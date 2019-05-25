@@ -12,6 +12,7 @@ class ApplicationController < ActionController::API
   request = HTTParty.get(q).to_json
   request_hash = JSON.parse(request)
   puts request_hash
+  #hello
 
   #https://api.edamam.com/search?q=chicken&q=cucumber&app_id=1404bd0e&app_key=ad0ecd1c212bcb688d6462d5dda1bfb1&time=10-30&yield=3&health=peanut-free
 
