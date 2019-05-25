@@ -1,16 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './index.css';
 import App from './App';
-import HomePage from './Homepage';
+import HomePage from './Homepage.jsx';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<HomePage />, document.getElementById('root'));
+ReactDOM.render(
+  <Router>
+    <Route path="/" component={HomePage} />
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+  </Router>,
+
+  document.getElementById('root')
+
+);
+
+
 serviceWorker.unregister();
 
 
