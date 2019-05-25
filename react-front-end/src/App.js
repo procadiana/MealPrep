@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+library.add(faCheckSquare)
+
+
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +26,7 @@ class App extends Component {
       this.setState({
         message: response.data.message
       });
-    }) 
+    })
   }
 
   render() {
@@ -29,7 +35,7 @@ class App extends Component {
         <h1>{ this.state.message }</h1>
         <button onClick={this.fetchData} >
           Fetch Data
-        </button>        
+        </button>
       </div>
     );
   }
