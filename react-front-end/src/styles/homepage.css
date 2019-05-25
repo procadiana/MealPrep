@@ -1,0 +1,31 @@
+.nav-bar {
+
+}
+
+
+
+
+
+.list-group {
+  font-size: 30px;
+  width: 100%;
+  padding-left: 15px;
+  border: none;
+  margin: 15px;
+
+
+}
+.item-group{
+  padding: 10px;
+  margin-right: 15px;
+}
+.form-check-box{
+
+
+}
+nav .nav-link{
+  color: '#ffffff';
+}
+nav .nav-linked{
+  color: '#e33d26';
+}

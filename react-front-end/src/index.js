@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
-import HomePage from './features/home/homepage';
+import HomePage from './Homepage';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<HomePage />, document.getElementById('root'));
