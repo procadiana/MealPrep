@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
+import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink, Row, Col,Card,CardImg,ListGroup,ListGroupItem} from 'reactstrap';
 import {Route, Switch} from "react-router-dom";
 import HomePage from './Homepage.jsx';
+import Signup from './Signup.jsx';
+import Layout from './Layout.jsx';
+import Login from './Login.jsx';
 
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
-library.add(faCheckSquare)
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+library.add(faCheck)
 
 
 
@@ -38,13 +41,19 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
+
+
         </Switch>
 
-        <h1>{ this.state.message }</h1>
+
+
+        {/*<h1>{ this.state.message }</h1>
         <button onClick={this.fetchData} >
           Fetch Data
-        </button>
+        </button>*/}
       </div>
     );
   }

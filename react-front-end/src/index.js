@@ -6,12 +6,15 @@ import './index.css';
 import App from './App';
 import HomePage from './Homepage.jsx';
 import * as serviceWorker from './serviceWorker';
+import Signup from './Signup.jsx';
+import Layout from './Layout.jsx';
 
 ReactDOM.render(
   <Router>
-    <Route path="/" component={HomePage} />
-
+    <Route path="/" component={App} />
   </Router>,
+
+
 
   document.getElementById('root')
 
