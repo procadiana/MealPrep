@@ -8,6 +8,7 @@ import HomePage from './Homepage.jsx';
 import Signup from './Signup.jsx';
 import Layout from './Layout.jsx';
 import Login from './Login.jsx';
+import MealSettings from './MealSettings.jsx';
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 library.add(faCheck)
@@ -44,6 +45,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/mealplan/new" component={MealSettings} />
 
 
         </Switch>
