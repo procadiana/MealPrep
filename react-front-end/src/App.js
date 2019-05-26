@@ -3,6 +3,9 @@ import axios from 'axios';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
+import {Route, Switch} from "react-router-dom";
+import HomePage from './Homepage.jsx';
+
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 library.add(faCheckSquare)
 
@@ -34,6 +37,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Switch>
+          <Route exact path="/home" component={HomePage} />
+        </Switch>
+
         <h1>{ this.state.message }</h1>
         <button onClick={this.fetchData} >
           Fetch Data
