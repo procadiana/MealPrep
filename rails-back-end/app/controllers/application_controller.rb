@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
 
   BASE_URL = "https://api.edamam.com/search?"
   API_PARTIAL_URL = "app_id=#{ENV['KEY_API_ID']}" + "&" +"app_key=#{ENV['KEY_API_PASS']}"
-  #query = BASE_URL+ API_PARTIAL_URL + "&q=chicken"
+  #query = BASE_URL + API_PARTIAL_URL + "&q=chicken"
   #q = "https://api.edamam.com/search?q=chicken#{API_PARTIAL_URL}&time=10-30"
   #puts q
   # request = HTTParty.get(q).to_json
@@ -20,8 +20,12 @@ class ApplicationController < ActionController::API
   #r_recipe= HTTParty.get(query_recipe)
   #puts "hello #{r_recipe}"
   #puts JSON.parse(r_recipe)
-  # def query(query_string)
+  def edaman_query_string(query)
+    @query_string = BASE_URL + API_PARTIAL_URL + query
+  end
 
-  # end
+  def query(query_string)
+    @result = HTTParty.get(query_string).to_json
+  end
 
 end
