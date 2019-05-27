@@ -28,18 +28,6 @@ export default class MealSettings extends Component {
         </FormGroup>
 
 
-
-        {/*<FormGroup check>
-        <p>Select Diet Type</p>
-          <Label check>
-          <Input type="checkbox" name="select" >Traditional</Input>
-            {/*<Input type="checkbox" name="select" >Keto</Input>*/}
-            {/*<Input type="checkbox" name="select" >Pescaterian</Input>
-            <Input type="checkbox" name="select" >Vegetarian</Input>
-            <Input type="checkbox" name="select" >Traditional</Input>
-            </Label>*/}
-
-
         <FormGroup>
           <Label for="selectMulti">Select Diet Type</Label>
           <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
