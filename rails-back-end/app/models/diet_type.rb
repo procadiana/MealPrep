@@ -1,0 +1,2 @@
+class DietType < ApplicationRecord
+end
