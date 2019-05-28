@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText, Container, Row,Col} from 'reactstrap';
+import {Button,Form, FormGroup, Label, Input, Container, Row,Col} from 'reactstrap';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import sign from './img/Sign.jpg';
@@ -30,7 +30,7 @@ class Signup extends Component {
         <Container>
           <Row>
             <Col sm="6">
-              <img class="sign_image" width="100%" src={sign} style={{ height: 400 }}/ >
+              <img class="home_image" width="100%" src={sign} style={{ height: 400 }} alt ="sign meal"/ >
             </Col>
             <Col sm="6">
               <Form ClassName ="signup_form" style={{marginTop:50}}>

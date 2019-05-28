@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { withRouter } from "react-router-dom";
 
-import {Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Button,Form, FormGroup, Label, Input,Col,Container,Row } from 'reactstrap';
 import axios from "axios";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import meal from './img/Meal.jpg';
 
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
@@ -71,7 +72,16 @@ class MealSettings extends Component {
     return (
       <div>
       <Layout />
-         <Form onSubmit={this.onSubmit}>
+        <Container>
+          <Row>
+            <Col xs="6">
+              <img class="home_image" width="100%" src={meal} style={{ height: 400 }} alt ="home image"/ >
+
+            </Col>
+
+            <Col xs="6" style={{marginTop:50}} >
+             <Label>Fill-in the details below to create your meal plan</Label>
+            <Form onSubmit={this.onSubmit}>
          <FormGroup>
           <Label for="select" >Number of days</Label>
           <Input type="select" name="days" value={days} onChange={this.onChange} >
@@ -135,6 +145,12 @@ class MealSettings extends Component {
             Create Meal Plan
           </Button>
            </Form>
+            </Col>
+
+          </Row>
+          </Container>
+
+
 
       </div>
 

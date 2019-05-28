@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col,Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactstrap';
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import log from './img/Log.jpg';
@@ -16,9 +14,6 @@ export default class Login extends Component {
         };
     }
 
-
-
-
   render() {
 
     return (
@@ -28,7 +23,7 @@ export default class Login extends Component {
       <Container >
       <Row>
         <Col xs="6">
-        <img class="home_image" width="100%" src={log} style={{ height: 400 }}/ >
+        <img class="home_image" width="100%" src={log} style={{ height: 400 }} alt ="login meal image"/ >
         </Col>
         <Col xs="6">
         <Form style={{marginTop:50}}>
