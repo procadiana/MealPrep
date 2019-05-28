@@ -40,7 +40,7 @@ class MealSettings extends Component {
         const { days, servings, diet, allergies} = this.state;
         axios.post('/api/mealplan', { days, servings, diet, allergies})
           .then((result) => {
-            const id = result.id; //
+            const id = result.mealplan.id; //
             this.props.history.push(`/mealplan/${id}`);
           });
         console.log(this.state);

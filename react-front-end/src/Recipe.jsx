@@ -32,7 +32,7 @@ export default class Recipe extends Component {
         <Layout />
         <img href='{this.state.mealPlan.image}' />
         <h3></h3>
-        <span style={{display: 'inline'}}><Button>Like</Button><Button>Remove</Button><Button>Check</Button></span>
+        <span style={{display: 'inline'}}><Button>Remove</Button><Button>Check</Button></span>
         <p>{this.setState}</p>
         </div>
 
