@@ -17,54 +17,49 @@ class MealSettings extends Component {
   constructor() {
         super();
         this.state = {
-          days: '3 days',
-          servings: '2 servings',
+          days: '3',
+          servings: '2',
           diet: 'Traditional',
           allergies: []
         };
       }
 
 
-  sendMealSettings(data) {
-    // axios.post('/api/mealplan', {data: data}).then(response => {
-    //   const id = response.id; //
-    //   this.props.history.push(`/mealplan/${id}`);
-    // });
+  // sendMealSettings(data) {
+  //   // axios.post('/api/mealplan', {data: data}).then(response => {
+  //   //   const id = response.id; //
+  //   //   this.props.history.push(`/mealplan/${id}`);
+  //   // });
 
-    console.log(data);
-  }
+  //   console.log(data);
+  // }
 
-
+//Saves data from the form on submit and sends it to teh backend
   onSubmit = (e) => {
         e.preventDefault();
-
         const { days, servings, diet, allergies} = this.state;
-
-        axios.post('/', { days, servings, diet, allergies})
+        axios.post('/api/mealplan', { days, servings, diet, allergies})
           .then((result) => {
-
+            const id = result.id; //
+            this.props.history.push(`/mealplan/${id}`);
           });
         console.log(this.state);
       }
 
+//Saves data from the select form fields
   onChange =(e) => {
     let index;
-
     this.setState({ [e.target.name]: e.target.value });
-
   }
 
+//Saves data from the cehckbox part of form
   onAllergiesChange =(e) => {
     let index;
-
     if (e.target.checked) {
-
       this.state.allergies.push(e.target.value)
-      } else {
-
+      } else { //removes unchecked data from the array
         index = this.state.allergies.indexOf(e.target.value)
         this.state.allergies.splice(index, 1)
-
       }
 
       // console.log(this.state);
@@ -80,15 +75,15 @@ class MealSettings extends Component {
          <FormGroup>
           <Label for="select" >Number of days</Label>
           <Input type="select" name="days" value={days} onChange={this.onChange} >
-            <option>3 days</option>
-            <option>5 days</option>
+            <option>3 </option>
+            <option>5 </option>
           </Input>
         </FormGroup>
          <FormGroup>
           <Label for="select" >Number of servings</Label>
           <Input type="select" name="servings" value={servings} onChange={this.onChange}>
-            <option>2 servings</option>
-            <option>4 servings</option>
+            <option>2 </option>
+            <option>4 </option>
           </Input>
         </FormGroup>
 
@@ -107,30 +102,30 @@ class MealSettings extends Component {
         <FormGroup check name='allergies'>
            <p>Select Allergies</p>
           <p><Label check name='dairy'>
-            <Input type="checkbox" value='dairy' onChange={this.onAllergiesChange}/>{' '}
+            <Input type="checkbox" value='dairy-free' onChange={this.onAllergiesChange}/>{' '}
             Dairy
           </Label></p>
           <p><Label check name='nuts'>
-            <Input type="checkbox" value='nuts' onChange={this.onAllergiesChange}/>{' '}
+            <Input type="checkbox" value='tree-nut-free' onChange={this.onAllergiesChange}/>{' '}
             Nuts
           </Label></p>
           <p><Label check name='gluten'>
-            <Input type="checkbox" value='gluten' onChange={this.onAllergiesChange}/>{' '}
+            <Input type="checkbox" value='gluten-free' onChange={this.onAllergiesChange}/>{' '}
             Gluten
           </Label>
           </p>
            <p><Label check name='eggs'>
-            <Input type="checkbox" value='eggs' onChange={this.onAllergiesChange} />{' '}
+            <Input type="checkbox" value='egg-free' onChange={this.onAllergiesChange} />{' '}
             Eggs
           </Label>
           </p>
           <p><Label check name='fish'>
-            <Input type="checkbox" value='fish' onChange={this.onAllergiesChange} />{' '}
+            <Input type="checkbox" value='fish-free' onChange={this.onAllergiesChange} />{' '}
             Fish
           </Label>
           </p>
            <p><Label check name='wheat'>
-            <Input type="checkbox" value='wheat' onChange={this.onAllergiesChange}/>{' '}
+            <Input type="checkbox" value='wheat-free' onChange={this.onAllergiesChange}/>{' '}
             Wheat
           </Label>
           </p>
