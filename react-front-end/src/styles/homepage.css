@@ -52,16 +52,27 @@
 
   border: 0 none;
 }
-.form-check-box{
-
+.meal-plan{
+  font-size: 18px;
+  font-weight: bold;
+}
+.meal-plans {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+.meals-plans {
+  font-size: 14px;
+  font-weight: bold;
 
 }
 
 
 
+
 .justify-content-end {
   font-size: 22px;
-  font-style: bold;
+  font-weight: bold;
 }
 nav .nav-link{
   color: '#ffffff';

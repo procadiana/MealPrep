@@ -16,7 +16,9 @@ export default class HomePage extends Component {
           <Col sm="6">
 
 
+
                <img  className="home_image" width="100%" src={home} />
+
 
 
         </Col>

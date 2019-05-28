@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col,Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactstrap';
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import log from './img/Log.jpg';
@@ -16,9 +14,6 @@ export default class Login extends Component {
         };
     }
 
-
-
-
   render() {
 
     return (
@@ -28,25 +23,25 @@ export default class Login extends Component {
       <Container >
       <Row>
         <Col xs="6">
-        <img class="home_image" width="100%" src={log} style={{ height: 400 }}/ >
+        <img class="home_image" width="100%" src={log} style={{ height: 400 }} alt ="login meal image"/ >
         </Col>
         <Col xs="6">
-        <Form style={{marginTop:50}}>
-          <FormGroup>
-            <Label for="exampleEmail" >Email</Label>
-            <Col>
+        <Form style={{marginTop:75}}>
+          <FormGroup row >
+            <Label for="exampleEmail" md={2} >Email</Label>
+            <Col md={{ span: 4, offset: 2 }}>
               <Input type="email" name="email" id="exampleEmail" placeholder="email"  />
             </Col>
           </FormGroup>
-          <FormGroup>
-           <Label for="examplePassword" >Password</Label>
-            <Col >
+          <FormGroup row >
+           <Label for="examplePassword" md ={2}>Password</Label>
+            <Col md={{ span: 4, offset: 2 }} >
             <Input type="password" name="password" id="examplePassword" placeholder="password " />
 
             </Col>
 
           </FormGroup>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit"  color="success" >
             Log-in
           </Button>
         </Form>
