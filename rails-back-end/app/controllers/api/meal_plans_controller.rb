@@ -1,4 +1,5 @@
 class Api::MealPlansController < ApplicationController
+
   def index
     mealplan = MealPlan.find(1);
     recipes = mealplan.recipes;
