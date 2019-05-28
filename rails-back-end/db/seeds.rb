@@ -20,7 +20,7 @@ User.delete_all
 DietType.delete_all
 MealPlan.delete_all
 Recipe.delete_all
-MealPlanRecipe.delete_all
+MealPlansRecipe.delete_all
 
 puts "Tables deleted"
 
@@ -48,9 +48,9 @@ recipe4 = Recipe.create! name: 'Persian Chicken', edaman_id: '4caf01683bf99ddc7c
 
 
 
-MealPlanRecipe.create! meal_plan: meal_plan1, recipe: recipe1
-MealPlanRecipe.create! meal_plan: meal_plan1, recipe: recipe2
-MealPlanRecipe.create! meal_plan: meal_plan1, recipe: recipe3
-MealPlanRecipe.create! meal_plan: meal_plan1, recipe: recipe4
+MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe1
+MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe2
+MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe3
+MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe4
 
 puts "DONE!"

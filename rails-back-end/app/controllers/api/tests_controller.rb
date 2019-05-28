@@ -9,13 +9,13 @@ class Api::TestsController < ApplicationController
     request = HTTParty.get(q).to_json
     #request_hash = JSON.parse(request)
     test_r = request_hash["hits"][0]
-    render :json => {
+    render json: {
       message: request
     }
   end
 
   def index
-    render :json => {
+    render json: {
       message: "Hello"
     }
   end
