@@ -13,7 +13,12 @@ import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 library.add(faCheck)
+library.add(faHeart)
+library.add(faTimes)
+
 
 
 
@@ -48,7 +53,7 @@ class App extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/mealplan/new" component={MealSettings} />
-          <Route exact path="/mealplan/:id" component={MealPlan} />
+          <Route exact path="/mealplan" component={MealPlan} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
 
 

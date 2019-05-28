@@ -1,2 +1,0 @@
-class UserAllergy < ApplicationRecord
-end
