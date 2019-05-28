@@ -53,7 +53,7 @@ class App extends Component {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/mealplan/new" component={MealSettings} />
-          <Route exact path="/mealplan" component={MealPlan} />
+          <Route exact path="/mealplan/:id" component={MealPlan} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
 
 

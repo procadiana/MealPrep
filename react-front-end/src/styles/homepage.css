@@ -80,3 +80,8 @@ nav .nav-link{
 nav .nav-linked{
   color: '#e33d26';
 }
+
+.notification-awesome {
+  background-color: #685dc3;
+  border-left: 8px solid darken(#685dc3, 15%);
+}
