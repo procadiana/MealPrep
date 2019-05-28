@@ -1,27 +1,92 @@
 import React, {Component} from 'react';
+import { withRouter } from "react-router-dom";
+
 import {Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import axios from "axios";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 
-export default class MealSettings extends Component {
+
+
+
+class MealSettings extends Component {
+
+  constructor() {
+        super();
+        this.state = {
+          days: '3 days',
+          servings: '2 servings',
+          diet: 'Traditional',
+          allergies: []
+        };
+      }
+
+
+  sendMealSettings(data) {
+    // axios.post('/api/mealplan', {data: data}).then(response => {
+    //   const id = response.id; //
+    //   this.props.history.push(`/mealplan/${id}`);
+    // });
+
+    console.log(data);
+  }
+
+
+  onSubmit = (e) => {
+        e.preventDefault();
+
+        const { days, servings, diet, allergies} = this.state;
+
+        axios.post('/', { days, servings, diet, allergies})
+          .then((result) => {
+
+          });
+        console.log(this.state);
+      }
+
+  onChange =(e) => {
+    let index;
+
+    this.setState({ [e.target.name]: e.target.value });
+
+  }
+
+  onAllergiesChange =(e) => {
+    let index;
+
+    if (e.target.checked) {
+
+      this.state.allergies.push(e.target.value)
+      } else {
+
+        index = this.state.allergies.indexOf(e.target.value)
+        this.state.allergies.splice(index, 1)
+
+      }
+
+      // console.log(this.state);
+  }
+
   render() {
+    const { days, servings, diet, allergies} = this.state;
+
     return (
-        <div>
+      <div>
       <Layout />
-         <Form>
+         <Form onSubmit={this.onSubmit}>
          <FormGroup>
-          <Label for="select">Number of days</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Label for="select" >Number of days</Label>
+          <Input type="select" name="days" value={days} onChange={this.onChange} >
             <option>3 days</option>
             <option>5 days</option>
           </Input>
         </FormGroup>
          <FormGroup>
-          <Label for="select">Number of servings</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Label for="select" >Number of servings</Label>
+          <Input type="select" name="servings" value={servings} onChange={this.onChange}>
             <option>2 servings</option>
             <option>4 servings</option>
           </Input>
@@ -29,49 +94,49 @@ export default class MealSettings extends Component {
 
 
         <FormGroup>
-          <Label for="selectMulti">Select Diet Type</Label>
-          <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
+          <Label for="selectMulti" >Select Diet Type</Label>
+          <Input type="select" name="diet" value={diet} onChange={this.onChange}>
             <option>Traditional</option>
             <option>Keto</option>
             <option>Pescaterian</option>
             <option>Vegetarian</option>
-            <option>Traditional</option>
+            <option>Paleo</option>
 
           </Input>
         </FormGroup>
-        <FormGroup check>
+        <FormGroup check name='allergies'>
            <p>Select Allergies</p>
-          <p><Label check>
-            <Input type="checkbox" />{' '}
+          <p><Label check name='dairy'>
+            <Input type="checkbox" value='dairy' onChange={this.onAllergiesChange}/>{' '}
             Dairy
           </Label></p>
-          <p><Label check>
-            <Input type="checkbox" />{' '}
+          <p><Label check name='nuts'>
+            <Input type="checkbox" value='nuts' onChange={this.onAllergiesChange}/>{' '}
             Nuts
           </Label></p>
-          <p><Label check>
-            <Input type="checkbox" />{' '}
+          <p><Label check name='gluten'>
+            <Input type="checkbox" value='gluten' onChange={this.onAllergiesChange}/>{' '}
             Gluten
           </Label>
           </p>
-           <p><Label check>
-            <Input type="checkbox" />{' '}
+           <p><Label check name='eggs'>
+            <Input type="checkbox" value='eggs' onChange={this.onAllergiesChange} />{' '}
             Eggs
           </Label>
           </p>
-          <p><Label check>
-            <Input type="checkbox" />{' '}
+          <p><Label check name='fish'>
+            <Input type="checkbox" value='fish' onChange={this.onAllergiesChange} />{' '}
             Fish
           </Label>
           </p>
-           <p><Label check>
-            <Input type="checkbox" />{' '}
+           <p><Label check name='wheat'>
+            <Input type="checkbox" value='wheat' onChange={this.onAllergiesChange}/>{' '}
             Wheat
           </Label>
           </p>
           </FormGroup>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" name="meal-plan">
             Create Meal Plan
           </Button>
            </Form>
@@ -82,3 +147,6 @@ export default class MealSettings extends Component {
       )
   }
 }
+
+
+export default withRouter(MealSettings)
