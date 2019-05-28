@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     get '/data', to: 'tests#index'
+    #resources :mealplan # to generate GET /api/dogs, POST /api/dogs, etc...
   end
 end
