@@ -33,7 +33,7 @@ class Signup extends Component {
               <img class="home_image" width="100%" src={sign} style={{ height: 400 }} alt ="sign meal"/ >
             </Col>
             <Col sm="6">
-              <Form ClassName ="signup_form" style={{marginTop:50}}>
+              <Form ClassName ="signup_form" style={{marginTop:70}}>
 
                 <FormGroup row >
                   <Label for="exampleEmail" md={2}>Email</Label>
@@ -53,7 +53,7 @@ class Signup extends Component {
                   <Input type="password" name="password" id="confirmPassword" placeholder="confirm password" />
                 </Col>
                 </FormGroup>
-              <Button variant="primary" type="submit" color="success" >
+              <Button variant="primary" type="submit" color="success">
                 Create Account
               </Button>
             </Form>

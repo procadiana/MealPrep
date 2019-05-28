@@ -83,7 +83,7 @@ class MealSettings extends Component {
              <Label className="meal-plan">Fill-in the details below to create your meal plan</Label>
             <Form onSubmit={this.onSubmit}>
          <FormGroup row >
-          <Label for="select" md={4} className="meal-plans">Number of days</Label>
+          <Label for="select" md={4} className="meal-plans">Number of days:</Label>
           <Col md={{ span: 4, offset: 2 }}>
           <Input type="select" name="days" value={days} onChange={this.onChange} >
             <option>3 </option>
@@ -92,9 +92,9 @@ class MealSettings extends Component {
           </Col>
         </FormGroup>
          <FormGroup row >
-          <Label for="select" md={4} className="meal-plans">Number of servings</Label>
+          <Label for="select" md={4} className="meal-plans">Number of servings:</Label>
           <Col md={{ span: 4, offset: 2 }}>
-          <Input type="select" name="servings" value={servings} onChange={this.onChange}>
+          <Input type="select" name="servings" value={servings} onChange={this.onChange} >
             <option>2 </option>
             <option>4 </option>
           </Input>
@@ -103,7 +103,7 @@ class MealSettings extends Component {
 
 
         <FormGroup row >
-          <Label for="selectMulti" md={4} className="meal-plans">Select Diet Type</Label>
+          <Label for="selectMulti" md={4} className="meal-plans">Select Diet Type:</Label>
           <Col md={{ span: 4, offset: 2 }}>
           <Input type="select" name="diet" value={diet} onChange={this.onChange}>
             <option>Traditional</option>
@@ -115,7 +115,7 @@ class MealSettings extends Component {
           </Input>
           </Col>
         </FormGroup>
-        <p className="meals-plans">Select Allergies</p>
+        <p className="meal-plans">Select Allergies:</p>
         <FormGroup check name='allergies'inline>
 
           <p><Label check name='dairy'  style={{ paddingRight: 4 }}>
@@ -148,7 +148,7 @@ class MealSettings extends Component {
           </p>
           </FormGroup>
 
-          <Button variant="primary" type="submit" name="meal-plan" size="lg" color="success">
+          <Button style={{marginTop:40}} variant="primary" type="submit" name="meal-plan" size="lg" color="success">
             Create Meal Plan
           </Button>
            </Form>

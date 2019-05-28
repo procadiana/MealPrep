@@ -14,13 +14,7 @@ export default class HomePage extends Component {
         <Container>
         <Row>
           <Col sm="6">
-
-
-
                <img  className="home_image" width="100%" src={home} />
-
-
-
         </Col>
           <Col sm="6">
           <ListGroup className ="list-group">
