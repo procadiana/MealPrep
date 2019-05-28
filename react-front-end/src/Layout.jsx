@@ -9,7 +9,7 @@ import Login from './Login.jsx';
 export default class Layout extends Component {
   render() {
     return (
-     <div className= "nav-bar">
+     <div>
           <Navbar expand="lg" variant="light" style={{backgroundColor: '#F6F6F6'}}>
           <Container style={{backgroundColor: '#F6F6F6'}}>
             <NavbarBrand href="#">

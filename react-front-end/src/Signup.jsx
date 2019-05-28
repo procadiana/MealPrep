@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {Button,Form, FormGroup, Label, Input, FormText, Container, Row,Col} from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
+import sign from './img/Sign.jpg';
 
 
 
@@ -26,30 +27,42 @@ class Signup extends Component {
 
       <div>
       <Layout />
-         <Form>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Confirm Password</Label>
-          <Input type="password" name="password" id="confirmPassword" placeholder="confirm password" />
-        </FormGroup>
+        <Container>
+          <Row>
+            <Col sm="6">
+              <img class="sign_image" width="100%" src={sign} style={{ height: 400 }}/ >
+            </Col>
+            <Col sm="6">
+              <Form ClassName ="signup_form" style={{marginTop:50}}>
 
+                <FormGroup>
+                  <Label for="exampleEmail">Email</Label>
+                <Col >
+                  <Input type="email" name="email" id="exampleEmail" placeholder="email"  />
+                </Col>
+                </FormGroup>
+                <FormGroup>
+                  <Label for="examplePassword">Password</Label>
+                <Col >
+                  <Input type="password" name="password" id="examplePassword" placeholder="password " />
+                </Col>
+                </FormGroup>
+                <FormGroup>
+                  <Label for="examplePassword">Confirm Password</Label>
+                <Col >
+                  <Input   type="password" name="password" id="confirmPassword" placeholder="confirm password" />
+                </Col>
+                </FormGroup>
+              <Button variant="primary" type="submit" >
+                Create Account
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </div>
 
-
-          <Button variant="primary" type="submit">
-            Create Account
-          </Button>
-           </Form>
-
-      </div>
-
-    )
+    );
   }
 }
 

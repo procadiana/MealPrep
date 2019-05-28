@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink, Row, Col,Card,CardImg,ListGroup,ListGroupItem, Button} from 'reactstrap';
+import {Container, Row, Col,ListGroup,ListGroupItem, Button} from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import home from './img/Home.jpg';
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 
@@ -16,7 +16,7 @@ export default class HomePage extends Component {
           <Col sm="6">
 
 
-               <img  class="home_image" width="100%" src="https://images.unsplash.com/photo-1543352631-6b884eafab2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80" alt="Card image cap" />
+               <img  class="home_image" width="100%" src={home} alt="Card image cap" />
 
 
         </Col>
