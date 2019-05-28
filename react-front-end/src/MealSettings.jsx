@@ -79,27 +79,32 @@ class MealSettings extends Component {
 
             </Col>
 
-            <Col xs="6" style={{marginTop:50}} >
-             <Label>Fill-in the details below to create your meal plan</Label>
+            <Col xs="6" style={{marginTop:50}} className="meal-form">
+             <Label className="meal-plan">Fill-in the details below to create your meal plan</Label>
             <Form onSubmit={this.onSubmit}>
-         <FormGroup>
-          <Label for="select" >Number of days</Label>
+         <FormGroup row >
+          <Label for="select" md={4} className="meal-plans">Number of days</Label>
+          <Col md={{ span: 4, offset: 2 }}>
           <Input type="select" name="days" value={days} onChange={this.onChange} >
             <option>3 </option>
             <option>5 </option>
           </Input>
+          </Col>
         </FormGroup>
-         <FormGroup>
-          <Label for="select" >Number of servings</Label>
+         <FormGroup row >
+          <Label for="select" md={4} className="meal-plans">Number of servings</Label>
+          <Col md={{ span: 4, offset: 2 }}>
           <Input type="select" name="servings" value={servings} onChange={this.onChange}>
             <option>2 </option>
             <option>4 </option>
           </Input>
+          </Col>
         </FormGroup>
 
 
-        <FormGroup>
-          <Label for="selectMulti" >Select Diet Type</Label>
+        <FormGroup row >
+          <Label for="selectMulti" md={4} className="meal-plans">Select Diet Type</Label>
+          <Col md={{ span: 4, offset: 2 }}>
           <Input type="select" name="diet" value={diet} onChange={this.onChange}>
             <option>Traditional</option>
             <option>Keto</option>
@@ -108,40 +113,42 @@ class MealSettings extends Component {
             <option>Paleo</option>
 
           </Input>
+          </Col>
         </FormGroup>
-        <FormGroup check name='allergies'>
-           <p>Select Allergies</p>
-          <p><Label check name='dairy'>
-            <Input type="checkbox" value='dairy-free' onChange={this.onAllergiesChange}/>{' '}
+        <p className="meals-plans">Select Allergies</p>
+        <FormGroup check name='allergies'inline>
+
+          <p><Label check name='dairy'  style={{ paddingRight: 4 }}>
+            <Input type="checkbox" value='dairy-free' onChange={this.onAllergiesChange} />{' '}
             Dairy
           </Label></p>
-          <p><Label check name='nuts'>
-            <Input type="checkbox" value='tree-nut-free' onChange={this.onAllergiesChange}/>{' '}
+          <p><Label check name='nuts' style={{ paddingRight: 4 }}>
+            <Input type="checkbox" value='tree-nut-free' onChange={this.onAllergiesChange} />{' '}
             Nuts
           </Label></p>
-          <p><Label check name='gluten'>
-            <Input type="checkbox" value='gluten-free' onChange={this.onAllergiesChange}/>{' '}
+          <p><Label check name='gluten' style={{ paddingRight: 4 }}>
+            <Input type="checkbox" value='gluten-free' onChange={this.onAllergiesChange} />{' '}
             Gluten
           </Label>
           </p>
-           <p><Label check name='eggs'>
+           <p><Label check name='eggs' style={{ paddingRight: 4 }}>
             <Input type="checkbox" value='egg-free' onChange={this.onAllergiesChange} />{' '}
             Eggs
           </Label>
           </p>
-          <p><Label check name='fish'>
+          <p><Label check name='fish' style={{ paddingRight: 4 }}>
             <Input type="checkbox" value='fish-free' onChange={this.onAllergiesChange} />{' '}
             Fish
           </Label>
           </p>
-           <p><Label check name='wheat'>
+           <p><Label check name='wheat' style={{ paddingRight: 4 }}>
             <Input type="checkbox" value='wheat-free' onChange={this.onAllergiesChange}/>{' '}
             Wheat
           </Label>
           </p>
           </FormGroup>
 
-          <Button variant="primary" type="submit" name="meal-plan">
+          <Button variant="primary" type="submit" name="meal-plan" size="lg" color="success">
             Create Meal Plan
           </Button>
            </Form>

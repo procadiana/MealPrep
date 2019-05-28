@@ -35,25 +35,25 @@ class Signup extends Component {
             <Col sm="6">
               <Form ClassName ="signup_form" style={{marginTop:50}}>
 
-                <FormGroup>
-                  <Label for="exampleEmail">Email</Label>
-                <Col >
+                <FormGroup row >
+                  <Label for="exampleEmail" md={2}>Email</Label>
+                <Col md={{ span: 4, offset: 2 }} >
                   <Input type="email" name="email" id="exampleEmail" placeholder="email"  />
                 </Col>
                 </FormGroup>
-                <FormGroup>
-                  <Label for="examplePassword">Password</Label>
-                <Col >
+                <FormGroup row>
+                  <Label for="examplePassword" md={2}>Password</Label>
+                <Col md={{ span: 4, offset: 2 }}>
                   <Input type="password" name="password" id="examplePassword" placeholder="password " />
                 </Col>
                 </FormGroup>
-                <FormGroup>
-                  <Label for="examplePassword">Confirm Password</Label>
-                <Col >
-                  <Input   type="password" name="password" id="confirmPassword" placeholder="confirm password" />
+                <FormGroup row>
+                  <Label for="examplePassword" md= {2}>Confirm Password</Label>
+                <Col md={{ span: 4, offset: 2 }}>
+                  <Input type="password" name="password" id="confirmPassword" placeholder="confirm password" />
                 </Col>
                 </FormGroup>
-              <Button variant="primary" type="submit" >
+              <Button variant="primary" type="submit" color="success" >
                 Create Account
               </Button>
             </Form>
