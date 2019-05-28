@@ -38,7 +38,7 @@ class MealSettings extends Component {
   onSubmit = (e) => {
         e.preventDefault();
         const { days, servings, diet, allergies} = this.state;
-        axios.post('/api/mealplan', { days, servings, diet, allergies})
+        axios.post('/api/meal_plans', { days, servings, diet, allergies})
           .then((result) => {
             const id = result.id; //
             this.props.history.push(`/mealplan/${id}`);

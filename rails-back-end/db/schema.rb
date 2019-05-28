@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_053503) do
   create_table "meal_plans", force: :cascade do |t|
     t.integer "user_id"
     t.integer "servings"
+    t.integer "days"
     t.integer "diet_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,7 +49,9 @@ ActiveRecord::Schema.define(version: 2019_05_27_053503) do
     t.string "name"
     t.string "edaman_id"
     t.string "main_ingredient"
+    t.string "shareAs"
     t.string "img_source"
+    t.integer "servings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

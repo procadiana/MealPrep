@@ -25,7 +25,7 @@ export default class MealPlan extends Component {
         <img />
         <h3></h3>
         <span style={{display: 'inline'}}><Button>Like</Button><Button>Remove</Button><Button>Check</Button></span>
-        <p>{this.state.mealPlan}</p>
+
         </div>
 
 
