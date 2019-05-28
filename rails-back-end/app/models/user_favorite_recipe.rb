@@ -1,2 +1,0 @@
-class UserFavoriteRecipe < ApplicationRecord
-end
