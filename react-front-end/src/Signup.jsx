@@ -34,23 +34,23 @@ class Signup extends Component {
               <img class="home_image"  src={sign}  alt ="sign meal"/ >
             </Col>
             <Col lg="6" md="12">
-              <Form style={{marginTop:70}}>
+              <Form className = "sign_up_form">
 
                 <FormGroup row >
-                  <Label for="exampleEmail" md={2}>Email</Label>
-                <Col md={{ span: 4, offset: 1 }} >
-                  <Input type="email" name="email" id="exampleEmail" placeholder="email"  />
+                  <Label for="exampleEmail" className= "sign_up_email">Email</Label>
+                <Col >
+                  <Input type="email" name="email" id="exampleEmail" placeholder="email"  inline />
                 </Col>
                 </FormGroup>
                 <FormGroup row>
-                  <Label for="examplePassword" md={2}>Password</Label>
-                <Col md={{ span: 2, offset: 1}}>
-                  <Input type="password" name="password" id="examplePassword" placeholder="password " />
+                  <Label for="examplePassword" className="sign_up_password">Password</Label>
+                <Col >
+                  <Input  type="password" name="password" id="examplePassword" placeholder="password " />
                 </Col>
                 </FormGroup>
                 <FormGroup row>
-                  <Label for="examplePassword" md= {2}>Confirm Password</Label>
-                <Col md={{ span: 2, offset: 1}}>
+                  <Label for="examplePassword" >Confirm Password</Label>
+                <Col >
                   <Input type="password" name="password" id="confirmPassword" placeholder="confirm password" />
                 </Col>
                 </FormGroup>

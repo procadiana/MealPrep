@@ -18,7 +18,7 @@
 }
 .login_form {
   margin-top: 75px;
-  font-size: 20px;
+
 }
 .login_form_email {
   margin-right: 35px;
@@ -72,9 +72,15 @@
   margin-top: 15px;
 
 }
-
-
-
+.sign_up_form {
+  margin-top: 100px;
+}
+.sign_up_email {
+  margin-right: 90px;
+}
+.sign_up_password {
+  margin-right: 60px;
+}
 
 .item-group{
   padding: 20px;
@@ -82,13 +88,8 @@
 
   border: 0 none;
 }
-.meal-plan{
-  font-size: 18px;
-  font-weight: bold;
-}
+
 .meal-plans {
-  font-size: 14px;
-  font-weight: bold;
   text-align: left;
 
 }
