@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 import React, {Component, useState} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem} from 'reactstrap';
-=======
-import React, {Component} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container,Row,Col,Nav,NavItem,NavLink} from 'reactstrap';
-import axios from "axios";
+import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
+
 import LayoutFooter from './Footer.jsx';
->>>>>>> feature/dashboard
-
-
-
 import axios from "axios";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
