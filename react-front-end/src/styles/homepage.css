@@ -16,6 +16,13 @@
  max-width: 550px;
  width:100%;
 }
+.login_form {
+  margin-top: 75px;
+  font-size: 20px;
+}
+.login_form_email {
+  margin-right: 35px;
+}
 
 
 
