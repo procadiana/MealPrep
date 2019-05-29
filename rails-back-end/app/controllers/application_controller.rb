@@ -1,6 +1,6 @@
 #require 'dotenv/load'
 class ApplicationController < ActionController::API
-  include HTTParty
+  #include HTTParty
 
 
 
@@ -16,17 +16,11 @@ class ApplicationController < ActionController::API
   #r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408
   #query_recipe = BASE_URL+ API_PARTIAL_URL + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9a7c1c4c891c72f649746650a9635919"
   #"&r=#{r}"
-  #puts query_recipe = "https://api.edamam.com/search?app_id=4377435e&app_key=ff344f7fcaf17dfc1eb3b37cfbeac61a&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9a7c1c4c891c72f649746650a9635919"
+
 
   #r_recipe= HTTParty.get(query_recipe)
   #puts "hello #{r_recipe}"
   #puts JSON.parse(r_recipe)
-  def edaman_query_string(query)
-    @query_string = BASE_URL + API_PARTIAL_URL + query
-  end
 
-  def query(query_string)
-    @result = HTTParty.get(query_string).to_json
-  end
 
 end

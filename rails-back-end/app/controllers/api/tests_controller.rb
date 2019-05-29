@@ -1,5 +1,5 @@
 class Api::TestsController < ApplicationController
-  include HTTParty
+  #include HTTParty
   BASE_URL = "https://api.edamam.com/search?"
   API_PARTIAL_URL = "app_id=#{ENV['KEY_API_ID']}" + "&" +"app_key=#{ENV['KEY_API_PASS']}"
 

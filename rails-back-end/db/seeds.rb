@@ -46,6 +46,7 @@ recipe1 = Recipe.create! name: 'Chicken Vesuvio', edaman_id: 'b79327d05b8e5b838a
 recipe2 = Recipe.create! name: 'Chicken Paprikash', edaman_id: '8275bb28647abcedef0baaf2dcf34f8b', main_ingredient: 'chicken', servings: 4, img_source:'https://www.edamam.com/web-img/e12/e12b8c5581226d7639168f41d126f2ff.jpg',shareAs: 'http://www.edamam.com/recipe/chicken-paprikash-8275bb28647abcedef0baaf2dcf34f8b/chicken'
 recipe3 = Recipe.create! name: 'Catalan Chicken', edaman_id: '2463f2482609d7a471dbbf3b268bd956', main_ingredient: 'chicken', servings: 12, img_source: 'https://www.edamam.com/web-img/4d9/4d9084cbc170789caa9e997108b595de.jpg',shareAs: 'http://www.edamam.com/recipe/catalan-chicken-2463f2482609d7a471dbbf3b268bd956/chicken'
 recipe4 = Recipe.create! name: 'Persian Chicken', edaman_id: '4caf01683bf99ddc7c08c35774aae54c', main_ingredient: 'chicken', servings: 5, img_source:'https://www.edamam.com/web-img/bd4/bd47ac0557ade02871750518d56ba928.jpg', shareAs: 'http://www.edamam.com/recipe/twistin-chicken-b7ad27e3e2c9440baca6ac8f7fac2a53/chicken'
+recipe5 = Recipe.create! name: 'Portabello Beef Stew', edaman_id: '14c68e61108cc0829ee6ef279f79b860', main_ingredient: 'beef', servings: 3, img_source:'https://www.edamam.com/web-img/72f/72fd32d089fdc211a0b35a7e41ed47e2.JPG', shareAs: 'http://www.edamam.com/recipe/portabello-beef-stew-14c68e61108cc0829ee6ef279f79b860/beef'
 
 
 
@@ -53,5 +54,6 @@ MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe1
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe2
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe3
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe4
+MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe5
 
 puts "Data seeded. DONE!"
