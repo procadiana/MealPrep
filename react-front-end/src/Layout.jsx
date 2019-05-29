@@ -12,7 +12,7 @@ export default class Layout extends Component {
           <Navbar expand="lg" variant="light" style={{backgroundColor: '#F6F6F6'}}>
           <Container style={{backgroundColor: '#F6F6F6'}}>
 
-            <NavbarBrand href="#">
+            <NavbarBrand href="/">
              <img src={logo} style={{ height: 70 }} alt ="logo"/ >
 
             </NavbarBrand>
@@ -31,6 +31,7 @@ export default class Layout extends Component {
 
           </Container>
           </Navbar>
+
            </div>
     );
   }

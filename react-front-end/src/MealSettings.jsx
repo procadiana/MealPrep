@@ -9,6 +9,7 @@ import meal from './img/Meal.jpg';
 
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
+import LayoutFooter from './Footer.jsx';
 
 
 
@@ -157,7 +158,7 @@ class MealSettings extends Component {
           </Row>
           </Container>
 
-
+          <LayoutFooter />
 
       </div>
 

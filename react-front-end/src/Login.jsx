@@ -41,7 +41,7 @@ export default class Login extends Component {
             </Col>
 
           </FormGroup>
-          <Button variant="primary" type="submit"  color="success" >
+          <Button variant="primary" type="submit"  color="success" className="login_button" >
             Log-in
           </Button>
         </Form>

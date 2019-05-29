@@ -11,13 +11,15 @@ import Login from './Login.jsx';
 import MealSettings from './MealSettings.jsx';
 import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
-
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 library.add(faCheck)
 library.add(faHeart)
 library.add(faTimes)
+library.add(faPlus)
+
 
 
 
