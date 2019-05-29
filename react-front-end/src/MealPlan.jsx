@@ -1,8 +1,6 @@
 import React, {Component, useState} from 'react';
 import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem} from 'reactstrap';
 
-
-
 import axios from "axios";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,9 +19,6 @@ export default class MealPlan extends Component {
       };
 
   }
-
-
-
 
 
   componentWillMount(){
