@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import React, {Component, useState} from 'react';
 import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem} from 'reactstrap';
+=======
+import React, {Component} from 'react';
+import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container,Row,Col,Nav,NavItem,NavLink} from 'reactstrap';
+import axios from "axios";
+import LayoutFooter from './Footer.jsx';
+>>>>>>> feature/dashboard
 
 
 
@@ -43,11 +50,40 @@ export default class MealPlan extends Component {
         <div>
 
         <Layout />
+        <div className="float-right">
+
+        <Button variant="primary" type="submit" color="success" className="new_plan_button">
+              <FontAwesomeIcon icon="plus" href=''/>  New Meal Plan
+        </Button>
+          <Nav >
+            <NavItem>
+              <NavLink href="#">View Previous Meal Plans</NavLink>
+            </NavItem>
+
+          </Nav>
+          </div>
+        <Container style={{marginTop:50}}>
+          <Row>
+            <Col sm= "3">
+              Shopping List
+            </Col>
+
+
+            <Col sm="9">
+            <h6> Here's your meal plan for 4 days </h6>
+            </Col>
+      </Row>
+      </Container>
+
         <ul>
         {recipes.map(item =>
           (<Recipe recipe={item}/>)
         )}
+
         </ul>
+
+      <LayoutFooter />
+
         </div>
 
       )

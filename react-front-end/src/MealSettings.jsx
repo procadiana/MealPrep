@@ -9,6 +9,7 @@ import meal from './img/Meal.jpg';
 
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
+import LayoutFooter from './Footer.jsx';
 
 
 
@@ -67,27 +68,30 @@ class MealSettings extends Component {
       <Layout />
         <Container>
           <Row>
-            <Col xs="6">
-              <img className="home_image" width="100%" src={meal} style={{ height: 400 }} alt ="home image"/ >
+
+
+            <Col lg="6" md="12">
+              <img class="home_image"  src={meal} style={{ height: 400 }} alt ="home image"/ >
+
 
             </Col>
 
-            <Col xs="6" style={{marginTop:50}} className="meal-form">
+            <Col lg="6" md="12"style={{marginTop:50}} className="meal-form">
              <Label className="meal-plan">Fill-in the details below to create your meal plan</Label>
             <Form onSubmit={this.onSubmit}>
          <FormGroup row >
-          <Label for="select" md={4} className="meal-plans">Number of days</Label>
-          <Col md={{ span: 4, offset: 2 }}>
-          <Input type="select" name="days" value={days} onChange={this.onChange} >
+          <Label for="select" md={4} className="meal-plans">Number of days:</Label>
+          <Col >
+          <Input className = "meal_plan_select" type="select" name="days" value={days} onChange={this.onChange} >
             <option>3 </option>
             <option>5 </option>
           </Input>
           </Col>
         </FormGroup>
          <FormGroup row >
-          <Label for="select" md={4} className="meal-plans">Number of servings</Label>
-          <Col md={{ span: 4, offset: 2 }}>
-          <Input type="select" name="servings" value={servings} onChange={this.onChange}>
+          <Label for="select" md={4} className="meal-plans">Number of servings:</Label>
+          <Col >
+          <Input className = "meal_plan_select" type="select" name="servings" value={servings} onChange={this.onChange} >
             <option>2 </option>
             <option>4 </option>
           </Input>
@@ -96,9 +100,9 @@ class MealSettings extends Component {
 
 
         <FormGroup row >
-          <Label for="selectMulti" md={4} className="meal-plans">Select Diet Type</Label>
-          <Col md={{ span: 4, offset: 2 }}>
-          <Input type="select" name="diet" value={diet} onChange={this.onChange}>
+          <Label for="selectMulti" md={4} className="meal-plans">Select Diet Type:</Label>
+          <Col >
+          <Input  className = "meal_plan_select" type="select" name="diet" value={diet} onChange={this.onChange}>
             <option>Traditional</option>
             <option>Keto</option>
             <option>Pescaterian</option>
@@ -108,7 +112,7 @@ class MealSettings extends Component {
           </Input>
           </Col>
         </FormGroup>
-        <p className="meals-plans">Select Allergies</p>
+        <p className="meal-plans">Select Allergies:</p>
         <FormGroup check name='allergies'inline>
 
           <p><Label check name='dairy'  style={{ paddingRight: 4 }}>
@@ -141,7 +145,7 @@ class MealSettings extends Component {
           </p>
           </FormGroup>
 
-          <Button variant="primary" type="submit" name="meal-plan" size="lg" color="success">
+          <Button style={{marginTop:40}} variant="primary" type="submit" name="meal-plan" size="lg" color="success">
             Create Meal Plan
           </Button>
            </Form>
@@ -150,7 +154,7 @@ class MealSettings extends Component {
           </Row>
           </Container>
 
-
+          <LayoutFooter />
 
       </div>
 

@@ -5,6 +5,7 @@ import {Button,Form, FormGroup, Label, Input, Container, Row,Col} from 'reactstr
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import sign from './img/Sign.jpg';
+import LayoutFooter from './Footer.jsx';
 
 
 
@@ -29,37 +30,38 @@ class Signup extends Component {
       <Layout />
         <Container>
           <Row>
-            <Col sm="6">
-              <img class="home_image" width="100%" src={sign} style={{ height: 400 }} alt ="sign meal"/ >
+            <Col lg="6" md="12">
+              <img class="home_image"  src={sign}  alt ="sign meal"/ >
             </Col>
-            <Col sm="6">
-              <Form ClassName ="signup_form" style={{marginTop:50}}>
+            <Col lg="6" md="12">
+              <Form className = "sign_up_form">
 
                 <FormGroup row >
-                  <Label for="exampleEmail" md={2}>Email</Label>
-                <Col md={{ span: 4, offset: 2 }} >
-                  <Input type="email" name="email" id="exampleEmail" placeholder="email"  />
+                  <Label for="exampleEmail" className= "sign_up_email">Email</Label>
+                <Col >
+                  <Input type="email" name="email" id="exampleEmail" placeholder="email"  inline />
                 </Col>
                 </FormGroup>
                 <FormGroup row>
-                  <Label for="examplePassword" md={2}>Password</Label>
-                <Col md={{ span: 4, offset: 2 }}>
-                  <Input type="password" name="password" id="examplePassword" placeholder="password " />
+                  <Label for="examplePassword" className="sign_up_password">Password</Label>
+                <Col >
+                  <Input  type="password" name="password" id="examplePassword" placeholder="password " />
                 </Col>
                 </FormGroup>
                 <FormGroup row>
-                  <Label for="examplePassword" md= {2}>Confirm Password</Label>
-                <Col md={{ span: 4, offset: 2 }}>
+                  <Label for="examplePassword" >Confirm Password</Label>
+                <Col >
                   <Input type="password" name="password" id="confirmPassword" placeholder="confirm password" />
                 </Col>
                 </FormGroup>
-              <Button variant="primary" type="submit" color="success" >
+              <Button variant="primary" type="submit" color="success" className="sign_up_button" >
                 Create Account
               </Button>
             </Form>
           </Col>
         </Row>
       </Container>
+      <LayoutFooter />
     </div>
 
     );

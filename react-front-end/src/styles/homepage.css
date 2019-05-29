@@ -1,3 +1,14 @@
+.nav_bar {
+background-color: #F6F6F6;
+}
+.nav_bar_name{
+  color: #718087;
+}
+
+.nav_bar_names {
+  color: #e33d26;
+}
+
 
 .list-group {
   text-align: left;
@@ -13,18 +24,19 @@
 .home_image{
  margin-top: 35px;
  padding:20px;
- width: 550px;
+ max-width: 550px;
+ width:100%;
+}
+.login_form {
+  margin-top: 75px;
+
+}
+.login_form_email {
+  margin-right: 30px;
 }
 
 
-.signup_form {
 
-  font-size: 50px;
-
-  margin-top: 30px;
-  border-color: white;
-  margin-bottom: 0;
-}
 .signup_col {
   text-align: left;
   font-size: 30px;
@@ -36,7 +48,7 @@
 
 }
 
-.sign_up {
+.home_button {
   border-top: 0;
   position: absolute;
   width: 200px;
@@ -44,7 +56,42 @@
   font-size: 22px;
   margin-left: 145px;
 }
+.login_button {
+  position: relative;
+  font-size: 22px;
+  margin-left: 145px;
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+  border-top: 0;
 
+}
+.sign_up_button{
+  position: relative;
+  font-size: 22px;
+  width: 200px;
+  height: 50px;
+  border-top: 0;
+  margin-left: 50px;
+  margin-top: 80px;
+}
+
+.new_plan_button {
+
+  font-size: 20px;
+  width: 200px;
+  margin-top: 15px;
+
+}
+.sign_up_form {
+  margin-top: 100px;
+}
+.sign_up_email {
+  margin-right: 90px;
+}
+.sign_up_password {
+  margin-right: 60px;
+}
 
 .item-group{
   padding: 20px;
@@ -52,36 +99,56 @@
 
   border: 0 none;
 }
-.meal-plan{
-  font-size: 18px;
-  font-weight: bold;
-}
+
 .meal-plans {
-  font-size: 14px;
-  font-weight: bold;
   text-align: left;
-}
-.meals-plans {
-  font-size: 14px;
-  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 20px;
 
 }
 
+.meal_plan_select{
+  width: 200px;
+  margin-top: 8px;
+  margin-left: 20px;
+}
 
-
+.fixed-bottom{
+  border : none;
+  background-color: #F6F6F6;
+}
 
 .justify-content-end {
   font-size: 22px;
-  font-weight: bold;
 }
-nav .nav-link{
-  color: '#ffffff';
-}
-nav .nav-linked{
-  color: '#e33d26';
-}
+
 
 .notification-awesome {
   background-color: #685dc3;
   border-left: 8px solid darken(#685dc3, 15%);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> feature/dashboard
