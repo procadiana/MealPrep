@@ -1,3 +1,14 @@
+.nav_bar {
+background-color: #F6F6F6;
+}
+.nav_bar_name{
+  color: #718087;
+}
+
+.nav_bar_names {
+  color: #e33d26;
+}
+
 
 .list-group {
   text-align: left;
@@ -21,7 +32,7 @@
 
 }
 .login_form_email {
-  margin-right: 35px;
+  margin-right: 30px;
 }
 
 
@@ -91,13 +102,17 @@
 
 .meal-plans {
   text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
 
 }
-.meals-plans {
-  font-size: 14px;
-  font-weight: bold;
 
+.meal_plan_select{
+  width: 200px;
+  margin-top: 8px;
+  margin-left: 20px;
 }
+
 .fixed-bottom{
   border : none;
   background-color: #F6F6F6;

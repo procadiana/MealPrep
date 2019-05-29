@@ -9,8 +9,8 @@ export default class Layout extends Component {
   render() {
     return (
      <div>
-          <Navbar expand="lg" variant="light" style={{backgroundColor: '#F6F6F6'}}>
-          <Container style={{backgroundColor: '#F6F6F6'}}>
+          <Navbar expand="lg" variant="light" className ="nav_bar" >
+          <Container>
 
             <NavbarBrand href="/">
              <img src={logo} style={{ height: 70 }} alt ="logo"/ >
@@ -19,13 +19,13 @@ export default class Layout extends Component {
 
               <Nav className="justify-content-end " variant="info" >
                 <NavItem >
-                  <NavLink  style={{ color: '#718087' }} href={'/'}>Recipes</NavLink>
+                  <NavLink className ="nav_bar_name"  href={'/'}>Recipes</NavLink>
               </NavItem>
                 <NavItem>
-                  <NavLink  style={{ color: '#718087' }} href={'/'}>About</NavLink>
+                  <NavLink  className ="nav_bar_name" href={'/'}>About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink style={{ color: '#e33d26' }} href={'login'}>Login</NavLink>
+                  <NavLink className = "nav_bar_names" href={'login'}>Login</NavLink>
                 </NavItem>
               </Nav>
 

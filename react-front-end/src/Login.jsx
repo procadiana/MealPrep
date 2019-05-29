@@ -22,10 +22,10 @@ export default class Login extends Component {
       <Layout />
       <Container >
       <Row>
-        <Col xs="6">
+        <Col lg="6" md="12">
         <img class="home_image" width="100%" src={log} style={{ height: 400 }} alt ="login meal image"/ >
         </Col>
-        <Col xs="6">
+        <Col lg="6" md="12">
         <Form  className= "login_form">
           <FormGroup row >
             <Label for="exampleEmail" inline className="login_form_email">Email</Label>
