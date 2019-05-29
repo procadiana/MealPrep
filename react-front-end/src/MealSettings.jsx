@@ -26,22 +26,15 @@ class MealSettings extends Component {
       }
 
 
-  // sendMealSettings(data) {
-  //   // axios.post('/api/mealplan', {data: data}).then(response => {
-  //   //   const id = response.id; //
-  //   //   this.props.history.push(`/mealplan/${id}`);
-  //   // });
 
-  //   console.log(data);
-  // }
-
-//Saves data from the form on submit and sends it to teh backend
+//Saves data from the form on submit and sends it to the backend
   onSubmit = (e) => {
         e.preventDefault();
         const { days, servings, diet, allergies} = this.state;
         axios.post('/api/meal_plans', { days, servings, diet, allergies})
           .then((result) => {
-            const id = result.mealplan.id; //
+            const id = result.data.mealplan.id
+            console.log(result.data.mealplan.id)
             this.props.history.push(`/mealplan/${id}`);
           });
         console.log(this.state);
@@ -75,7 +68,7 @@ class MealSettings extends Component {
         <Container>
           <Row>
             <Col xs="6">
-              <img class="home_image" width="100%" src={meal} style={{ height: 400 }} alt ="home image"/ >
+              <img className="home_image" width="100%" src={meal} style={{ height: 400 }} alt ="home image"/ >
 
             </Col>
 
