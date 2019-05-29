@@ -3,6 +3,7 @@ import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactst
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import log from './img/Log.jpg';
+import LayoutFooter from './Footer.jsx';
 
 export default class Login extends Component {
 
@@ -49,6 +50,7 @@ export default class Login extends Component {
       </Row>
 
         </Container>
+         <LayoutFooter />
       </div>
 
     )
