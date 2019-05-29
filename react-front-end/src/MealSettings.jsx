@@ -145,7 +145,13 @@ class MealSettings extends Component {
           </p>
           </FormGroup>
 
+          <FormGroup>
+          <Label for="favourite_ingredient" style={{ float: 'left' }}>Favourite ingredients (optional):
+          <Input type="textarea" name="fav-ing" id="fav-ing" style={{ height: '30px' }} /> </Label>
+          </FormGroup>
+
           <Button style={{marginTop:40}} variant="primary" type="submit" name="meal-plan" size="lg" color="success">
+
             Create Meal Plan
           </Button>
            </Form>
