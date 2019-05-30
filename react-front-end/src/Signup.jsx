@@ -20,8 +20,6 @@ class Signup extends Component {
     }
 
 
-
-
   render() {
 
     return (
