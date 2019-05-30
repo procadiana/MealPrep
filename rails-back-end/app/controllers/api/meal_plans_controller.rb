@@ -47,6 +47,7 @@ class Api::MealPlansController < ApplicationController
    }
  end
 
+
  private
 
  def list_of_ingredients (recipes)
