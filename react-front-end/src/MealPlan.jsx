@@ -5,7 +5,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
-import history from './History';
+import History from './History';
 import Recipe from"./Recipe.jsx";
 
 export default class MealPlan extends Component {
