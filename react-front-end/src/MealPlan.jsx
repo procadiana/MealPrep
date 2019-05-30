@@ -9,13 +9,13 @@ import history from './History';
 import Recipe from"./Recipe.jsx";
 
 export default class MealPlan extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       mealplan: {},
       recipes: []
       };
-
   }
 
 

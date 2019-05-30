@@ -15,5 +15,5 @@ export const setCookie = (name, value) => {
 }
 
 // export const logout = () => {
-//   return Cookies.remove('react-cookies', { path: '/' })
+//   return cookie.remove(name, { path: '/' })
 // }
