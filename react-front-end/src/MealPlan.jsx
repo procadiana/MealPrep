@@ -1,16 +1,11 @@
 import React, {Component, useState} from 'react';
-
 import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
-
 import LayoutFooter from './Footer.jsx';
-
 import axios from "axios";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
-import history from './history';
+import history from './History';
 import Recipe from"./Recipe.jsx";
 
 export default class MealPlan extends Component {

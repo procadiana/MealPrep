@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import { withRouter } from "react-router-dom";
-
 import {Button,Form, FormGroup, Label, Input,Col,Container,Row } from 'reactstrap';
 import axios from "axios";
-
-
 import meal from './img/Meal.jpg';
-
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import LayoutFooter from './Footer.jsx';
-
-
 
 
 class MealSettings extends Component {
@@ -25,7 +19,6 @@ class MealSettings extends Component {
           allergies: []
         };
       }
-
 
 
 //Saves data from the form on submit and sends it to the backend

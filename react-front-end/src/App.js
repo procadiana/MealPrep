@@ -7,10 +7,13 @@ import {Route, Switch} from "react-router-dom";
 import HomePage from './Homepage.jsx';
 import Signup from './Signup.jsx';
 import Layout from './Layout.jsx';
+import Home from './Home.jsx'
 import Login from './Login.jsx';
 import MealSettings from './MealSettings.jsx';
 import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -25,8 +28,10 @@ library.add(faPlus)
 
 
 class App extends Component {
+
   constructor(props) {
-    super(props)
+    super(props);
+
     this.state = {
       message: 'Click the button to load data!'
     }
@@ -57,6 +62,7 @@ class App extends Component {
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" component={MealPlan} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
+          <Route exact path="/home" component={Home} />
 
 
         </Switch>
