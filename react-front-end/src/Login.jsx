@@ -7,6 +7,7 @@ import { getCookie, setCookie } from './Cookie';
 import axios from "axios";
 import LayoutFooter from './Footer.jsx';
 
+
 export default class Login extends Component {
 
    constructor(){
@@ -29,10 +30,10 @@ export default class Login extends Component {
         setCookie('email', this.state.email)
         axios.post('/api/login', { email, password })
           .then((result) => {
-            this.props.history.push('/home');
+
           });
         // window.location.reload()
-        this.props.history.push('/home')
+        this.props.history.push('/home');
       }
 
   render() {
