@@ -14,22 +14,23 @@ export default class MealPlan extends Component {
     super(props);
     this.state = {
       mealplan: {},
-      recipes: []
+      recipes: [],
+      ingredients: []
       };
   }
 
 
-  componentWillMount(){
+  componentDidMount(){
     const id = this.props.match.params.id
     axios.get(`/api/meal_plans/${id}`).then(response =>{
-      this.setState({mealplan: response.data.mealplan, recipes: response.data.recipes})
+      this.setState({mealplan: response.data.mealplan, recipes: response.data.recipes, ingredients: response.data.ingredients} )
     })
   }
 
 
 
   render() {
-    const { mealplan, recipes} = this.state;
+    const { mealplan, recipes, ingredients} = this.state;
 
     return (
 
@@ -52,6 +53,16 @@ export default class MealPlan extends Component {
           <Row>
             <Col sm= "3">
               Shopping List
+
+            <ul>
+        {ingredients.map(item =>
+           <li key={item['name']} style={{display: 'inline-block', margin:'15px'}}>
+            {item}
+          </li>
+
+        )}
+
+        </ul>
             </Col>
 
 
