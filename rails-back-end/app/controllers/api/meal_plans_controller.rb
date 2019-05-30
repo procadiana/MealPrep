@@ -31,6 +31,7 @@ class Api::MealPlansController < ApplicationController
     puts params
     #raise "Yay, I'm here!"
     recipes = Recipe.take(params[:days])
+    recip
     user = User.first
     diet_type = DietType.find_by(name: params[:diet])
     mealplan = MealPlan.new
