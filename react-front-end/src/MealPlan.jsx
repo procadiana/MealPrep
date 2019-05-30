@@ -42,15 +42,11 @@ export default class MealPlan extends Component {
         <Button variant="primary" type="submit" color="success" className="new_plan_button">
               <FontAwesomeIcon icon="plus" href=''/>  New Meal Plan
         </Button>
-          <Nav >
-            <NavItem>
-              <NavLink href="#">View Previous Meal Plans</NavLink>
-            </NavItem>
 
-          </Nav>
           </div>
         <Container style={{marginTop:50}}>
           <Row>
+
             <Col sm= "3">
               Shopping List
 
@@ -66,10 +62,11 @@ export default class MealPlan extends Component {
             </Col>
 
 
-            <Col sm="9">
+
+            <Col>
             <h6> Here's your meal plan for 4 days </h6>
             </Col>
-      </Row>
+        </Row>
       </Container>
 
         <ul>

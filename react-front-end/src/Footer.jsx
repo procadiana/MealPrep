@@ -11,8 +11,9 @@ export default class LayoutFooter extends Component {
     return (
      <div>
         <footer className="fixed-bottom">
-        <small className="text-muted">{'\u00A9'}Copyright 2019 MealPrep LTD </small>
-        <small className="text-muted"> Poweredby Edamam </small>
+        <small className="text-muted float-left"> Poweredby Edamam </small>
+        <small className="text-muted float-right">{'\u00A9'}Copyright 2019 MealPrep LTD </small>
+
 
         </footer>
       </div>

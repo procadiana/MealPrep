@@ -127,7 +127,12 @@ background-color: #F6F6F6;
   background-color: #685dc3;
   border-left: 8px solid darken(#685dc3, 15%);
 }
-
+.dropdown-item.active, .dropdown-item:active {
+    font-size: 20px;
+    color: #718087;
+    text-decoration: none;
+    background-color: #007bff00;
+}
 
 
 
