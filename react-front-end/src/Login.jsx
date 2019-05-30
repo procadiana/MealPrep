@@ -3,6 +3,9 @@ import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactst
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import log from './img/Log.jpg';
+import { getCookie, setCookie } from './Cookie';
+import axios from "axios";
+import LayoutFooter from './Footer.jsx';
 
 export default class Login extends Component {
 
@@ -10,11 +13,30 @@ export default class Login extends Component {
         super();
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            cookie: ''
         };
     }
 
+  onChange =(e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+
+  handleLogin = (e) => {
+        e.preventDefault();
+        const { email, password} = this.state;
+        setCookie('email', this.state.email)
+        axios.post('/api/login', { email, password })
+          .then((result) => {
+            this.props.history.push('/home');
+          });
+        // window.location.reload()
+        this.props.history.push('/home')
+      }
+
   render() {
+    const { email,password,cookie } = this.state;
 
     return (
 
@@ -22,26 +44,26 @@ export default class Login extends Component {
       <Layout />
       <Container >
       <Row>
-        <Col xs="6">
-        <img class="home_image" width="100%" src={log} style={{ height: 400 }} alt ="login meal image"/ >
+        <Col lg="6" md="12">
+        <img className="home_image" width="100%" src={log} style={{ height: 400 }} alt ="login meal image"/ >
         </Col>
-        <Col xs="6">
-        <Form style={{marginTop:75}}>
+        <Col lg="6" md="12">
+        <Form  className= "login_form" onSubmit={this.handleLogin}>
           <FormGroup row >
-            <Label for="exampleEmail" md={2} >Email</Label>
-            <Col md={{ span: 4, offset: 2 }}>
-              <Input type="email" name="email" id="exampleEmail" placeholder="email"  />
+            <Label for="exampleEmail"  className="login_form_email" >Email</Label>
+            <Col >
+              <Input type="email" name="email" id="exampleEmail" placeholder="email" defaultValue={email} onChange={this.onChange} /> <br />
             </Col>
           </FormGroup>
-          <FormGroup row >
-           <Label for="examplePassword" md ={2}>Password</Label>
-            <Col md={{ span: 4, offset: 2 }} >
-            <Input type="password" name="password" id="examplePassword" placeholder="password " />
+          <FormGroup row>
+           <Label for="examplePassword" >Password</Label>
+            <Col >
+            <Input type="password" name="password" id="examplePassword" defaultValue={password} placeholder="password " onChange={this.onChange}/>
 
             </Col>
 
           </FormGroup>
-          <Button variant="primary" type="submit"  color="success" >
+          <Button variant="primary" type="submit"  color="success" className="login_button" >
             Log-in
           </Button>
         </Form>
@@ -49,6 +71,7 @@ export default class Login extends Component {
       </Row>
 
         </Container>
+        <LayoutFooter />
       </div>
 
     )
