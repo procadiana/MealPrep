@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_053503) do
+ActiveRecord::Schema.define(version: 2019_05_29_205817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_053503) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "meal_plans_recipes", force: :cascade do |t|
+  create_table "meal_plans_recipes", id: false, force: :cascade do |t|
     t.bigint "meal_plan_id"
     t.bigint "recipe_id"
     t.datetime "created_at", null: false
@@ -56,6 +56,24 @@ ActiveRecord::Schema.define(version: 2019_05_27_053503) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "recipes_allergies", id: false, force: :cascade do |t|
+    t.bigint "recipe_id"
+    t.bigint "allergy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["allergy_id"], name: "index_recipes_allergies_on_allergy_id"
+    t.index ["recipe_id"], name: "index_recipes_allergies_on_recipe_id"
+  end
+
+  create_table "recipes_diet_types", id: false, force: :cascade do |t|
+    t.bigint "recipe_id"
+    t.bigint "diet_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diet_type_id"], name: "index_recipes_diet_types_on_diet_type_id"
+    t.index ["recipe_id"], name: "index_recipes_diet_types_on_recipe_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -64,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_053503) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users_allergies", force: :cascade do |t|
+  create_table "users_allergies", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "allergy_id"
     t.datetime "created_at", null: false
@@ -73,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_053503) do
     t.index ["user_id"], name: "index_users_allergies_on_user_id"
   end
 
-  create_table "users_favorite_recipes", force: :cascade do |t|
+  create_table "users_favorite_recipes", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "recipe_id"
     t.datetime "created_at", null: false
