@@ -22,7 +22,6 @@ class Api::SessionsController < ApplicationController
       authenticated: true,
       user: user
       }
-
  end
 
  def destroy
@@ -33,8 +32,19 @@ class Api::SessionsController < ApplicationController
  end
 
  def logedin
+    authenticated = false
+    user = current_user
+    if user
+      authenticated = true
+    end
+    # user = current_user
+    # user ? authenticated = true : autenticated = false
+    puts authenticated
+    puts user
+
     render json: {
-       authenticated: current_user
+       authenticated: authenticated,
+       user: user
       }
  end
 end
