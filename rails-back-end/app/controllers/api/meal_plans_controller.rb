@@ -1,35 +1,46 @@
 class Api::MealPlansController < ApplicationController
+
  BASE_URL = "https://api.edamam.com/search?"
  API_PARTIAL_URL = "app_id=#{ENV['KEY_API_ID']}" + "&" +"app_key=#{ENV['KEY_API_PASS']}"
  RECIPE_PARTIAL_URL = "r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_"
 
  def index
-   mealplan = MealPlan.find(1);
-   recipes = mealplan.recipes;
-   ingredients = list_of_ingredients(recipes)
-   render json: {
-     mealplan: mealplan,
-     recipes: recipes,
-     ingredients: ingredients
+  #if current_user
+  mealplans = MealPlan.all.order(created_at: :desc) #.where(user_id: session[:user_id])
+  render json: {
+    mealplans: mealplans # an array of mealplans
    }
+   #end
  end
 
  def show
-  if(current_user)
-   mealplan = MealPlan.find params[:id]
-   recipes = mealplan.recipes;
+  #if current_user
+   mealplan = MealPlan.find(params[:id])
+   recipes = mealplan.recipes
    ingredients = list_of_ingredients(recipes)
      render json: {
-
        mealplan: mealplan,
        recipes: recipes,
        ingredients: ingredients
-     }
-    else
-      puts "user not allowed to see this mealplan"
+      }
+  #   else
+  #     puts "user not allowed to see this mealplan"
+  #end
   end
 
- end
+  def last
+    #if current_user
+      mealplan = MealPlan.last #.where(user_id: session[:user_id])
+      recipes = mealplan.recipes
+      ingredients = list_of_ingredients(recipes)
+      render json: {
+       mealplan: mealplan,
+       recipes: recipes,
+       ingredients: ingredients
+      }
+    #end
+  end
+
 
 
  def create

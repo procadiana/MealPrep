@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post '/api/login' => 'api/sessions#create'
   get '/api/logout' => 'api/sessions#destroy'
+  get '/api/meal_plans/last' => 'api/meal_plans#last'
 
 
   namespace :api do
