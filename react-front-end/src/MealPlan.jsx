@@ -8,6 +8,10 @@ import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import History from './History.js';
 import Recipe from"./Recipe.jsx";
+import { EmailShareButton} from 'react-share';
+import { EmailIcon} from 'react-share';
+
+
 
 export default class MealPlan extends Component {
 
@@ -17,8 +21,18 @@ export default class MealPlan extends Component {
     this.state = {
       recipes: [],
       ingredients: [],
+<<<<<<< HEAD
       mealplan: {},
     }
+=======
+      user: {
+        email: "anithaamarnath04@gmail.com"
+
+
+            }
+
+      };
+>>>>>>> feature/setting1
   }
 
   componentDidMount(){
@@ -57,7 +71,17 @@ export default class MealPlan extends Component {
             </li>
             )}
 
+<<<<<<< HEAD
             </ul>
+=======
+        </ul>
+          <a href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan%20mail&body=${this.state.ingredients}`} >
+
+              < EmailIcon size={32} />
+            </a>
+
+            </Col>
+>>>>>>> feature/setting1
 
         </Col>
 

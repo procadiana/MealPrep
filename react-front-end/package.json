@@ -18,6 +18,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-share": "^3.0.0",
     "reactstrap": "^8.0.0"
   },
   "scripts": {
@@ -36,5 +37,7 @@
     "not op_mini all"
   ],
   "proxy": "http://localhost:3001",
-  "devDependencies": {}
+  "devDependencies": {
+    "react-to-print": "^2.1.2"
+  }
 }
