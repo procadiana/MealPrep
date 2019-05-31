@@ -15,12 +15,20 @@ class Api::SessionsController < ApplicationController
      user.save!
      session[:user_id] = user.id
      puts session
+
    end
-   puts "Loged in !!"
+   puts "#{user} Loged in !!"
+   render json: {
+      authenticated: true
+      user: user
+      }
+
  end
 
  def destroy
    session[:user_id] = nil
-   #redirect_to '/login'
+   render json: {
+       authenticated: false
+      }
  end
 end
