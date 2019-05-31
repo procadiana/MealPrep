@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 
-import History from './History';
+import History from './History.js';
 import Recipe from"./Recipe.jsx";
 
 
@@ -20,7 +20,7 @@ export default class Home extends Component {
 
   render(){
 
-
+    let mealplans = this.props.mealplans
    return (
       <div>
 
@@ -40,7 +40,19 @@ export default class Home extends Component {
 
            </div>
 
-          <MealPlan recipes={this.props.recipes} ingredients={this.props.ingredients} mealplan={this.props.mealplan}/>
+
+
+
+            <h6> Here's your new meal plan: </h6>
+
+            <ul>
+              {/*{mealplans.map(item =>
+               <li key={item['id']} style={{display: 'inline-block', margin:'15px'}}>
+                {item}
+                </li>
+              )}*/}
+
+            </ul>
         <LayoutFooter />
 
         </div>

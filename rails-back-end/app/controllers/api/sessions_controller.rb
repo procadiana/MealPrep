@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
    end
    puts "#{user} Loged in !!"
    render json: {
-      authenticated: true
+      authenticated: true,
       user: user
       }
 

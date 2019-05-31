@@ -28,10 +28,13 @@ export default class Login extends Component {
   handleLogin = (e) => {
         e.preventDefault();
         const { email, password} = this.state;
-        this.props.setCookie('email', this.state.email)
+
         axios.post('/api/login', { email, password })
           .then((result) => {
-
+            console.log(this.props)
+              if(result.data.authenticated){
+                this.props.setLogin(true);
+              }
           });
         // window.location.reload()
         this.props.history.push('/home');

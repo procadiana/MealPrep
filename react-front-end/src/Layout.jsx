@@ -26,7 +26,17 @@ export default class LayoutSignedIn extends Component {
 
 
   render() {
-
+    let content = <NavLink className = "nav_bar_names" href={'/login'} >Login</NavLink>
+    if(this.props.authenticated){
+      content = (<UncontrolledDropdown setActiveFromChild className="nav_bar_name">
+                <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Setting </DropdownToggle>
+                <DropdownMenu>
+                <DropdownItem tag="a" href="/blah" active>Edit User</DropdownItem>
+                <DropdownItem tag="a" href="/blah" active>Edit Meal Plan</DropdownItem>
+                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={() => logout(false)} active>Logout</DropdownItem>
+                </DropdownMenu>
+                </UncontrolledDropdown>);
+    }
 
 
     return (
@@ -47,19 +57,13 @@ export default class LayoutSignedIn extends Component {
                   <NavLink  className ="nav_bar_name" href={'/'}>About</NavLink>
                 </NavItem>
                 <NavItem>
+                {content}
 
-                  <NavLink className = "nav_bar_names" href={'/login'} >Login</NavLink>
 
-                <UncontrolledDropdown setActiveFromChild className="nav_bar_name">
-                <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Setting </DropdownToggle>
-                <DropdownMenu>
-                <DropdownItem tag="a" href="/blah" active>Edit User</DropdownItem>
-                <DropdownItem tag="a" href="/blah" active>Edit Meal Plan</DropdownItem>
-                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={logout} active>Logout</DropdownItem>
-                </DropdownMenu>
-                </UncontrolledDropdown>
+
 
                 </NavItem>
+
 
               </Nav>
 

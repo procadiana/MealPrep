@@ -53,6 +53,7 @@ export default class MealPlan extends Component {
   render() {
     let {recipes, mealplan, ingredients} = this.state;
 
+
     if (this.props.recipes){
       recipes = this.props.recipes;
     }
