@@ -22,7 +22,7 @@ export default class MealPlan extends Component {
   }
 
   componentDidMount(){
-    // this.setRecipes()
+    this.setRecipes()
   }
 
   setRecipes = () => {

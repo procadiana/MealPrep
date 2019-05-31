@@ -12,6 +12,8 @@ import Login from './Login.jsx';
 import MealSettings from './MealSettings.jsx';
 import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
+
+import * as cookie from 'react-cookies';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -39,8 +41,12 @@ class App extends Component {
     this.state = {
       recipes: [],
       ingredients: [],
-      mealplan: {}
+      mealplan: {},
+      cookie: false,
+
     }
+    this.getCookie = this.getCookie.bind(this);
+    this.setCookie = this.setCookie.bind(this);
   }
 
   // fetchData = () => {
@@ -57,11 +63,38 @@ class App extends Component {
   // }
 //users mealplans
 
+
+getCookie = key => {
+  return cookie.load(key)
+}
+
+setCookie = (name, value) => {
+  const now = new Date()
+  now.setDate(now.getDate() + 14)
+
+  return cookie.save(name, value, {
+    expires: now,
+    path: '/'
+  })
+}
+
+logout = (name) => {
+  return cookie.remove(name, { path: '/' })
+}
+
   getMealplans = () =>{
     axios.get(`/api/meal_plans/`).then(response =>{
       const mealPlans = [{}]
     })
- }
+  }
+
+  isLoggedIn = () =>{
+    if(this.state.cookie){
+      this.setState({cookie: true})
+    }
+  }
+
+
 
   componentDidMount(){
     let id = this.props.match.params.id
@@ -78,7 +111,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" component={(props) => <Login {...props} logout={this.logout} getCookie={this.getCookie} setCookie={this.setCookie} />}  />
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" component={(props) => <MealPlan {...props} ></MealPlan>} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
@@ -90,10 +123,6 @@ class App extends Component {
 
 
 
-        {/*<h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>*/}
       </div>
     );
   }

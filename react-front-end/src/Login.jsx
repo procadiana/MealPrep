@@ -3,19 +3,20 @@ import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactst
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import log from './img/Log.jpg';
-import { logout, getCookie, setCookie } from './Cookie';
+import { logout, getCookie, setCookie } from './App';
 import axios from "axios";
 import LayoutFooter from './Footer.jsx';
 
 
 export default class Login extends Component {
 
-   constructor(){
+  constructor(){
         super();
         this.state = {
             email: '',
             password: '',
-            cookie: ''
+            cookie: '',
+
         };
     }
 
@@ -27,7 +28,7 @@ export default class Login extends Component {
   handleLogin = (e) => {
         e.preventDefault();
         const { email, password} = this.state;
-        setCookie('email', this.state.email)
+        this.props.setCookie('email', this.state.email)
         axios.post('/api/login', { email, password })
           .then((result) => {
 
@@ -37,7 +38,8 @@ export default class Login extends Component {
       }
 
   render() {
-    const { email,password,cookie } = this.state;
+    const { email,password,cookie,  } = this.state;
+
 
     return (
 
