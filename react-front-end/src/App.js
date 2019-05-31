@@ -94,10 +94,10 @@ class App extends Component {
   }
 
   isLoggedIn = () =>{
-    // axios.get('/api/login/').then(response =>{
-    //   console.log(response.data)
-    //   this.setState({authenticated: response.data.authenticated})
-    // })
+    axios.get('/api/logedin/').then(response =>{
+      console.log(response.data)
+      this.setState({authenticated: response.data.authenticated})
+    })
   }
   setLogin = (loggedin ) => {
     this.setState({authenticated: loggedin});
