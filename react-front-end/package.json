@@ -37,7 +37,5 @@
     "not op_mini all"
   ],
   "proxy": "http://localhost:3001",
-  "devDependencies": {
-    "react-to-print": "^2.1.2"
-  }
+  "devDependencies": {}
 }

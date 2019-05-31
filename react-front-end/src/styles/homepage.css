@@ -148,9 +148,32 @@ background-color: #F6F6F6;
     text-decoration: none;
     background-color: #007bff00;
 }
+.ingredient_list {
+  display: inline-block;
 
 
+}
+.meal_plans{
+  margin-top: 50px;
+}
+.ingredient_check {
+  text-align:left;
+  font-size: 12px;
 
+}
+.email {
+  float:right;
+}
+
+.recipe_display {
+  display: inline-block;
+  margin: 15px;
+}
+.recipe_span {
+  display: inline;
+  padding: 5px;
+
+}
 
 
 

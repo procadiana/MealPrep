@@ -19,7 +19,9 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { EmailShareButton,FacebookIcon,} from 'react-share';
+import { EmailShareButton} from 'react-share';
+
+
 
 
 
