@@ -67,57 +67,45 @@ export default class MealPlan extends Component {
 
 
     return (
-
-
-
-
         <div>
           {
             !mealplan
               ? <div> loading... </div>
-              : <div>
-              <Container className="meal_plans">
-              <Row>
-              <Col lg="3" md="6" >
-              <FormGroup check className="ingredient_check">
-                <ul>
-                  {ingredients.map(item =>
-                  <li key={item['name']} className = "ingredient_list">
-                    <Label check>
-                      <Input type="checkbox" />{' '}
-                        {item}
-                    </Label>
-                  </li>
-                    )}
-                </ul>
-                </FormGroup>
+                : <div>
+                <Container className="meal_plans">
+                  <Row>
+                    <Col lg="3" md="6" >
+                      <FormGroup check className="ingredient_check">
+                        <ul>
+                          {ingredients.map(item =>
+                            <li key={item['name']} className = "ingredient_list">
+                              <Label check>
+                            <Input type="checkbox" />{' '}
+                                {item}
+                              </Label>
+                             </li>
+                          )}
+                        </ul>
+                      </FormGroup>
+                      <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
+                      < EmailIcon size={20} /> </a>
 
-            </Col>
-              <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
-              < EmailIcon size={20} /> </a>
+                    </Col>
 
-            <Col lg="9" md="6">
-            <h6> Here's your new meal plan: </h6>
-            </Col>
-
-
-            <ul>
-            {recipes.map(item =>
-              (<Recipe recipe={item}/>)
-            )}
-
-
-            </ul>
-            </Row>
-            </Container>
-            <LayoutFooter />
-            </div>
+                    <Col lg="9" md="6">
+                      <h6> Here's your new meal plan: </h6>
+                        <ul>
+                          {recipes.map(item =>
+                            (<Recipe recipe={item}/>)
+                          )}
+                        </ul>
+                    </Col>
+                  </Row>
+                </Container>
+                  <LayoutFooter />
+                </div>
           }
-
-          </div>
-
-
-
-  )
-}
+      </div>
+      )
+   }
 }
