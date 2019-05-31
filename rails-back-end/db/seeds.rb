@@ -21,6 +21,9 @@ MealPlan.delete_all
 Recipe.delete_all
 MealPlansRecipe.delete_all
 Allergy.delete_all
+UsersFavoriteRecipe.delete_all
+RecipesAllergy.delete_all
+RecipesDietType.delete_all;
 
 puts "Tables deleted"
 

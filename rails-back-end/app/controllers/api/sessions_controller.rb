@@ -32,6 +32,7 @@ class Api::SessionsController < ApplicationController
  end
 
  def logedin
+    puts "the user loged in is #{session.inspect}"
     authenticated = false
     user = current_user
     if user
