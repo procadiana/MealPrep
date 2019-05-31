@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_205817) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "meal_plans_recipes", id: false, force: :cascade do |t|
+  create_table "meal_plans_recipes", force: :cascade do |t|
     t.bigint "meal_plan_id"
     t.bigint "recipe_id"
     t.datetime "created_at", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_205817) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "recipes_allergies", id: false, force: :cascade do |t|
+  create_table "recipes_allergies", force: :cascade do |t|
     t.bigint "recipe_id"
     t.bigint "allergy_id"
     t.datetime "created_at", null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_205817) do
     t.index ["recipe_id"], name: "index_recipes_allergies_on_recipe_id"
   end
 
-  create_table "recipes_diet_types", id: false, force: :cascade do |t|
+  create_table "recipes_diet_types", force: :cascade do |t|
     t.bigint "recipe_id"
     t.bigint "diet_type_id"
     t.datetime "created_at", null: false
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_205817) do
     t.index ["user_id"], name: "index_users_allergies_on_user_id"
   end
 
-  create_table "users_favorite_recipes", id: false, force: :cascade do |t|
+  create_table "users_favorite_recipes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "recipe_id"
     t.datetime "created_at", null: false
