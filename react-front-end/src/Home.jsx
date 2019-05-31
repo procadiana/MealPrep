@@ -10,6 +10,7 @@ import './styles/homepage.css';
 import Layout from './Layout.jsx';
 
 import History from './History.js';
+
 import Recipe from"./Recipe.jsx";
 
 
@@ -17,6 +18,8 @@ import Recipe from"./Recipe.jsx";
 
 
 export default class Home extends Component {
+
+
 
   render(){
 
@@ -32,6 +35,7 @@ export default class Home extends Component {
           <Nav >
             <NavItem>
               <NavLink href="#">View Previous Meal Plans</NavLink>
+
             </NavItem>
 
           </Nav>
@@ -46,11 +50,11 @@ export default class Home extends Component {
             <h6> Here's your new meal plan: </h6>
 
             <ul>
-              {/*{mealplans.map(item =>
+              {mealplans.map(item =>
                <li key={item['id']} style={{display: 'inline-block', margin:'15px'}}>
-                {item}
+                {item['id']}
                 </li>
-              )}*/}
+              )}
 
             </ul>
         <LayoutFooter />
