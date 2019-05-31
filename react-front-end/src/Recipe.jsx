@@ -65,8 +65,6 @@ export default class Recipe extends Component {
             <span style={{display: 'inline', padding:'5px'}}><FontAwesomeIcon icon="heart" href='' onClick={this.addNotification} style={{color: this.state.favourite ? 'red': 'black'}}  />  &nbsp;&nbsp; &nbsp;&nbsp;    <FontAwesomeIcon icon="times" href='' />  &nbsp;&nbsp;&nbsp;&nbsp;    <FontAwesomeIcon icon="check" href='' />  &nbsp;&nbsp;   </span>
         </li>
         </>
-
-
       )
   }
 }

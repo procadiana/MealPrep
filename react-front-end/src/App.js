@@ -21,7 +21,9 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { EmailShareButton,FacebookIcon,} from 'react-share';
+import { EmailShareButton} from 'react-share';
+
+
 
 
 
@@ -118,12 +120,12 @@ class App extends Component {
     let content = "";
     if(this.state.authenticated){
       content = (
-        <React.Fragment>
+        <React>
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" render={(props) => <MealPlan {...props} ></MealPlan>} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
           <Route exact path="/home" render={() => <Home ingredients={this.state.ingredients} mealplans={this.state.mealplans} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
-        </React.Fragment>
+        </React>
         );
     }
     return (
