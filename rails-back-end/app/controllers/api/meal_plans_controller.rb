@@ -72,11 +72,12 @@ class Api::MealPlansController < ApplicationController
      q_string = q_string + "&" + RECIPE_PARTIAL_URL + r.edaman_id
    }
    puts q_string
-   puts result = HTTParty.get(q_string)
+   result = HTTParty.get(q_string)
    list = []
    result.each { |r|
      list = list + r["ingredientLines"]
    }
+   puts list
    return list
  end
 
