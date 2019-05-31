@@ -52,57 +52,45 @@ export default class MealPlan extends Component {
 
   render() {
     let {recipes, mealplan, ingredients} = this.state;
-
-
     if (this.props.recipes){
       recipes = this.props.recipes;
     }
 
     return (
+
+
         <div>
-
-          <Col sm= "3">
-
+          {
+            !mealplan
+              ? <div> loading... </div>
+              : <div><Col sm= "3">
               Shopping List
-           <ul>
-            {ingredients.map(item =>
-             <li key={item['name']} style={{display: 'inline-block', margin:'15px'}}>
-            {item}
-            </li>
-            )}
-
-
-            </ul>
-
-
-          <a href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan%20mail&body=${this.state.ingredients}`} >
-
-              < EmailIcon size={32} />
-            </a>
-
+               <ul>
+                {ingredients.map(item =>
+                 <li key={item['name']} style={{display: 'inline-block', margin:'15px'}}>
+                {item}
+                </li>
+                )}
+                </ul>
             </Col>
+              <a href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan%20mail&body=${this.state.ingredients}`} >
+              < EmailIcon size={32} /> </a>
 
-
-
-
-        <Col sm="9">
+            <Col sm="9">
             <h6> Here's your new meal plan: </h6>
             </Col>
 
 
-        <ul>
-        {recipes.map(item =>
-          (<Recipe recipe={item}/>)
-        )}
+            <ul>
+            {recipes.map(item =>
+              (<Recipe recipe={item}/>)
+            )}
 
-        </ul>
-
-
-
-      <LayoutFooter />
-
-        </div>
-
-      )
-  }
+            </ul>
+            <LayoutFooter />
+            </div>
+           }
+      </div>
+  )
+}
 }

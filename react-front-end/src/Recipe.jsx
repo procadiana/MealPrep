@@ -42,14 +42,17 @@ export default class Recipe extends Component {
         });
         this.setState({
         favourite: true
-      })
+
+        })
+        // axios.post('/api/recipe/${this.props.recipe.id}', {this.props.recipe.id}).then(response =>{
+        // }
     }
     //insert get route to axios
   }
-  // isFavourite = () =>
-  //  axios.get(`/api/recipe/${this.props.recipe.id}`).then(response =>{
 
-  //       }
+  // isFavourite = () =>
+  //   axios.get(`/api/recipe/${this.props.recipe.id}`).then(response =>{
+  // }
 
 
   render() {
