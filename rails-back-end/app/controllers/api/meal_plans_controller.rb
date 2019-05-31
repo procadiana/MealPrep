@@ -80,6 +80,7 @@ class Api::MealPlansController < ApplicationController
    puts q_string
    result = HTTParty.get(q_string)
    list = []
+
    if result
      result.each { |r|
        list = list + r["ingredientLines"]
@@ -89,6 +90,7 @@ class Api::MealPlansController < ApplicationController
   end
     puts "List of ingredients: #{list}"
     return list
+
  end
 
 end
