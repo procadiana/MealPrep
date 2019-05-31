@@ -1,14 +1,39 @@
 import React, {Component} from 'react';
-import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink,UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem} from 'reactstrap';
+import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink,UncontrolledDropdown, DropdownToggle, DropdownMenu,DropdownItem} from 'reactstrap';
 import './styles/homepage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from './img/Logo2.png';
 import login from './Login.jsx';
 import HomePage from './Homepage.jsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { logout, getCookie, setCookie } from './Cookie';
 
 
-export default class Layout extends Component {
+
+
+export default class LayoutSignedIn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+  }
+
+
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+
   render() {
+    if(this.props.loggedIn){
+
+    }
+
+
     return (
      <div>
           <Navbar expand="lg" variant="light" className ="nav_bar" >
@@ -28,9 +53,8 @@ export default class Layout extends Component {
                 </NavItem>
                 <NavItem>
 
-                  <NavLink className = "nav_bar_names" href={'/login'}>Login</NavLink>
+                  <NavLink className = "nav_bar_names" href={'/login'} >Login</NavLink>
 
-                </NavItem>
                 <UncontrolledDropdown setActiveFromChild className="nav_bar_name">
                 <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Setting </DropdownToggle>
                 <DropdownMenu>
@@ -39,6 +63,9 @@ export default class Layout extends Component {
                 <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} active>Logout</DropdownItem>
                 </DropdownMenu>
                 </UncontrolledDropdown>
+
+                </NavItem>
+
               </Nav>
 
           </Container>

@@ -27,6 +27,7 @@ export default class Recipe extends Component {
     if (this.state.favourite){
       this.setState({
         favourite: false
+
       })
       }else {
         this.notificationDOMRef.current.addNotification({
@@ -45,7 +46,10 @@ export default class Recipe extends Component {
     }
     //insert get route to axios
   }
+  // isFavourite = () =>
+  //  axios.get(`/api/recipe/${this.props.recipe.id}`).then(response =>{
 
+  //       }
 
 
   render() {

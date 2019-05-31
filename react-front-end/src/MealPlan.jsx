@@ -32,6 +32,10 @@ export default class MealPlan extends Component {
 
 
 
+  componentDidMount(){
+    this.setRecipes()
+  }
+
 
   setRecipes = () => {
     if(this.props.match && this.props.match.params.id){
