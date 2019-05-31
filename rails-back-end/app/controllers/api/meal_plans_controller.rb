@@ -75,7 +75,7 @@ class Api::MealPlansController < ApplicationController
    puts result = HTTParty.get(q_string)
    list = []
    result.each { |r|
-     list = list + (r["ingredientLines"] || [])
+     list = list + r["ingredientLines"]
    }
    return list
  end
