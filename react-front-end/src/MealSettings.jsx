@@ -58,7 +58,7 @@ class MealSettings extends Component {
 
     return (
       <div>
-      <Layout />
+
         <Container>
           <Row>
 
@@ -139,8 +139,8 @@ class MealSettings extends Component {
           </FormGroup>
 
           <FormGroup>
-          <Label for="favourite_ingredient" style={{ float: 'left' }}>Favourite ingredients (optional):
-          <Input type="textarea" name="fav-ing" id="fav-ing" style={{ height: '30px' }} /> </Label>
+          <Label for="favourite_ingredient" className="fav_meal-plans"  md={6} >Favourite ingredients (optional):</Label>
+          <Input  type="textarea" name="fav-ing" id="fav-ing" className ="fav_meal_input" />
           </FormGroup>
 
           <Button style={{marginTop:40}} variant="primary" type="submit" name="meal-plan" size="lg" color="success">

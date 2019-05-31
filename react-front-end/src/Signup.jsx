@@ -25,7 +25,7 @@ class Signup extends Component {
     return (
 
       <div>
-      <Layout />
+
         <Container>
           <Row>
             <Col lg="6" md="12">
