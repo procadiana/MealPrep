@@ -14,6 +14,6 @@ export const setCookie = (name, value) => {
   })
 }
 
-// export const logout = () => {
-//   return cookie.remove(name, { path: '/' })
-// }
+export const logout = (name) => {
+  return cookie.remove(name, { path: '/' })
+}

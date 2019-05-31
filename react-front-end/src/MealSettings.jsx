@@ -58,7 +58,7 @@ class MealSettings extends Component {
 
     return (
       <div>
-      <Layout />
+
         <Container>
           <Row>
 

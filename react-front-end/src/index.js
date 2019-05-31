@@ -14,7 +14,8 @@ import Layout from './Layout.jsx';
 ReactDOM.render(
 
   <Router>
-    <Route path="/" component={App} />
+
+    <Route path="/" component={props => <App {...props} />} />
   </Router>,
 
 
