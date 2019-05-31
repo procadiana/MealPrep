@@ -7,14 +7,15 @@ class Api::SessionsController < ApplicationController
      # success logic, log them in
      session[:user_id] = user.id
      #response.set_cookie "user_id", "testCookie"
-     puts session
+     puts session.inspect
    else
    # failure, create new user
+     puts "No such user found, creating new user"
      user = User.new
      user.email = email
      user.save!
      session[:user_id] = user.id
-     puts session
+     puts session.inspect
 
    end
    puts "#{user} Loged in !!"
@@ -40,8 +41,8 @@ class Api::SessionsController < ApplicationController
     end
     # user = current_user
     # user ? authenticated = true : autenticated = false
-    puts authenticated
-    puts user
+    puts "authenticated: #{authenticated}"
+    puts "user: #{user.inspect}"
 
     render json: {
        authenticated: authenticated,

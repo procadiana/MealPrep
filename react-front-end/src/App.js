@@ -70,24 +70,25 @@ class App extends Component {
 //users mealplans
 
 
-// getCookie = key => {
-//   return cookie.load(key)
-// }
+getCookie = key => {
+  return cookie.load(key)
+}
 
-// setCookie = (name, value) => {
-//   const now = new Date()
-//   now.setDate(now.getDate() + 14)
+setCookie = (name, value) => {
+  const now = new Date()
+  now.setDate(now.getDate() + 14)
 
-//   this.setState({cookie: true})
-//   return cookie.save(name, value, {
-//     expires: now,
-//     path: '/'
-//   })
-// }
+  this.setState({cookie: true})
+  return cookie.save(name, value, {
+    expires: now,
+    path: '/'
+  })
+}
 
-// logout = (name) => {
-//   return cookie.remove(name, { path: '/' })
-// }
+logout = (name) => {
+  localStorage.clear();
+  // return cookie.remove(name, { path: '/' })
+}
 
   getMealplans = () =>{
     axios.get('/api/meal_plans').then(response =>{
@@ -95,12 +96,12 @@ class App extends Component {
     })
   }
 
-  isLoggedIn = () =>{
-    axios.get('/api/logedin/').then(response =>{
-      console.log(response.data)
-      this.setState({authenticated: response.data.authenticated})
-    })
-  }
+  // isLoggedIn = () =>{
+  //   axios.get('/api/logedin/').then(response =>{
+  //     console.log(response.data)
+  //     this.setState({authenticated: response.data.authenticated})
+  //   })
+  // }
   setLogin = (loggedin ) => {
     this.setState({authenticated: loggedin});
   }
@@ -113,28 +114,34 @@ class App extends Component {
       this.setState({mealplan: response.data.mealplan, recipes: response.data.recipes, ingredients: response.data.ingredients} )
     })
     this.getMealplans()
-    this.isLoggedIn()
+    // this.isLoggedIn()
   }
 
   render() {
     let content = "";
-    if(this.state.authenticated){
+    const loggedInEmail = localStorage.getItem('email');
+    if (loggedInEmail) {
+    // if(this.state.authenticated){
       content = (
-        <React>
+
+        <Switch>
+
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" render={(props) => <MealPlan {...props} ></MealPlan>} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
           <Route exact path="/home" render={() => <Home ingredients={this.state.ingredients} mealplans={this.state.mealplans} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
-        </React>
+
+        </Switch>
+
         );
     }
     return (
       <div className="App">
-       <Layout authenticated = {this.state.authenticated} logout={this.setLogin}/>
+       <Layout authenticated = {Boolean(loggedInEmail)} logout={this.logout}/>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" render={(props) => <Login {...props} setLogin={this.setLogin} getCookie={this.getCookie} setCookie={this.setCookie} />}  />
+          <Route exact path="/login" render={(props) => <Login {...props} setLogin={this.setLogin.bind(this)} getCookie={this.getCookie} setCookie={this.setCookie} />}  />
           {content}
 
         </Switch>

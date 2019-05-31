@@ -19,48 +19,56 @@ import Recipe from"./Recipe.jsx";
 
 export default class Home extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      lastMealPlan: ""
+    }
+  }
 
+  // {mealplans.map(item =>
+  //              <li key={item['id']} style={{display: 'inline-block', margin:'15px'}}>
+  //               {item['id']}
+  //               </li>
+  //             )}
+
+
+  getLastMealPlan = () => {
+    axios.get('/api/meal_plans/last').then((response) => {
+      this.setState({lastMealPlan: response.data})
+    })
+  }
+
+ componentDidMount() {
+  this.getLastMealPlan()
+ }
 
   render(){
-
+    const {lastMealPlan} = this.state
     let mealplans = this.props.mealplans
+    console.log(lastMealPlan)
    return (
       <div>
-
         <div className="float-right">
           <Button variant="primary" type="submit" color="success" className="new_plan_button" href='/mealplan/new'>
                 <FontAwesomeIcon icon="plus" />  New Meal Plan
           </Button>
-
-          <Nav >
+          <Nav>
             <NavItem>
               <NavLink href="#">View Previous Meal Plans</NavLink>
-
             </NavItem>
-
           </Nav>
-
-
-
-           </div>
-
-
-
-
-            <h6> Here's your new meal plan: </h6>
-
-            <ul>
-              {mealplans.map(item =>
-               <li key={item['id']} style={{display: 'inline-block', margin:'15px'}}>
-                {item['id']}
-                </li>
-              )}
-
-            </ul>
-        <LayoutFooter />
-
+          {
+            !lastMealPlan
+              ? <div> loading... </div>
+              : <ul> { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }</ul>
+          }
         </div>
-
+        <div>
+          <h6> Here's your new meal plan: </h6>
+          <LayoutFooter />
+        </div>
+      </div>
     )
 }
 }

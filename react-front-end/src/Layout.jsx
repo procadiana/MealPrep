@@ -20,9 +20,6 @@ export default class LayoutSignedIn extends Component {
   }
 
 
-  logout = (name) => {
-  return cookie.remove(name, { path: '/' })
-  }
 
 
   render() {
@@ -33,7 +30,7 @@ export default class LayoutSignedIn extends Component {
                 <DropdownMenu>
                 <DropdownItem tag="a" href="/blah" active>Edit User</DropdownItem>
                 <DropdownItem tag="a" href="/blah" active>Edit Meal Plan</DropdownItem>
-                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={() => logout(false)} active>Logout</DropdownItem>
+                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={this.props.logout} active>Logout</DropdownItem>
                 </DropdownMenu>
                 </UncontrolledDropdown>);
     }

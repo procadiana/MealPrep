@@ -61,20 +61,22 @@ export default class MealPlan extends Component {
 
   render() {
     let {recipes, mealplan, ingredients} = this.state;
-
-
     if (this.props.recipes){
       recipes = this.props.recipes;
     }
 
 
-
     return (
+
+
         <div>
-          <Container className="meal_plans">
-            <Row>
-              <Col lg="3" md="6" > Ingredients List
-                <FormGroup check className="ingredient_check">
+        <Container className="meal_plans">
+        <Row>
+          {
+            !mealplan
+              ? <div> loading... </div>
+              : <div><Col lg="3" md="6" >
+              <FormGroup check className="ingredient_check">
                 <ul>
                   {ingredients.map(item =>
                   <li key={item['name']} className = "ingredient_list">
@@ -86,25 +88,31 @@ export default class MealPlan extends Component {
                     )}
                 </ul>
                 </FormGroup>
-                <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
-                   <EmailIcon size={20}  />
-                  </a>
 
-              </Col>
-              <Col lg="9" md="6">
-                <h6> Here's your new meal plan: </h6>
-                    <ul>
-                      {recipes.map(item =>
-                        (<Recipe recipe={item}/>)
-                      )}
-                    </ul>
-              </Col>
+            </Col>
+              <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
+              < EmailIcon size={20} /> </a>
+
+            <Col lg="9" md="6">
+            <h6> Here's your new meal plan: </h6>
+            </Col>
+
+
+            <ul>
+            {recipes.map(item =>
+              (<Recipe recipe={item}/>)
+            )}
+
+
+            </ul>
             </Row>
-          </Container>
+            </Container>
+            <LayoutFooter />
 
-          <LayoutFooter />
-        </div>
+            </div>
+           }
 
-      )
-  }
+      </div>
+  )
+}
 }
