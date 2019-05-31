@@ -37,36 +37,53 @@ class App extends Component {
     super(props);
 
     this.state = {
-      message: 'Click the button to load data!'
+      recipes: [],
+      ingredients: [],
+      mealplan: {}
     }
   }
 
-  fetchData = () => {
-    axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
+  // fetchData = () => {
+  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
+  //   .then((response) => {
+  //     // handle success
+  //     console.log(response.data) // The entire response from the Rails API
 
-      console.log(response.data.message) // Just the message
-      this.setState({
-        message: response.data.message
-      });
+  //     console.log(response.data.message) // Just the message
+  //     this.setState({
+  //       message: response.data.message
+  //     });
+  //   })
+  // }
+//users mealplans
+
+  getMealplans = () =>{
+    axios.get(`/api/meal_plans/`).then(response =>{
+      const mealPlans = [{}]
     })
+ }
+
+  componentDidMount(){
+    let id = this.props.match.params.id
+    axios.get(`/api/meal_plans/1`).then(response =>{
+      this.setState({mealplan: response.data.mealplan, recipes: response.data.recipes, ingredients: response.data.ingredients} )
+    })
+    this.getMealplans()
   }
-
-
 
   render() {
     return (
       <div className="App">
+       <Layout />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/mealplan/new" component={MealSettings} />
-          <Route exact path="/mealplan/:id" component={MealPlan} />
+          <Route exact path="/mealplan/:id" component={(props) => <MealPlan {...props} ></MealPlan>} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/home" component={() => <Home ingredients={this.state.ingredients} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
+
 
 
         </Switch>

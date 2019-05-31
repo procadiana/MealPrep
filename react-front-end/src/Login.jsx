@@ -3,7 +3,7 @@ import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactst
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import log from './img/Log.jpg';
-import { getCookie, setCookie } from './Cookie';
+import { logout, getCookie, setCookie } from './Cookie';
 import axios from "axios";
 import LayoutFooter from './Footer.jsx';
 
@@ -42,7 +42,7 @@ export default class Login extends Component {
     return (
 
       <div>
-      <Layout />
+
       <Container >
       <Row>
         <Col lg="6" md="12">
