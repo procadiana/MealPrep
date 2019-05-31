@@ -7,8 +7,14 @@ class Api::MealPlansController < ApplicationController
  def index
   #if current_user
   mealplans = MealPlan.all.order(created_at: :desc) #.where(user_id: session[:user_id])
+  recipes = {}
+  mealplans.each { |m|
+       id = m.id
+       recipes[id] = m.recipes
+  }
   render json: {
-    mealplans: mealplans # an array of mealplans
+    mealplans: mealplans, # an array of mealplans
+    recipes: recipes  #object of recipes, indexed by its mealplan id
    }
    #end
  end
@@ -74,12 +80,15 @@ class Api::MealPlansController < ApplicationController
    puts q_string
    result = HTTParty.get(q_string)
    list = []
-   result.each { |r|
-
-     list = list + r["ingredientLines"]
-   }
-   puts list
-   return list
+   if result
+     result.each { |r|
+       list = list + r["ingredientLines"]
+     }
+   else
+    puts result
+  end
+    puts "List of ingredients: #{list}"
+    return list
  end
 
 end
