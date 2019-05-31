@@ -27,7 +27,6 @@ export default class Recipe extends Component {
     if (this.state.favourite){
       this.setState({
         favourite: false
-
       })
       }else {
         this.notificationDOMRef.current.addNotification({
@@ -40,14 +39,15 @@ export default class Recipe extends Component {
           dismiss: { duration: 500 },
           dismissable: { click: true }
         });
-        this.setState({
-        favourite: true
 
+         axios.post(`/api/recipe/${this.props.recipe.id}`)
+          .then((response) =>{
+            this.setState({
+            favourite: true
+
+          })
         })
-        // axios.post('/api/recipe/${this.props.recipe.id}', {this.props.recipe.id}).then(response =>{
-        // }
-    }
-    //insert get route to axios
+      }
   }
 
   // isFavourite = () =>
