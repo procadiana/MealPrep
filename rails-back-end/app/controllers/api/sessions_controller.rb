@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
    end
    puts "#{user} Loged in !!"
    render json: {
-      authenticated: true
+      authenticated: true,
       user: user
       }
 
@@ -29,6 +29,12 @@ class Api::SessionsController < ApplicationController
    session[:user_id] = nil
    render json: {
        authenticated: false
+      }
+ end
+
+ def logedin
+    render json: {
+       authenticated: current_user
       }
  end
 end
