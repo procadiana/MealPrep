@@ -15,14 +15,19 @@ class Api::MealPlansController < ApplicationController
  end
 
  def show
+  if(current_user)
    mealplan = MealPlan.find params[:id]
    recipes = mealplan.recipes;
    ingredients = list_of_ingredients(recipes)
      render json: {
+
        mealplan: mealplan,
        recipes: recipes,
        ingredients: ingredients
      }
+    else
+      puts "user not allowed to see this mealplan"
+  end
 
  end
 

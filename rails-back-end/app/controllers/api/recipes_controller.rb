@@ -17,19 +17,21 @@ class Api::RecipesController < ApplicationController
   def create
     puts params
     puts session[:user_id]
-    # if(current_user) end
-    ur = UsersFavoriteRecipe.new
-    ur.user_id = session[:user_id]
-    ur.recipe_id = params[:recipe_id]
-    ur.save!
+    if current_user
+      ur = UsersFavoriteRecipe.new
+      ur.user_id = session[:user_id]
+      ur.recipe_id = params[:recipe_id]
+      ur.save!
+    end
   end
 
   def destroy
     puts params
     puts session[:user_id]
-    # if(current_user) end
-    ur = UsersFavoriteRecipe.find_by(user_id: 1, recipe_id: params[:id])
-    puts ur
-    ur.delete
+    if current_user
+      ur = UsersFavoriteRecipe.find_by(user_id: 1, recipe_id: params[:id])
+      puts ur
+      ur.delete
+    end
   end
 end
