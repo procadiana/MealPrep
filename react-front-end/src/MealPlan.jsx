@@ -69,13 +69,16 @@ export default class MealPlan extends Component {
     return (
 
 
+
+
         <div>
-        <Container className="meal_plans">
-        <Row>
           {
             !mealplan
               ? <div> loading... </div>
-              : <div><Col lg="3" md="6" >
+              : <div>
+              <Container className="meal_plans">
+              <Row>
+              <Col lg="3" md="6" >
               <FormGroup check className="ingredient_check">
                 <ul>
                   {ingredients.map(item =>
@@ -108,11 +111,13 @@ export default class MealPlan extends Component {
             </Row>
             </Container>
             <LayoutFooter />
-
             </div>
-           }
+          }
 
-      </div>
+          </div>
+
+
+
   )
 }
 }
