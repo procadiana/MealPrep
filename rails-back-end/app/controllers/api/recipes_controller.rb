@@ -28,7 +28,8 @@ class Api::RecipesController < ApplicationController
     puts params
     puts session[:user_id]
     # if(current_user) end
-    ur = UsersFavoriteRecipe.find_by(user_id: session[:user_id], recipe_id: params[:recipe_id])
-    ur.destroy
+    ur = UsersFavoriteRecipe.find_by(user_id: 1, recipe_id: params[:id])
+    puts ur
+    ur.delete
   end
 end
