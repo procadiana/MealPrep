@@ -6,6 +6,7 @@ import logo from './img/Logo2.png';
 import login from './Login.jsx';
 import HomePage from './Homepage.jsx';
 import { logout, getCookie, setCookie } from './Cookie';
+import * as cookie from 'react-cookies';
 
 
 
@@ -14,24 +15,18 @@ export default class LayoutSignedIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false
+
     };
   }
 
 
-
-  handleLoginClick() {
-    this.setState({isLoggedIn: true});
+  logout = (name) => {
+  return cookie.remove(name, { path: '/' })
   }
 
-  handleLogoutClick() {
-    this.setState({isLoggedIn: false});
-  }
 
   render() {
-    if(this.props.loggedIn){
 
-    }
 
 
     return (
@@ -60,7 +55,7 @@ export default class LayoutSignedIn extends Component {
                 <DropdownMenu>
                 <DropdownItem tag="a" href="/blah" active>Edit User</DropdownItem>
                 <DropdownItem tag="a" href="/blah" active>Edit Meal Plan</DropdownItem>
-                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} active>Logout</DropdownItem>
+                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={logout} active>Logout</DropdownItem>
                 </DropdownMenu>
                 </UncontrolledDropdown>
 
