@@ -39,20 +39,19 @@ export default class Recipe extends Component {
           dismiss: { duration: 500 },
           dismissable: { click: true }
         });
-
-         axios.post(`/api/recipe/${this.props.recipe.id}`)
-          .then((response) =>{
-            this.setState({
+         this.setState({
             favourite: true
 
           })
+
+         axios.post(`/api/recipe/${this.props.recipe.id}`)
+          .then((response) =>{
+
         })
       }
   }
 
-  // isFavourite = () =>
-  //   axios.get(`/api/recipe/${this.props.recipe.id}`).then(response =>{
-  // }
+
 
 
   render() {
@@ -67,6 +66,7 @@ export default class Recipe extends Component {
             <p><a href={item['shareAs']}>{item['name']}</a></p>
             <span style={{display: 'inline', padding:'5px'}}><FontAwesomeIcon icon="heart" href='' onClick={this.addNotification} style={{color: this.state.favourite ? 'red': 'black'}}  />  &nbsp;&nbsp; &nbsp;&nbsp;    <FontAwesomeIcon icon="times" href='' />  &nbsp;&nbsp;&nbsp;&nbsp;    <FontAwesomeIcon icon="check" href='' />  &nbsp;&nbsp;   </span>
         </li>
+
         </>
       )
   }
