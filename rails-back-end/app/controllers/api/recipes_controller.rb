@@ -22,6 +22,7 @@ class Api::RecipesController < ApplicationController
     end
   end
 
+
   def favorite
     puts params
     puts session[:user_id]
