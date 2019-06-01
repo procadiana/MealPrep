@@ -82,10 +82,13 @@ background-color: #F6F6F6;
   width: 200px;
   margin-top: 15px;
 
+
+}
+.home_meal_plan{
+  margin-top:50px;
 }
 .fav_meal-plans {
    text-align: left;
-
    margin-right: 20px;
    float: left;
 
