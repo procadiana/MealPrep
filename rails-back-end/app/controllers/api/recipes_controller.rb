@@ -23,14 +23,14 @@ class Api::RecipesController < ApplicationController
   end
 
   def create
-    # puts params
-    # puts session[:user_id]
-    # if current_user
-    #   ur = UsersFavoriteRecipe.new
-    #   ur.user_id = session[:user_id]
-    #   ur.recipe_id = params[:recipe_id]
-    #   ur.save!
-    # end
+    puts params
+    puts session[:user_id]
+    if current_user
+      ur = UsersFavoriteRecipe.new
+      ur.user_id = session[:user_id]
+      ur.recipe_id = params[:recipe_id]
+      ur.save!
+    end
   end
 
   def destroy
