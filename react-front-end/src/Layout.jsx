@@ -19,9 +19,6 @@ export default class LayoutSignedIn extends Component {
     };
   }
 
-
-
-
   render() {
     let content = <NavLink className = "nav_bar_names" href={'/login'} >Login</NavLink>
     if(this.props.authenticated){
