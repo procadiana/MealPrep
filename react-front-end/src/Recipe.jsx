@@ -44,7 +44,7 @@ export default class Recipe extends Component {
 
           })
 
-         axios.post(`/api/recipe/${this.props.recipe.id}`)
+         axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
           .then((response) =>{
 
         })

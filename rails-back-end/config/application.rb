@@ -20,6 +20,8 @@ Bundler.require(*Rails.groups)
 module RailsBackEnd
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore, key: '_mealPlan_session'
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
