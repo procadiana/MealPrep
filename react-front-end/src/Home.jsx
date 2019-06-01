@@ -23,6 +23,7 @@ export default class Home extends Component {
     this.state = {
       lastMealPlan: "",
       favouriteRecipes: []
+
     }
   }
 
@@ -68,7 +69,6 @@ export default class Home extends Component {
           </div>
           <Container className= "home_meal_plan">
 
-
               {
                 !lastMealPlan
                 ? <div> loading... </div>
@@ -82,8 +82,8 @@ export default class Home extends Component {
                           {ingredients.map(item =>
                             <li key={item['name']} className = "ingredient_list">
                               <Label check>
-                            <Input type="checkbox" />{' '}
-                                {item}
+                            <Input type="checkbox"  />{' '}
+                                <span>{item}</span>
                               </Label>
                              </li>
                           )}
@@ -97,6 +97,13 @@ export default class Home extends Component {
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }
                         </ul>
+                        <h6> Your favourite recipes: </h6>
+
+                          {
+                            !favouriteRecipes
+                            ? <div> loading... </div>
+                            : <ul> { favouriteRecipes.map(item => <Recipe recipe={item} />) }</ul>
+                          }
                     </Col>
                   </Row>
                 </Container>
@@ -107,17 +114,7 @@ export default class Home extends Component {
 
           </Container>
 
-          <Container className= "home_meal_plan">
-          <h6> Your favourite recipes: </h6>
 
-              {
-                !favouriteRecipes
-                ? <div> loading... </div>
-                : <ul> { favouriteRecipes.map(item => <Recipe recipe={item} />) }</ul>
-              }
-
-          </Container>
-            <LayoutFooter />
         </div>
       )
     }

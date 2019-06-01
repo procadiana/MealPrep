@@ -181,8 +181,10 @@ background-color: #F6F6F6;
   width:150px;
 }
 
-
-
+input[type=checkbox]:checked + span {
+  color: black;
+  text-decoration: line-through;
+}
 
 
 
