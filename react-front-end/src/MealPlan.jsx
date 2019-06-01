@@ -11,8 +11,6 @@ import { EmailShareButton} from 'react-share';
 import { EmailIcon} from 'react-share';
 
 
-
-
 export default class MealPlan extends Component {
 
   constructor(props) {
@@ -21,21 +19,17 @@ export default class MealPlan extends Component {
     this.state = {
       recipes: [],
       ingredients: [],
-
       mealplan: {},
       user: {
-        email: "anithaamarnath04@gmail.com"
+        email: "diana.claudia.ilinca@gmail.com"
 
             }
           }
       };
 
-
   componentDidMount(){
     this.setRecipes()
   }
-
-
 
 
   setRecipes = () => {
@@ -57,6 +51,11 @@ export default class MealPlan extends Component {
     return emailBody
   }
 
+
+
+
+
+
   render() {
     let {recipes, mealplan, ingredients} = this.state;
     if (this.props.recipes){
@@ -77,19 +76,25 @@ export default class MealPlan extends Component {
                   <Row>
                     <Col lg="3" md="6" > Ingredients
                       <FormGroup check className="ingredient_check">
-                        <ul>
+                        <ul >
+
                           {ingredients.map(item =>
                             <li key={item['name']} className = "ingredient_list">
-                              <Label check>
+                              <Label check >
                             <Input type="checkbox" />{' '}
-                                {item}
+                              <span> {item} </span>
+
                               </Label>
                              </li>
                           )}
+
+                          {}
                         </ul>
                       </FormGroup>
-                      <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
-                      < EmailIcon size={20} /> </a>
+                       <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
+                        <EmailIcon size={20} /> </a>
+
+
 
                     </Col>
 
