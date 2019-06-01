@@ -49,6 +49,18 @@ class Api::MealPlansController < ApplicationController
     #end
   end
 
+  def alexa
+    mealplan = MealPlan.last #.where(user_id: session[:user_id])
+    recipes = mealplan.recipes
+    recipes_names = ""
+    recipes.each { |r|
+        recipes_names += r['name'] + ", "
+      }
+    render json: {
+       recipes: recipes_names
+      }
+  end
+
 
 
  def create

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/api/logout' => 'api/sessions#destroy'
   get '/api/logedin' => 'api/sessions#logedin'
   get '/api/meal_plans/last' => 'api/meal_plans#last'
+  get '/api/meal_plans/alexa' => 'api/meal_plans#alexa'
 
 
   namespace :api do
