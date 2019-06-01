@@ -31,8 +31,6 @@ export default class MealPlan extends Component {
       };
 
 
-
-
   componentDidMount(){
     this.setRecipes()
   }
@@ -67,14 +65,17 @@ export default class MealPlan extends Component {
 
 
     return (
+
         <div>
           {
             !mealplan
               ? <div> loading... </div>
                 : <div>
+                  <Button variant="primary" color="success" className="new_plan_button float-right" href='/home'>
+                   Dashboard</Button>
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" >
+                    <Col lg="3" md="6" > Ingredients
                       <FormGroup check className="ingredient_check">
                         <ul>
                           {ingredients.map(item =>

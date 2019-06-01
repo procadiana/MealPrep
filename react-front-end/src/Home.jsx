@@ -14,9 +14,6 @@ import History from './History.js';
 import Recipe from"./Recipe.jsx";
 
 
-
-
-
 export default class Home extends Component {
 
   constructor(props) {
@@ -47,28 +44,29 @@ export default class Home extends Component {
     const {lastMealPlan} = this.state
     let mealplans = this.props.mealplans
     console.log(lastMealPlan)
-   return (
-      <div>
-        <div className="float-right">
-          <Button variant="primary" type="submit" color="success" className="new_plan_button" href='/mealplan/new'>
-                <FontAwesomeIcon icon="plus" />  New Meal Plan
-          </Button>
-          <Nav>
-            <NavItem>
-              <NavLink href="#">View Previous Meal Plans</NavLink>
-            </NavItem>
-          </Nav>
-          {
-            !lastMealPlan
-              ? <div> loading... </div>
-              : <ul> { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }</ul>
-          }
-        </div>
+      return(
         <div>
+          <div className="float-right">
+             <Button variant="primary" color="success" className="new_plan_button" href='/mealplan/new'>
+                <FontAwesomeIcon icon="plus" /> New Meal Plan</Button>
+            <Nav>
+              <NavItem>
+                <NavLink href="#">View Previous Meal Plans</NavLink>
+              </NavItem>
+            </Nav>
+          </div>
+          <Container className= "home_meal_plan">
           <h6> Here's your new meal plan: </h6>
-          <LayoutFooter />
+
+              {
+                !lastMealPlan
+                ? <div> loading... </div>
+                : <ul> { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }</ul>
+              }
+
+          </Container>
+            <LayoutFooter />
         </div>
-      </div>
-    )
-}
+      )
+    }
 }
