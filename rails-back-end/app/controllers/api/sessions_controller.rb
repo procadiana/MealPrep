@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
      # success logic, log them in
      session[:user_id] = user.id
      #response.set_cookie "user_id", "testCookie"
-     puts session.inspect
+     puts session
    else
    # failure, create new user
      puts "No such user found, creating new user"

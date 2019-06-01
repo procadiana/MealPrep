@@ -24,18 +24,20 @@ class Api::RecipesController < ApplicationController
 
 
   def favorite
-    puts params
+    puts params[:recipe_id]
     puts session[:user_id]
 
     if current_user
-      ur = UsersFavoriteRecipe.find_by(user_id: session[:user_id], recipe_id: params[:id])
-      if ur
-        ur.delete
-      else
+      ur = UsersFavoriteRecipe.find_by(user_id: session[:user_id], recipe_id: params[:recipe_id])
+      puts "UsersFavoriteRecipe #{ur}"
+      if ur == nil
         ur = UsersFavoriteRecipe.new
         ur.user_id = session[:user_id]
         ur.recipe_id = params[:recipe_id]
         ur.save!
+      else
+        ur.delete
+        puts "The recipe is not your favorite anymore"
       end
     end
   end
