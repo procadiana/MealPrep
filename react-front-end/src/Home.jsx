@@ -19,7 +19,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lastMealPlan: ""
+      lastMealPlan: "",
+      favouriteRecipes: []
     }
   }
 
@@ -36,14 +37,20 @@ export default class Home extends Component {
     })
   }
 
+  getFavouriteRecipes = () => {
+    axios.get('/api/recipes').then((response) => {
+      this.setState({favouriteRecipes: response.data})
+    })
+  }
+
  componentDidMount() {
   this.getLastMealPlan()
  }
 
   render(){
-    const {lastMealPlan} = this.state
+    const {lastMealPlan, favouriteRecipes} = this.state
     let mealplans = this.props.mealplans
-    console.log(lastMealPlan)
+
       return(
         <div>
           <div className="float-right">
@@ -62,6 +69,16 @@ export default class Home extends Component {
                 !lastMealPlan
                 ? <div> loading... </div>
                 : <ul> { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }</ul>
+              }
+
+          </Container>
+          <Container className= "home_meal_plan">
+          <h6> Your favourite recipes: </h6>
+
+              {
+                !favouriteRecipes
+                ? <div> loading... </div>
+                : <ul> { favouriteRecipes.map(item => <Recipe recipe={item}/>) }</ul>
               }
 
           </Container>
