@@ -1,28 +1,36 @@
 class Api::RecipesController < ApplicationController
-  # def update
-  #   puts params
-  #   puts session[:user_id]
-  #   # if(current_user)
-  #   #   u = User.find(session[:user_id])
-  #   #   u.recipes.find(recipe_id)
-  #   #r1 =UsersFavoriteRecipe.where(user_id: session[:user_id], recipe_id: recipe_id)
-  #   #puts r1
-
-  #   # end
-  #   render json: {
-  #     mealplan: "Hasta aqui"
-  #   }
-  # end
-
-  def create
-    puts params
-    puts session[:user_id]
-    if current_user
+  def update
+    puts params[:id]
+    puts session
+    user = current_user
+    if user
       ur = UsersFavoriteRecipe.new
       ur.user_id = session[:user_id]
       ur.recipe_id = params[:recipe_id]
       ur.save!
+      puts ur
     end
+  end
+
+  def index
+    user = current_user
+    if user
+      recipes = user.recipes
+      render json: {
+        recipes: recipes  #array of recipes
+      }
+    end
+  end
+
+  def create
+    # puts params
+    # puts session[:user_id]
+    # if current_user
+    #   ur = UsersFavoriteRecipe.new
+    #   ur.user_id = session[:user_id]
+    #   ur.recipe_id = params[:recipe_id]
+    #   ur.save!
+    # end
   end
 
   def destroy
