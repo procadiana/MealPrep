@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   namespace :api do
     #get '/data', to: 'tests#index'
     resources :meal_plans , only: [:index, :show, :create]
-    resources :recipes, only: [:create, :destroy]
+    resources :recipes, only: [:create, :destroy, :index, :update]
   end
 end

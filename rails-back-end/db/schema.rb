@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_205817) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users_allergies", id: false, force: :cascade do |t|
+  create_table "users_allergies", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "allergy_id"
     t.datetime "created_at", null: false
