@@ -77,6 +77,27 @@ class Api::MealPlansController < ApplicationController
  def create
    puts params
    #raise "Yay, I'm here!"
+   recipes = Recipe.where(servings: params[:servings]).limit(params[:days]) #.take(params[:days])
+   user = current_user #User.first
+   diet_type = DietType.find_by(name: params[:diet])
+   mealplan = MealPlan.new
+   mealplan.user = user
+   mealplan.recipes = recipes
+   mealplan.diet_type = diet_type
+   mealplan.servings = params[:servings]
+   mealplan.days = params[:days]
+   mealplan.save!
+   puts "The new mealplan id #{mealplan.id}"
+   render json: {
+     mealplan: mealplan,
+     recipes: recipes
+   }
+ end
+
+  def create_edaman
+    puts params
+   #raise "Yay, I'm here!"
+   q_string = "#{BASE_URL}&#{API_PARTIAL_URL}"
    recipes = Recipe.take(params[:days])
    user = User.first
    diet_type = DietType.find_by(name: params[:diet])
@@ -149,6 +170,5 @@ class Api::MealPlansController < ApplicationController
     end
     return shopping_list_array
   end
-
 end
 

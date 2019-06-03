@@ -61,9 +61,18 @@ recipe3 = Recipe.create! name: 'Catalan Chicken', edaman_id: '2463f2482609d7a471
 recipe4 = Recipe.create! name: 'Persian Chicken', edaman_id: '4caf01683bf99ddc7c08c35774aae54c', main_ingredient: 'chicken', servings: 5, img_source:'https://www.edamam.com/web-img/bd4/bd47ac0557ade02871750518d56ba928.jpg', shareAs: 'http://www.edamam.com/recipe/persian-chicken-4caf01683bf99ddc7c08c35774aae54c/chicken'
 recipe5 = Recipe.create! name: 'Portabello Beef Stew', edaman_id: '14c68e61108cc0829ee6ef279f79b860', main_ingredient: 'beef', servings: 3, img_source:'https://www.edamam.com/web-img/72f/72fd32d089fdc211a0b35a7e41ed47e2.JPG', shareAs: 'http://www.edamam.com/recipe/portabello-beef-stew-14c68e61108cc0829ee6ef279f79b860/beef'
 recipe6 = Recipe.create! name: 'Warm and Nutty Cinnamon Quinoa Recipe', edaman_id: '70386282c8bbc742149df16aff4e089e', main_ingredient: 'quinoa', servings: 4, img_source:'https://www.edamam.com/web-img/862/86252014c2ef25dd041d6b052c1bc122.jpg', shareAs: 'http://www.edamam.com/recipe/warm-and-nutty-cinnamon-quinoa-recipe-70386282c8bbc742149df16aff4e089e/quinoa'
-
-
-
+recipe7 = Recipe.create! name: 'Chicken Quinoa', edaman_id: 'a25ab6e41f439e4cc0721f3f34780da9', main_ingredient: 'quinoa', servings: 2, img_source:'https://www.edamam.com/web-img/560/5606f4fb972e0789464fecdc9ca595aa.JPG', shareAs: 'http://www.edamam.com/recipe/chicken-quinoa-a25ab6e41f439e4cc0721f3f34780da9/quinoa'
+recipe8 = Recipe.create! name: 'Quinoa Chowder', edaman_id: '4ff5da533d621b243b7594cf1145f176', main_ingredient: 'quinoa', servings: 4, img_source:'https://www.edamam.com/web-img/912/912a78df8f2316f478ab0b2a510c0605.jpg', shareAs: 'http://www.edamam.com/recipe/quinoa-chowder-4ff5da533d621b243b7594cf1145f176/quinoa'
+#recipe = Recipe.create! name: '', edaman_id: '', main_ingredient: '', servings: , img_source:'', shareAs: ''
+recipe9 = Recipe.create! name: 'Quick Balsamic Quinoa Salad recipes', edaman_id: 'b92435ccdff962a73aff447351c7b0f2', main_ingredient: 'quinoa', servings: 4 , img_source:'https://www.edamam.com/web-img/d57/d5778d1f0fe743be2b3fa45f2530dac1', shareAs: 'http://www.edamam.com/recipe/quick-balsamic-quinoa-salad-recipes-b92435ccdff962a73aff447351c7b0f2/quinoa'
+recipe10 = Recipe.create! name: 'Cool And Spicy Fish And Cucumber Salad', edaman_id: '17b514c50a6dd4fc9f2d99a45a645c14', main_ingredient: 'fish', servings: 4, img_source:'https://www.edamam.com/web-img/136/1362cc0f20b9c105716a58984a17f816.jpg', shareAs: 'http://www.edamam.com/recipe/cool-and-spicy-fish-and-cucumber-salad-17b514c50a6dd4fc9f2d99a45a645c14/fish'
+#recipe = Recipe.create! name: '', edaman_id: '', main_ingredient: '', servings: , img_source:'', shareAs: ''
+recipe11 = Recipe.create! name: 'Rainbow Rice', edaman_id: 'dc1ed9e2cafc516f2e850e26510cfe67', main_ingredient: 'rice', servings: 2, img_source:'https://www.edamam.com/web-img/132/132c14353d52572d1354dce07ba9b24e.jpg', shareAs: 'https://www.edamam.com/recipe/rainbow-rice-dc1ed9e2cafc516f2e850e26510cfe67/rice'
+recipe12 = Recipe.create! name: 'Roasted Spaghetti Squash', edaman_id: '6dc2f5b272379da6fc3b02dbd53d213b', main_ingredient: 'squash', servings: 2, img_source:'https://www.edamam.com/web-img/1aa/1aa2baae82a997df3ed8845f747e816c.jpg', shareAs: 'http://www.edamam.com/recipe/meatless-monday-roasted-spaghetti-squash-6dc2f5b272379da6fc3b02dbd53d213b/spaghetti'
+recipe13 = Recipe.create! name: 'Chicken Marengo', edaman_id: '182eb4e5d92618a9e132d55cc9a080e5', main_ingredient: 'chicken', servings: 4 , img_source:'https://www.edamam.com/web-img/ef0/ef0e5316c430c3ec6b26edd187373569.jpg', shareAs: 'http://www.edamam.com/recipe/chicken-marengo-182eb4e5d92618a9e132d55cc9a080e5/chicken-marengo'
+recipe14 = Recipe.create! name: 'Potato & salmon grill', edaman_id: 'aba3caf2c01fa25a4bd3914767f2a22a', main_ingredient: 'salmon', servings: 4, img_source:'https://www.edamam.com/web-img/079/0791b0be9ad3272b4bd899a41b557fc5.jpg', shareAs: 'http://www.edamam.com/recipe/potato-salmon-grill-aba3caf2c01fa25a4bd3914767f2a22a/potato-salmon'
+recipe15 = Recipe.create! name: 'Potato Chip–Crust Salmon', edaman_id: 'd6c36964962a31e770e4a03b36a57409', main_ingredient: 'salmon', servings: 2, img_source:'https://www.edamam.com/web-img/20b/20b726d1c639601cc604182f35dd431f.jpg', shareAs: 'http://www.edamam.com/recipe/dinner-tonight-potato-chip-crust-salmon-d6c36964962a31e770e4a03b36a57409/potato-salmon'
+recipe16 = Recipe.create! name: 'Salmon Fillets With Horseradish-Potato Crust', edaman_id: '1e29f6599d3e86b8608a8dac7decdeab', main_ingredient: 'salmon', servings: 2, img_source:'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18151406/potato-crusted-fish-main.jpg', shareAs: ''
 
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe1
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe2
@@ -73,8 +82,70 @@ MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe5
 
 
 RecipesAllergy.create! recipe: recipe6, allergy: allergy_p
+RecipesAllergy.create! recipe: recipe6, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe7, allergy: allergy_p
+RecipesAllergy.create! recipe: recipe7, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe8, allergy: allergy_p
+RecipesAllergy.create! recipe: recipe8, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe8, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe9, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe9, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe9, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe9, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe9, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe10, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe10, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe10, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe11, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe11, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe11, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe11, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe11, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe11, allergy: allergy_w
+RecipesAllergy.create! recipe: recipe12, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe12, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe12, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe12, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe12, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe12, allergy: allergy_w
+RecipesAllergy.create! recipe: recipe13, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe13, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe13, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe13, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe14, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe14, allergy: allergy_w
+RecipesAllergy.create! recipe: recipe14, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe14, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe15, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe15, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe15, allergy: allergy_w
+RecipesAllergy.create! recipe: recipe15, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe15, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe16, allergy: allergy_w
+RecipesAllergy.create! recipe: recipe16, allergy: allergy_g
+RecipesAllergy.create! recipe: recipe16, allergy: allergy_n
+
+
 
 RecipesDietType.create! recipe: recipe6, diet_type: diet_v
+RecipesDietType.create! recipe: recipe6, diet_type: diet_p
+RecipesDietType.create! recipe: recipe8, diet_type: diet_v
+RecipesDietType.create! recipe: recipe8, diet_type: diet_p
+RecipesDietType.create! recipe: recipe9, diet_type: diet_v
+RecipesDietType.create! recipe: recipe9, diet_type: diet_p
+RecipesDietType.create! recipe: recipe10, diet_type: diet_p
+RecipesDietType.create! recipe: recipe11, diet_type: diet_p
+RecipesDietType.create! recipe: recipe11, diet_type: diet_v
+RecipesDietType.create! recipe: recipe12, diet_type: diet_p
+RecipesDietType.create! recipe: recipe12, diet_type: diet_v
+RecipesDietType.create! recipe: recipe12, diet_type: diet_l
+RecipesDietType.create! recipe: recipe14, diet_type: diet_p
+RecipesDietType.create! recipe: recipe15, diet_type: diet_p
+RecipesDietType.create! recipe: recipe15, diet_type: diet_k
+RecipesDietType.create! recipe: recipe16, diet_type: diet_p
+RecipesDietType.create! recipe: recipe16, diet_type: diet_k
+
+
 
 UsersFavoriteRecipe.create! user: user1, recipe: recipe1
 UsersFavoriteRecipe.create! user: user1, recipe: recipe2
