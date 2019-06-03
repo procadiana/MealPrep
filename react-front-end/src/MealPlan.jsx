@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, FormGroup, Label, Input,Container, Col,Row} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/homepage.css';
 
 import Recipe from"./Recipe.jsx";

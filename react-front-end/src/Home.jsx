@@ -8,9 +8,6 @@ import './styles/homepage.css';
 import { EmailIcon} from 'react-share';
 
 
-
-
->>>>>>> feature/refresh
 import Recipe from"./Recipe.jsx";
 
 
