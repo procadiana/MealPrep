@@ -37,7 +37,7 @@ export default class Login extends Component {
               }
           });
         // window.location.reload()
-        this.props.history.push('/home');
+        this.props.history.push('/mealplan/new');
       }
 
   render() {

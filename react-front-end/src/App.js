@@ -12,6 +12,7 @@ import Login from './Login.jsx';
 import MealSettings from './MealSettings.jsx';
 import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
+import Archive from './Archive.jsx';
 
 import * as cookie from 'react-cookies';
 import { instanceOf } from 'prop-types';
@@ -21,8 +22,9 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { EmailShareButton} from 'react-share';
-
+import Moment from 'react-moment';
 
 
 
@@ -32,6 +34,7 @@ library.add(faHeart)
 library.add(faTimes)
 library.add(faPlus)
 library.add(faUser)
+library.add(faSpinner)
 
 
 
@@ -90,11 +93,7 @@ logout = (name) => {
   // return cookie.remove(name, { path: '/' })
 }
 
-  getMealplans = () =>{
-    axios.get('/api/meal_plans').then(response =>{
-      this.setState({mealplans: response.data.mealplans})
-    })
-  }
+
 
   // isLoggedIn = () =>{
   //   axios.get('/api/logedin/').then(response =>{
@@ -113,7 +112,7 @@ logout = (name) => {
     axios.get(`/api/meal_plans/1`).then(response =>{
       this.setState({mealplan: response.data.mealplan, recipes: response.data.recipes, ingredients: response.data.ingredients} )
     })
-    this.getMealplans()
+    // this.getMealplans()
     // this.isLoggedIn()
   }
 
@@ -130,6 +129,7 @@ logout = (name) => {
           <Route exact path="/mealplan/:id" render={(props) => <MealPlan {...props} ></MealPlan>} />
           <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
           <Route exact path="/home" render={() => <Home ingredients={this.state.ingredients} mealplans={this.state.mealplans} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
+          <Route exact path="/mealplans" render={() => <Archive /> } />
 
         </Switch>
 
