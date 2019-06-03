@@ -12,6 +12,9 @@ import MealSettings from './MealSettings.jsx';
 import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
 import Archive from './Archive.jsx';
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+
 
 import * as cookie from 'react-cookies';
 import { instanceOf } from 'prop-types';
@@ -54,26 +57,15 @@ class App extends Component {
       mealplan: {},
       cookie: false,
       mealplans: [],
-      authenticated: false
+      authenticated: false,
+      favourite: false
 
     }
 
 
   }
 
-  // fetchData = () => {
-  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log(response.data) // The entire response from the Rails API
 
-  //     console.log(response.data.message) // Just the message
-  //     this.setState({
-  //       message: response.data.message
-  //     });
-  //   })
-  // }
-//users mealplans
 
 
 getCookie = key => {
@@ -97,16 +89,9 @@ logout = (name) => {
 }
 
 
-
-  // isLoggedIn = () =>{
-  //   axios.get('/api/logedin/').then(response =>{
-  //     console.log(response.data)
-  //     this.setState({authenticated: response.data.authenticated})
-  //   })
-  // }
-  setLogin = (loggedin ) => {
-    this.setState({authenticated: loggedin});
-  }
+setLogin = (loggedin ) => {
+  this.setState({authenticated: loggedin});
+}
 
 
 
@@ -117,6 +102,7 @@ logout = (name) => {
     })
     // this.getMealplans()
     // this.isLoggedIn()
+
   }
 
   render() {
@@ -130,7 +116,7 @@ logout = (name) => {
 
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" render={(props) => <MealPlan {...props} ></MealPlan>} />
-          <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
+          <Route exact path="/recipe" render={(props) => <Recipe {...props} ></Recipe>} /> //mealplan/:id/recipe??
           <Route exact path="/home" render={() => <Home ingredients={this.state.ingredients} mealplans={this.state.mealplans} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
           <Route exact path="/mealplans" render={() => <Archive /> } />
 

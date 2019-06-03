@@ -105,7 +105,7 @@ export default class Home extends Component {
                           {
                             !favouriteRecipes
                             ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}} />
-                            : <ul> { favouriteRecipes.map(item => <Recipe recipe={item} />) }</ul>
+                            : <ul> { favouriteRecipes.map(item => <Recipe style={{color: this.props.favourite  ? 'red': 'black'}} recipe={item} />) }</ul>
                           }
                     </Col>
                   </Row>

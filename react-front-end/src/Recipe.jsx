@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import axios from "axios";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
@@ -13,13 +12,14 @@ export default class Recipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      favourite: false,
       };
     this.addNotification = this.addNotification.bind(this);
 
     this.notificationDOMRef = React.createRef();
 
   }
+
 
 
   addNotification() {
@@ -39,12 +39,11 @@ export default class Recipe extends Component {
           dismissable: { click: true }
         });
          this.setState({
-            favourite: true
-
-          })
-
+          favourite: true
+         })
          axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
           .then((response) =>{
+            this.setState({favourite: response.data})
 
         })
       }
