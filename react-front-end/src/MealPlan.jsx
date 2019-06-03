@@ -1,15 +1,12 @@
-import React, {Component, useState} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText,Container, Col,Row} from 'reactstrap';
+import React, {Component} from 'react';
+import {Button, FormGroup, Label, Input,Container, Col,Row} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
-import History from './History.js';
+
 import Recipe from"./Recipe.jsx";
-import { EmailShareButton} from 'react-share';
-import { EmailIcon} from 'react-share';
+
 
 
 export default class MealPlan extends Component {
@@ -20,11 +17,8 @@ export default class MealPlan extends Component {
     this.state = {
       recipes: [],
       ingredients: [],
-      mealplan: {},
-      user: {
-        email: "diana.claudia.ilinca@gmail.com"
+      mealplan: {}
 
-            }
           }
       };
 
@@ -43,17 +37,6 @@ export default class MealPlan extends Component {
       this.setState({recipes: this.props.recipes, ingredients: this.props.ingredients, mealplan: this.props.mealplan})
     }
   }
-
-  formatIngredientsForMail = () => {
-    let emailBody = ''
-    this.state.ingredients.forEach(element => {
-          emailBody += element+'%0D%0A'
-      })
-    return emailBody
-  }
-
-
-
 
 
 
@@ -75,7 +58,7 @@ export default class MealPlan extends Component {
                    Dashboard</Button>
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > Ingredients
+                    <Col lg="3" md="6" > <h5 className="heading">Ingredients</h5>
                       <FormGroup check className="ingredient_check">
                         <ul >
 
@@ -91,16 +74,14 @@ export default class MealPlan extends Component {
 
                           {}
                         </ul>
-                      </FormGroup>
-                       <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
-                        <EmailIcon size={20} /> </a>
 
+                      </FormGroup>
 
 
                     </Col>
 
                     <Col lg="9" md="6">
-                      <h6> Here's your new meal plan: </h6>
+                      <h5 className="heading_mealplan">Here's your new meal plan: </h5>
                         <ul>
                           {recipes.map(item =>
                             (<Recipe recipe={item}/>)

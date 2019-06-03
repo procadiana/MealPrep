@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Container, Row, Col,Button,Form, FormGroup, Label, Input } from 'reactstrap';
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
+
 import log from './img/Log.jpg';
-import { logout, getCookie, setCookie } from './App';
+import { getCookie, setCookie } from './App';
 import axios from "axios";
 import LayoutFooter from './Footer.jsx';
 
@@ -51,7 +51,7 @@ export default class Login extends Component {
       <Container >
       <Row>
         <Col lg="6" md="12">
-        <img className="home_image" width="100%" src={log} style={{ height: 400 }} alt ="login meal image"/ >
+        <img className="home_image" width="100%" src={log} style={{ height: 400 }} alt ="mealplan"/ >
         </Col>
         <Col lg="6" md="12">
         <Form  className= "login_form" onSubmit={this.handleLogin}>

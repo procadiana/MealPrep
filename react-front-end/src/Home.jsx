@@ -1,16 +1,16 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 
-import MealPlan from "./MealPlan.jsx";
-
-import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
+import {Button, FormGroup, Label, Input,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
-import { EmailShareButton} from 'react-share';
 import { EmailIcon} from 'react-share';
-import History from './History.js';
+
+
+
+
+>>>>>>> feature/refresh
 import Recipe from"./Recipe.jsx";
 
 
@@ -20,10 +20,16 @@ export default class Home extends Component {
     super(props);
     this.state = {
       lastMealPlan: "",
-      favouriteRecipes: []
+      favouriteRecipes: [],
+      ingredients:[],
+      user: {
+        email: "diana.claudia.ilinca@gmail.com"
 
+            }
     }
+
   }
+
 
   getLastMealPlan = () => {
     axios.get('/api/meal_plans/last').then((response) => {
@@ -36,6 +42,13 @@ export default class Home extends Component {
       this.setState({favouriteRecipes: response.data.recipes})
     })
   }
+  formatIngredientsForMail = () => {
+    let emailBody = ''
+    this.state.ingredients.forEach(element => {
+          emailBody += element+'%0D%0A'
+      })
+    return emailBody
+  }
 
  componentDidMount() {
   this.getLastMealPlan()
@@ -45,7 +58,7 @@ export default class Home extends Component {
   render(){
     const ingredients = this.state.ingredients
     const {lastMealPlan, favouriteRecipes} = this.state
-    let mealplans = this.props.mealplans
+
 
       return(
         <div>
@@ -67,7 +80,7 @@ export default class Home extends Component {
 
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > Ingredients
+                    <Col lg="3" md="6" > <h5 className= "home_heading">Ingredients </h5>
                       <FormGroup check className="ingredient_check">
                         <ul>
                           {ingredients.map(item =>
@@ -80,15 +93,17 @@ export default class Home extends Component {
                           )}
                         </ul>
                       </FormGroup>
+                      <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
+                        <EmailIcon size={20} /> </a>
 
                     </Col>
 
                     <Col lg="9" md="6">
-                      <h6> Here's your new meal plan: </h6>
+                      <h5 className= "home_heading"> Here's your new meal plan: </h5>
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }
                         </ul>
-                        <h6> Your favourite recipes: </h6>
+                        <h5 className="fav_heading">Your favourite recipes: </h5>
 
                           {
                             !favouriteRecipes

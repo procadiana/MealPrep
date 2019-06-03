@@ -4,7 +4,6 @@ import {Button,Form, FormGroup, Label, Input,Col,Container,Row } from 'reactstra
 import axios from "axios";
 import meal from './img/Meal.jpg';
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
 import LayoutFooter from './Footer.jsx';
 
 
@@ -64,13 +63,12 @@ class MealSettings extends Component {
 
 
             <Col lg="6" md="12">
-              <img class="home_image"  src={meal} style={{ height: 400 }} alt ="home image"/ >
-
+              <img class="home_image"  src={meal} style={{ height: 400 }} alt ="home"/ >
 
             </Col>
 
             <Col lg="6" md="12"style={{marginTop:50}} className="meal-form">
-             <Label className="meal-plan">Fill-in the details below to create your meal plan</Label>
+              <h5 className="meal-plan mealset_heading">Fill-in the details below to create your meal plan</h5>
             <Form onSubmit={this.onSubmit}>
          <FormGroup row >
           <Label for="select" md={4} className="meal-plans">Number of days:</Label>

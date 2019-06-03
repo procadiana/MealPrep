@@ -4,7 +4,7 @@ import {Container, Row, Col,ListGroup,ListGroupItem, Button} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import home from './img/Home.jpg';
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
+
 import LayoutFooter from './Footer.jsx';
 
 

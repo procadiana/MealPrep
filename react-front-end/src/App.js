@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink, Row, Col,Card,CardImg,ListGroup,ListGroupItem} from 'reactstrap';
 import {Route, Switch} from "react-router-dom";
 import HomePage from './Homepage.jsx';
 import Signup from './Signup.jsx';
@@ -22,9 +21,13 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { EmailShareButton} from 'react-share';
 import Moment from 'react-moment';
+
+
+
 
 
 
