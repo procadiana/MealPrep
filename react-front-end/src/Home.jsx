@@ -10,9 +10,7 @@ import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import { EmailShareButton} from 'react-share';
 import { EmailIcon} from 'react-share';
-
 import History from './History.js';
-
 import Recipe from"./Recipe.jsx";
 
 
@@ -26,13 +24,6 @@ export default class Home extends Component {
 
     }
   }
-
-  // {mealplans.map(item =>
-  //              <li key={item['id']} style={{display: 'inline-block', margin:'15px'}}>
-  //               {item['id']}
-  //               </li>
-  //             )}
-
 
   getLastMealPlan = () => {
     axios.get('/api/meal_plans/last').then((response) => {
@@ -55,7 +46,7 @@ export default class Home extends Component {
     const ingredients = this.state.ingredients
     const {lastMealPlan, favouriteRecipes} = this.state
     let mealplans = this.props.mealplans
-    console.log(favouriteRecipes)
+
       return(
         <div>
           <div className="float-right">
@@ -63,7 +54,7 @@ export default class Home extends Component {
                 <FontAwesomeIcon icon="plus" /> New Meal Plan</Button>
             <Nav>
               <NavItem>
-                <NavLink href="#">View Previous Meal Plans</NavLink>
+                <NavLink href="/mealplans">View Previous Meal Plans</NavLink>
               </NavItem>
             </Nav>
           </div>
@@ -71,7 +62,7 @@ export default class Home extends Component {
 
               {
                 !lastMealPlan
-                ? <div> loading... </div>
+                ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}}/>
                 : <div>
 
                 <Container className="meal_plans">
@@ -101,7 +92,7 @@ export default class Home extends Component {
 
                           {
                             !favouriteRecipes
-                            ? <div> loading... </div>
+                            ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}} />
                             : <ul> { favouriteRecipes.map(item => <Recipe recipe={item} />) }</ul>
                           }
                     </Col>

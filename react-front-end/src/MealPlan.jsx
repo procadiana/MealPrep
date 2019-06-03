@@ -3,6 +3,7 @@ import {Button,Form, FormGroup, Label, Input, FormText,Container, Col,Row} from 
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import './styles/homepage.css';
 import Layout from './Layout.jsx';
 import History from './History.js';
@@ -67,8 +68,8 @@ export default class MealPlan extends Component {
 
         <div>
           {
-            !mealplan
-              ? <div> loading... </div>
+            !ingredients
+              ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}} />
                 : <div>
                   <Button variant="primary" color="success" className="new_plan_button float-right" href='/home'>
                    Dashboard</Button>
