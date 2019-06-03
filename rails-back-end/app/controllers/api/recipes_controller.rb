@@ -35,10 +35,15 @@ class Api::RecipesController < ApplicationController
         ur.user_id = session[:user_id]
         ur.recipe_id = params[:recipe_id]
         ur.save!
+        favorite = true
       else
         ur.delete
         puts "The recipe is not your favorite anymore"
+        favorite = false
       end
+      render json: {
+          favorite: favorite
+        }
     end
   end
 
