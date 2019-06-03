@@ -1,14 +1,12 @@
-import React, {Component, useState} from 'react';
-import MealPlan from "./MealPlan.jsx";
-import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
+import React, {Component} from 'react';
+
+import {Container, Col,Row} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
-import { EmailShareButton} from 'react-share';
-import { EmailIcon} from 'react-share';
-import History from './History.js';
+
+
 import Recipe from"./Recipe.jsx";
 import Moment from 'react-moment';
 
@@ -38,20 +36,29 @@ export default class Archive extends Component {
   render(){
     return(
       <div>
-          <Col lg="9" md="6">
-              <h6> Previous Meal Plans </h6>
-              <ul>
-                <li>{this.state.mealplans.map(item =>
-                    <div key={item.id}> Created at: <Moment format="LLLL" date={item.created_at} />
+      <h5 className= "archive_home_heading">Previous Meal Plans : </h5>
+
+          <Container >
+
+
+
+            <Row>
+              <ul className="align">
+
+                <li id="archive_item">{this.state.mealplans.map(item =>
+                    <p key={item.id}> <span className="archive_time">Created at <Moment format="LLLL" date={item.created_at} /></span>
                     {this.state.recipes && Array.isArray(this.state.recipes[item.id]) && this.state.recipes[item.id].map(items =>
-                      <Recipe recipe={items} />
+                     <Recipe recipe={items} />
                     )}
-                    </div>
+                    </p>
                 )}
                 </li>
               </ul>
-          </Col>
+
+          </Row>
+          </Container>
       <LayoutFooter />
+
       </div>
     )
   }

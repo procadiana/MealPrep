@@ -205,12 +205,33 @@ input[type=checkbox]:checked + span {
 }
 .mealset_heading {
   text-align: left;
-  margin-left: 15px;
+  margin-left: 150px;
+}
+.archive_time {
+  float: left;
+
 }
 
+.align {
+  display: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+.recipe_item {
+  height: 80px;
+   width: 80px;
+}
+#archive_item {
+  float: right;
+  display:inline;
+}
+.archive_home_heading{
+  margin-top: 25px;
+text-align: left;
+ margin-left: 150px;
 
 
-
+}
 
 
 
