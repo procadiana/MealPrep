@@ -152,7 +152,7 @@ background-color: #F6F6F6;
     background-color: #007bff00;
 }
 .ingredient_list {
-  display: inline-block;
+  display: block;
 
 
 }
@@ -184,6 +184,10 @@ background-color: #F6F6F6;
 input[type=checkbox]:checked + span {
   color: black;
   text-decoration: line-through;
+}
+.heading {
+  text-align: center;
+  margin-right: 230px;
 }
 
 

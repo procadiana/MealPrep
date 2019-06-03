@@ -22,10 +22,16 @@ export default class Home extends Component {
     super(props);
     this.state = {
       lastMealPlan: "",
-      favouriteRecipes: []
+      favouriteRecipes: [],
+      ingredients:[],
+      user: {
+        email: "diana.claudia.ilinca@gmail.com"
 
+            }
     }
+
   }
+
 
   // {mealplans.map(item =>
   //              <li key={item['id']} style={{display: 'inline-block', margin:'15px'}}>
@@ -45,6 +51,14 @@ export default class Home extends Component {
       this.setState({favouriteRecipes: response.data.recipes})
     })
   }
+  formatIngredientsForMail = () => {
+    let emailBody = ''
+    this.state.ingredients.forEach(element => {
+          emailBody += element+'%0D%0A'
+      })
+    return emailBody
+  }
+
 
  componentDidMount() {
   this.getLastMealPlan()
@@ -53,7 +67,7 @@ export default class Home extends Component {
 
   render(){
     const ingredients = this.state.ingredients
-    const {lastMealPlan, favouriteRecipes} = this.state
+    const {lastMealPlan, favouriteRecipes,user} = this.state
     let mealplans = this.props.mealplans
     console.log(favouriteRecipes)
       return(
@@ -76,24 +90,26 @@ export default class Home extends Component {
 
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > Ingredients
+                    <Col lg="3" md="6" > <h5 className="heading">Ingredients</h5>
                       <FormGroup check className="ingredient_check">
                         <ul>
                           {ingredients.map(item =>
                             <li key={item['name']} className = "ingredient_list">
                               <Label check>
                             <Input type="checkbox"  />{' '}
-                                <span>{item}</span>
+                                <span >{item}</span>
                               </Label>
                              </li>
                           )}
                         </ul>
                       </FormGroup>
+                      <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
+                        <EmailIcon size={20} /> </a>
 
                     </Col>
 
                     <Col lg="9" md="6">
-                      <h6> Here's your new meal plan: </h6>
+                      <h5 className="heading"> Here's your new meal plan: </h5>
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }
                         </ul>

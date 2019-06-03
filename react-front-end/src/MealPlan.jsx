@@ -94,12 +94,10 @@ export default class MealPlan extends Component {
                        <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
                         <EmailIcon size={20} /> </a>
 
-
-
                     </Col>
 
                     <Col lg="9" md="6">
-                      <h6> Here's your new meal plan: </h6>
+                      <h5> Here's your new meal plan: </h5>
                         <ul>
                           {recipes.map(item =>
                             (<Recipe recipe={item}/>)
