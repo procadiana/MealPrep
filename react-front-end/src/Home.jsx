@@ -59,7 +59,6 @@ export default class Home extends Component {
     return emailBody
   }
 
-
  componentDidMount() {
   this.getLastMealPlan()
   this.getFavouriteRecipes()
@@ -90,14 +89,14 @@ export default class Home extends Component {
 
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > <h5 className="heading">Ingredients</h5>
+                    <Col lg="3" md="6" > <h5 className= "home_heading">Ingredients </h5>
                       <FormGroup check className="ingredient_check">
                         <ul>
                           {ingredients.map(item =>
                             <li key={item['name']} className = "ingredient_list">
                               <Label check>
                             <Input type="checkbox"  />{' '}
-                                <span >{item}</span>
+                                <span>{item}</span>
                               </Label>
                              </li>
                           )}
@@ -109,11 +108,11 @@ export default class Home extends Component {
                     </Col>
 
                     <Col lg="9" md="6">
-                      <h5 className="heading"> Here's your new meal plan: </h5>
+                      <h5 className= "home_heading"> Here's your new meal plan: </h5>
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }
                         </ul>
-                        <h6> Your favourite recipes: </h6>
+                        <h5 className="fav_heading">Your favourite recipes: </h5>
 
                           {
                             !favouriteRecipes

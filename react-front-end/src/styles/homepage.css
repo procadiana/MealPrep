@@ -35,8 +35,6 @@ background-color: #F6F6F6;
   margin-right: 30px;
 }
 
-
-
 .signup_col {
   text-align: left;
   font-size: 30px;
@@ -91,8 +89,6 @@ background-color: #F6F6F6;
    text-align: left;
    margin-right: 20px;
    float: left;
-
-
 }
 .fav_meal_input {
 
@@ -134,6 +130,10 @@ background-color: #F6F6F6;
 .fixed-bottom{
   border : none;
   background-color: #F6F6F6;
+
+}
+.footer_font_size {
+  padding: 10px
 }
 
 .justify-content-end {
@@ -189,7 +189,22 @@ input[type=checkbox]:checked + span {
   text-align: center;
   margin-right: 230px;
 }
+.heading_mealplan {
+  margin-right: 415px
+}
 
+.float-right {
+  margin-right: 15px;
+}
+.home_heading {
+  text-align: center;
+  margin-right: 230px;
+}
+.fav_heading {
+  text-align: left;
+  margin-left: 130px;
+
+}
 
 
 
