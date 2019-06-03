@@ -1,14 +1,12 @@
-import React, {Component, useState} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText,Container, Col,Row} from 'reactstrap';
+import React, {Component} from 'react';
+import {Button, FormGroup, Label, Input,Container, Col,Row} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
-import History from './History.js';
+
 import Recipe from"./Recipe.jsx";
-import { EmailShareButton} from 'react-share';
-import { EmailIcon} from 'react-share';
+
 
 
 export default class MealPlan extends Component {

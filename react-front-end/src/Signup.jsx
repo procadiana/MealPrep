@@ -3,7 +3,7 @@ import {Button,Form, FormGroup, Label, Input, Container, Row,Col} from 'reactstr
 
 
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
+
 import sign from './img/Sign.jpg';
 import LayoutFooter from './Footer.jsx';
 

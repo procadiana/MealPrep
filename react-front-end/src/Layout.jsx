@@ -3,9 +3,7 @@ import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink,UncontrolledDropdo
 import './styles/homepage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from './img/Logo2.png';
-import login from './Login.jsx';
-import HomePage from './Homepage.jsx';
-import { logout, getCookie, setCookie } from './Cookie';
+import {  getCookie, setCookie } from './Cookie';
 import * as cookie from 'react-cookies';
 
 

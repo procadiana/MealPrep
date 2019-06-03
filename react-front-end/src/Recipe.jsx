@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button,Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 import axios from "axios";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
@@ -7,7 +7,7 @@ import "react-notifications-component/dist/theme.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
+
 
 export default class Recipe extends Component {
   constructor(props) {

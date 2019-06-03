@@ -1,17 +1,13 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 
-import MealPlan from "./MealPlan.jsx";
-
-import {Button,Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
+import {Button, FormGroup, Label, Input,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/homepage.css';
-import Layout from './Layout.jsx';
-import { EmailShareButton} from 'react-share';
 import { EmailIcon} from 'react-share';
 
-import History from './History.js';
+
 
 import Recipe from"./Recipe.jsx";
 
@@ -66,9 +62,8 @@ export default class Home extends Component {
 
   render(){
     const ingredients = this.state.ingredients
-    const {lastMealPlan, favouriteRecipes,user} = this.state
-    let mealplans = this.props.mealplans
-    console.log(favouriteRecipes)
+    const {lastMealPlan, favouriteRecipes} = this.state
+
       return(
         <div>
           <div className="float-right">
