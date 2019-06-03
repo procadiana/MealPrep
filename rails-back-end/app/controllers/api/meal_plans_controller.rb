@@ -53,11 +53,22 @@ class Api::MealPlansController < ApplicationController
     mealplan = MealPlan.last #.where(user_id: session[:user_id])
     recipes = mealplan.recipes
     recipes_names = ""
-    recipes.each { |r|
+        recipes.each { |r|
         recipes_names += r['name'] + ", "
       }
+    #getting ingredients for the first recipe of the plan
+    q_string= "#{BASE_URL}&#{API_PARTIAL_URL}&#{RECIPE_PARTIAL_URL + recipes[0].edaman_id}"
+    puts q_string
+    result = HTTParty.get(q_string)
+    puts ingredients = result[0]["ingredientLines"] #an array of ingredients
+    #converting the ingredients array in a string Alexa con read
+    ing_string = ""
+    ingredients.each { |i|
+      ing_string += i + ", "
+    }
     render json: {
-       recipes: recipes_names
+       recipes: recipes_names,
+       ingredients: ing_string
       }
   end
 
