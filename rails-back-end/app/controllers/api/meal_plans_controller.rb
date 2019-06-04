@@ -6,7 +6,7 @@ class Api::MealPlansController < ApplicationController
 
  def index
   #if current_user
-  mealplans = MealPlan.all.order(created_at: :desc) #.where(user_id: session[:user_id])
+  mealplans = MealPlan.where(user_id: session[:user_id]).order(created_at: :desc) #
   recipes = {}
   mealplans.each { |m|
        id = m.id
