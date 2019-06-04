@@ -21,7 +21,7 @@ export default class LayoutSignedIn extends Component {
     let content = <NavLink className = "nav_bar_names" href={'/login'} >Login</NavLink>
     if(this.props.authenticated){
       content = (<UncontrolledDropdown setActiveFromChild className="nav_bar_name">
-                <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Setting </DropdownToggle>
+                <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Settings </DropdownToggle>
                 <DropdownMenu>
                 <DropdownItem tag="a" href="/login" active>Edit User</DropdownItem>
                 <DropdownItem tag="a" href="/mealplan/new" active>Edit Meal Plan</DropdownItem>

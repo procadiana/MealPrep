@@ -87,16 +87,13 @@ logout = (name) => {
 }
 
  deleteItem(item){
-    const data = this.state.recipes.filter(i => i.id !== item.id)
-    this.setState({data})
-  }
-
-  // isLoggedIn = () =>{
-  //   axios.get('/api/logedin/').then(response =>{
+    axios.delete('/api/delete/').then(response =>{
   //     console.log(response.data)
   //     this.setState({authenticated: response.data.authenticated})
-  //   })
-  // }
+    })
+  }
+
+
   setLogin = (loggedin ) => {
     this.setState({authenticated: loggedin});
   }
