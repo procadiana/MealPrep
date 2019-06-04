@@ -23,8 +23,8 @@ export default class LayoutSignedIn extends Component {
       content = (<UncontrolledDropdown setActiveFromChild className="nav_bar_name">
                 <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Settings </DropdownToggle>
                 <DropdownMenu>
+                <DropdownItem tag="a" href="/home" active>Home</DropdownItem>
                 <DropdownItem tag="a" href="/login" active>Edit User</DropdownItem>
-                <DropdownItem tag="a" href="/mealplan/new" active>Edit Meal Plan</DropdownItem>
                 <DropdownItem tag="a" href="/mealplan/new" active>New Meal Plan</DropdownItem>
                 <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={this.props.logout} active>Logout</DropdownItem>
                 </DropdownMenu>
