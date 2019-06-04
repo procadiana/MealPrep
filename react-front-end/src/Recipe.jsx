@@ -84,11 +84,7 @@ export default class Recipe extends Component {
 
         <li key={item['id']} className ="recipe_display">
         <ReactNotification ref={this.notificationDOMRef} />
-<<<<<<< HEAD
-            <a href={item['shareAs']}><img  src={item['img_source']} className= "recipe_item" /></a>
-            <p className="recipe_name"><a href={item['shareAs']}>{item['name']}</a></p>
-            <span style={{display: 'inline', padding:'5px'}}>
-=======
+
             <a href={item['shareAs']}>
             <Figure className="recipe_bg">
             <Figure.Image
@@ -104,7 +100,6 @@ export default class Recipe extends Component {
             <a className="recipe_link" href={item['shareAs']}>{item['name']}</a>
             </span>
             </Figure.Caption>
->>>>>>> feature/design4
             <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
             <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
         </li>
