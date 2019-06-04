@@ -212,6 +212,7 @@ input[type=checkbox]:checked + span {
 
 }
 
+
 .align {
   display: inherit;
   margin: 0px;
@@ -234,6 +235,16 @@ input[type=checkbox]:checked + span {
 display: inline;
 padding:5px;
 }
+
+.red {
+  color: red;
+}
+
+.black{
+  color: black;
+}
+
+
 
 
 
