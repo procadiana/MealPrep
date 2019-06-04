@@ -28,19 +28,12 @@ import Moment from 'react-moment';
 
 
 
-
-
-
-
 library.add(faCheck)
 library.add(faHeart)
 library.add(faTimes)
 library.add(faPlus)
 library.add(faUser)
 library.add(faSpinner)
-
-
-
 
 
 class App extends Component {
@@ -96,7 +89,10 @@ logout = (name) => {
   // return cookie.remove(name, { path: '/' })
 }
 
-
+ deleteItem(item){
+    const data = this.state.recipes.filter(i => i.id !== item.id)
+    this.setState({data})
+  }
 
   // isLoggedIn = () =>{
   //   axios.get('/api/logedin/').then(response =>{
@@ -130,7 +126,7 @@ logout = (name) => {
 
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" render={(props) => <MealPlan {...props} ></MealPlan>} />
-          <Route exact path="/recipe" component={Recipe} /> //mealplan/:id/recipe??
+          <Route exact path="/recipe" render={() => <Recipe delete={this.deleteItem.bind(this)} /> } />//mealplan/:id/recipe??
           <Route exact path="/home" render={() => <Home ingredients={this.state.ingredients} mealplans={this.state.mealplans} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
           <Route exact path="/mealplans" render={() => <Archive /> } />
 
