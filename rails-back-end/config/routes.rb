@@ -13,8 +13,11 @@ Rails.application.routes.draw do
 
 
   namespace :api do
-    resources :meal_plans , only: [:index, :show, :create]
-    resources :recipes do
+    resources :meal_plans , only: [:index, :show, :create] do
+      post 'add_recipe'
+      post 'remove_recipe'
+    end
+    resources :recipes, only: [:index] do
       post 'favorite'
       get 'isfavorite'
     end
