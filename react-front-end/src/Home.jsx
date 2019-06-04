@@ -53,7 +53,6 @@ export default class Home extends Component {
 
   formatIngredientsForMail = () => {
     let emailBody = ''
-    console.log()
     this.state.ingredients.forEach((element,index) => {
         this.state.checked[index] ? emailBody += element +'  ✓ '+'%0D%0A' : emailBody += element +'%0D%0A'
 
@@ -72,9 +71,7 @@ export default class Home extends Component {
 
  componentDidMount() {
   this.getLastMealPlan()
-  var intervalId = setInterval(this.getFavouriteRecipes(), 1);
-
-   // store intervalId in the state so it can be accessed later:
+  var intervalId = setInterval(this.getFavouriteRecipes, 10);
 
   }
 

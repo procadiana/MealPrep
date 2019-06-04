@@ -22,22 +22,12 @@ export default class Recipe extends Component {
   }
 
 
-
   componentDidMount() {
     if(this.props.recipe.favorite){
       this.setState({favorite: true})
     }
 
   }
-//   var intervalId = setInterval(this.setState({favorite: this.state.favorite}), 1);
-//    // store intervalId in the state so it can be accessed later:
-//    this.setState({intervalId: intervalId});
-// }
-
-//    componentWillUnmount() {
-//       clearInterval(this.state.intervalId);
-//     }
-
 
 
   addNotification() {
@@ -80,25 +70,8 @@ export default class Recipe extends Component {
     }axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
           .then((response) =>{
         })
-    // localStorage.favorite = JSON.stringify(favorite);
+
 }
-
-
-
-
-
-// color {
-//   favourite: 'red',
-// }
-
-// isFavourite(){
-//   if(this.props.favorite === true){
-//     color
-//   }
-// }
-// componentDidMount() {
-//   this.addNotification()
-// }
 
   render() {
 
