@@ -36,17 +36,16 @@ class Api::MealPlansController < ApplicationController
   end
 
   def last
-    #if current_user
-      mealplan = MealPlan.last #.where(user_id: session[:user_id])
+      user = current_user
+      mealplan = MealPlan.where(user_id: session[:user_id]).last
       recipes = mealplan.recipes
-      #ingredients = list_of_ingredients(recipes)
       shopping_list = shopping_list(recipes)
+
       render json: {
        mealplan: mealplan,
-       recipes: recipes,
+       recipes: mealplan.recipes_json,
        ingredients: shopping_list
       }
-    #end
   end
 
   def alexa
@@ -56,6 +55,7 @@ class Api::MealPlansController < ApplicationController
         recipes.each { |r|
         recipes_names += r['name'] + ", "
       }
+
     #getting ingredients for the first recipe of the plan
     q_string= "#{BASE_URL}&#{API_PARTIAL_URL}&#{RECIPE_PARTIAL_URL + recipes[0].edaman_id}"
     puts q_string
@@ -68,6 +68,7 @@ class Api::MealPlansController < ApplicationController
     }
     render json: {
        recipes: recipes_names,
+       arrRecipes: recipes,
        ingredients: ing_string
       }
   end

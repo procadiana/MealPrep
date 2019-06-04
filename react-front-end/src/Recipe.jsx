@@ -12,7 +12,7 @@ export default class Recipe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favourite: false,
+      favorite: false,
       recipe: []
       };
     this.addNotification = this.addNotification.bind(this);
@@ -21,21 +21,26 @@ export default class Recipe extends Component {
 
   }
 
-  componentDidMount() {
-    axios.get(`/api/recipes/${this.props.recipe.id}/favorite`)
-          .then((response) =>{
-            this.setState({favourite: response.data})
 
-    // set the state
-  })
-}
+
+  componentDidMount() {
+      this.intervalID = setInterval(
+      () => this.setState({ favorite: this.props.favorite}),
+      10
+
+    )
+  }
+
+   componentWillUnmount() {
+      clearInterval(this.intervalID);
+    }
 
 
 
   addNotification() {
-    if (this.state.favourite){
+    if (this.state.favorite){
       this.setState({
-        favourite: false
+        favorite: false
       })
       }else {
         this.notificationDOMRef.current.addNotification({
@@ -49,7 +54,7 @@ export default class Recipe extends Component {
           dismissable: { click: true }
         });
          this.setState({
-          favourite: true
+          favorite: true
          })
          axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
           .then((response) =>{
@@ -78,9 +83,9 @@ export default class Recipe extends Component {
             <a href={item['shareAs']}><img  src={item['img_source']} className= "recipe_item" /></a>
             <p><a href={item['shareAs']}>{item['name']}</a></p>
             <span style={{display: 'inline', padding:'5px'}}>
-            <FontAwesomeIcon icon="heart" href='' onClick={this.addNotification} style={{color: this.state.favourite  ? 'red': 'black'}}  />  &nbsp;&nbsp; &nbsp;&nbsp;
-            <FontAwesomeIcon icon="times" href='' onClick={this.props.delete}/>  &nbsp;&nbsp;&nbsp;&nbsp;
-            <FontAwesomeIcon icon="check" href='' />  &nbsp;&nbsp;   </span>
+            <FontAwesomeIcon icon="heart" onClick={this.addNotification} style={{color: item.favorite  ? 'red': 'black'}}  />  &nbsp;&nbsp; &nbsp;&nbsp;
+            <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
         </li>
 
         </>

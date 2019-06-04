@@ -81,7 +81,7 @@ export default class Home extends Component {
                       <FormGroup check className="ingredient_check">
                         <ul>
                           {ingredients.map(item =>
-                            <li key={item['name']} className = "ingredient_list">
+                            <li key={item} className = "ingredient_list">
                               <Label check>
                             <Input type="checkbox"  />{' '}
                                 <span>{item}</span>
@@ -98,14 +98,14 @@ export default class Home extends Component {
                     <Col lg="9" md="6">
                       <h5 className= "home_heading"> Here's your new meal plan: </h5>
                         <ul>
-                          { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }
+                          { lastMealPlan.recipes.map(item => <Recipe key={item.id} recipe={item}/>) }
                         </ul>
                         <h5 className="fav_heading">Your favourite recipes: </h5>
 
                           {
                             !favouriteRecipes
                             ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}} />
-                            : <ul> { favouriteRecipes.map(item => <Recipe recipe={item} />) }</ul>
+                            : <ul> { favouriteRecipes.map(item => <Recipe key={item.id} recipe={item} />) }</ul>
                           }
                     </Col>
                   </Row>

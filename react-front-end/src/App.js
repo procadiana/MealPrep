@@ -126,7 +126,7 @@ logout = (name) => {
 
           <Route exact path="/mealplan/new" component={MealSettings} />
           <Route exact path="/mealplan/:id" render={(props) => <MealPlan {...props} ></MealPlan>} />
-          <Route exact path="/recipe" render={() => <Recipe delete={this.deleteItem.bind(this)} /> } />//mealplan/:id/recipe??
+          <Route exact path="/recipe" render={() => <Recipe deleteItem={this.deleteItem.bind(this)} /> } />//mealplan/:id/recipe??
           <Route exact path="/home" render={() => <Home ingredients={this.state.ingredients} mealplans={this.state.mealplans} recipes={this.state.recipes} mealplan={this.state.mealplan}/> } />
           <Route exact path="/mealplans" render={() => <Archive /> } />
 

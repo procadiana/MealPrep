@@ -9,4 +9,8 @@ class Recipe < ApplicationRecord
 
   has_many :recipes_diet_types
   has_many :diet_types, :through => :recipes_diet_types
+
+  def favorited_by?(user)
+    !!users.find_by(id: user.id)
+  end
 end

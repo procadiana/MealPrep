@@ -2,13 +2,9 @@ class Api::RecipesController < ApplicationController
 
 
   def index
-    user = current_user
-    if user
-      recipes = user.recipes
-      render json: {
-        recipes: recipes  #array of recipes
-      }
-    end
+    render json: {
+      recipes: recipes_json
+    }
   end
 
 
@@ -45,5 +41,14 @@ class Api::RecipesController < ApplicationController
     render json: {
           favorite: favorite
         }
+  end
+
+  private
+
+  def recipes_json
+    return {} unless current_user
+
+    user = current_user
+    user.recipes_json
   end
 end
