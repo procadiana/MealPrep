@@ -12,7 +12,6 @@ import MealSettings from './MealSettings.jsx';
 import MealPlan from './MealPlan.jsx';
 import Recipe from './Recipe.jsx';
 import Archive from './Archive.jsx';
-
 import * as cookie from 'react-cookies';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
@@ -21,9 +20,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { EmailShareButton} from 'react-share';
 import Moment from 'react-moment';
 
 
