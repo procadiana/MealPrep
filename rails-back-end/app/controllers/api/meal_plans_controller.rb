@@ -47,7 +47,7 @@ class Api::MealPlansController < ApplicationController
   end
 
   def alexa
-    mealplan = MealPlan.where(user_id: session[:user_id]).last #
+    mealplan = MealPlan.last #.where(user_id: session[:user_id])
     recipes = mealplan.recipes
     recipes_names = ""
         recipes.each { |r|
