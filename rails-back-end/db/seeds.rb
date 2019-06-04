@@ -73,6 +73,10 @@ recipe13 = Recipe.create! name: 'Chicken Marengo', edaman_id: '182eb4e5d92618a9e
 recipe14 = Recipe.create! name: 'Potato & salmon grill', edaman_id: 'aba3caf2c01fa25a4bd3914767f2a22a', main_ingredient: 'salmon', servings: 4, img_source:'https://www.edamam.com/web-img/079/0791b0be9ad3272b4bd899a41b557fc5.jpg', shareAs: 'http://www.edamam.com/recipe/potato-salmon-grill-aba3caf2c01fa25a4bd3914767f2a22a/potato-salmon'
 recipe15 = Recipe.create! name: 'Potato Chip–Crust Salmon', edaman_id: 'd6c36964962a31e770e4a03b36a57409', main_ingredient: 'salmon', servings: 2, img_source:'https://www.edamam.com/web-img/20b/20b726d1c639601cc604182f35dd431f.jpg', shareAs: 'http://www.edamam.com/recipe/dinner-tonight-potato-chip-crust-salmon-d6c36964962a31e770e4a03b36a57409/potato-salmon'
 recipe16 = Recipe.create! name: 'Salmon Fillets With Horseradish-Potato Crust', edaman_id: '1e29f6599d3e86b8608a8dac7decdeab', main_ingredient: 'salmon', servings: 2, img_source:'https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/18151406/potato-crusted-fish-main.jpg', shareAs: ''
+recipe17 = Recipe.create! name: '25-Minute Chicken & Noodles', edaman_id: 'a69993d4ad2cd619bd6128df284a3968', main_ingredient: 'chicken', servings: 4, img_source:'https://www.edamam.com/web-img/476/476ccf0e658c8719da9658e967cd23ce.jpeg', shareAs: 'http://www.edamam.com/recipe/25-minute-chicken-noodles-a69993d4ad2cd619bd6128df284a3968/chicken-noodles'
+recipe18 = Recipe.create! name: 'Chicken Couscous Salad', edaman_id: '8958acf73e4433fbcdaaffee03836225', main_ingredient: 'chicken', servings: 4, img_source:'https://www.edamam.com/web-img/032/032e0e43e1a678f463cf86c96a4b1511.jpg', shareAs: 'http://www.edamam.com/recipe/chicken-couscous-salad-8958acf73e4433fbcdaaffee03836225/chicken-couscous'
+recipe19 = Recipe.create! name: 'Flambéed Chicken With Asparagus', edaman_id: '9f71b9c53d2b3cf2d2fe410e581385aa', main_ingredient: 'chicken', servings: 4, img_source:'https://www.edamam.com/web-img/61a/61a811d03c8ad9202fe81f12b2ea2228.jpg', shareAs: 'http://www.edamam.com/recipe/flamb%C3%A9ed-chicken-with-asparagus-9f71b9c53d2b3cf2d2fe410e581385aa/flamb%C3%A9ed-chicken'
+#recipe = Recipe.create! name: '', edaman_id: '', main_ingredient: '', servings: , img_source:'', shareAs: ''
 
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe1
 MealPlansRecipe.create! meal_plan: meal_plan1, recipe: recipe2
@@ -124,6 +128,18 @@ RecipesAllergy.create! recipe: recipe15, allergy: allergy_n
 RecipesAllergy.create! recipe: recipe16, allergy: allergy_w
 RecipesAllergy.create! recipe: recipe16, allergy: allergy_g
 RecipesAllergy.create! recipe: recipe16, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe17, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe17, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe17, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe18, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe18, allergy: allergy_d
+RecipesAllergy.create! recipe: recipe18, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe18, allergy: allergy_n
+RecipesAllergy.create! recipe: recipe19, allergy: allergy_e
+RecipesAllergy.create! recipe: recipe19, allergy: allergy_f
+RecipesAllergy.create! recipe: recipe19, allergy: allergy_n
+
+
 
 
 
