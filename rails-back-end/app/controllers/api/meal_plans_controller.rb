@@ -113,7 +113,25 @@ class Api::MealPlansController < ApplicationController
    }
  end
 
+ def remove_recipe
+  puts params
+  mr = MealPlansRecipe.find_by(meal_plan_id: params[:meal_plan_id], recipe_id: params[:recipe_id])
+  if mr
+    mr.delete
+    puts "The recipe was deleted from mealplan with id #{params[:meal_plan_id]}"
+  end
+ end
 
+ def add_recipe
+  puts params
+  mr = MealPlansRecipe.find_by(meal_plan_id: params[:meal_plan_id], recipe_id: params[:recipe_id])
+  if !mr
+    mr = MealPlansRecipe.new
+    mr.meal_plan_id = params[:meal_plan_id]
+    mr.recipe_id = params[:recipe_id]
+    MealPlansRecipe.create!
+  end
+ end
  private
 
  # def list_of_ingredients (recipes)
