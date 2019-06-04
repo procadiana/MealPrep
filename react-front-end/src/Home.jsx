@@ -71,10 +71,12 @@ export default class Home extends Component {
 
  componentDidMount() {
   this.getLastMealPlan()
-  var intervalId = setInterval(this.getFavouriteRecipes, 10);
-
+  var intervalId = setInterval(this.getFavouriteRecipes, 1000);
+  this.setState({intervalId: intervalId});
   }
-
+  componentWillMount(){
+     clearInterval(this.state.intervalId)
+  }
 
 
   render(){
@@ -85,16 +87,13 @@ export default class Home extends Component {
       return(
         <div>
 
-          <div className="float-right">
+          <div >
              <Button variant="primary" color="success" className="new_plan_button" href='/mealplan/new'>
                 <FontAwesomeIcon icon="plus" /> New Meal Plan</Button>
             <Nav>
-            <NavItem>
-
-              <Button variant="primary" className="previous_plan_button" href="/mealplans">
-                View Previous Meal Plans</Button>
-
-             </NavItem>
+              <NavItem>
+                <NavLink href="/mealplans" className="link">View Previous Meal Plans</NavLink>
+              </NavItem>
             </Nav>
           </div>
           <Container className= "home_meal_plan">
@@ -124,7 +123,7 @@ export default class Home extends Component {
                         </ul>
                       </FormGroup>
                       <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
-                        <EmailIcon size={50} /> </a>
+                        <EmailIcon size={30} /> </a>
 
                     </Col>
 
@@ -133,7 +132,7 @@ export default class Home extends Component {
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe key={item.id} recipe={item}/>) }
                         </ul>
-                        <h5 className="fav_heading">Your favourite recipes  </h5>
+                        <h5 className="fav_heading">Your favourite recipes: </h5>
 
                           {
                             !favouriteRecipes

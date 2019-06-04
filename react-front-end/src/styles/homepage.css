@@ -1,6 +1,8 @@
 .nav_bar {
 background-color: #F6F6F6;
 }
+
+
 .nav_bar_name{
   color: #718087;
 }
@@ -83,10 +85,17 @@ background-color: #F6F6F6;
 
   font-size: 20px;
   width: 200px;
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-right: 165px;
+  float:right;
 
 
 }
+
+.link{
+float:right;
+}
+
 .previous_plan_button{
   width: 200px;
   font-size: 15px;
@@ -95,7 +104,7 @@ background-color: #F6F6F6;
 
 }
 .home_meal_plan{
-  margin-top:50px;
+  margin-top:80px;
 }
 .fav_meal-plans {
    text-align: left;
@@ -190,11 +199,7 @@ background-color: #F6F6F6;
 .recipe_item {
   width:150px;
 }
-.recipe_name{
-  width:150px;
-  overflow-wrap: normal;
 
-}
 
 
 .heading {
