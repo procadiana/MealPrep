@@ -13,10 +13,10 @@ export default class Recipe extends Component {
     super(props);
     this.state = {
       favorite: false,
-      recipe: []
+      recipe: [],
+      color: 'black'
       };
     this.addNotification = this.addNotification.bind(this);
-
     this.notificationDOMRef = React.createRef();
 
   }
@@ -24,24 +24,42 @@ export default class Recipe extends Component {
 
 
   componentDidMount() {
-      this.intervalID = setInterval(
-      () => this.setState({ favorite: this.props.favorite}),
-      10
-
-    )
-  }
-
-   componentWillUnmount() {
-      clearInterval(this.intervalID);
+    console.log(this.props.recipe.favorite)
+    if(this.props.recipe.favorite){
+      this.setState({favorite: true})
     }
+
+  }
+//   var intervalId = setInterval(this.setState({favorite: this.state.favorite}), 1);
+//    // store intervalId in the state so it can be accessed later:
+//    this.setState({intervalId: intervalId});
+// }
+
+//    componentWillUnmount() {
+//       clearInterval(this.state.intervalId);
+//     }
 
 
 
   addNotification() {
+    var favorite = this.state.favorite
     if (this.state.favorite){
       this.setState({
-        favorite: false
+        favorite: false,
+        color: 'black'
       })
+
+      this.notificationDOMRef.current.addNotification({
+          type: "warning",
+          message: "Your recipe was removed from favourites.",
+          insert: "top",
+          container: "top-center",
+          animationIn: ["animated", "fadeIn"],
+          animationOut: ["animated", "fadeOut"],
+          dismiss: { duration: 500 },
+          dismissable: { click: true }
+        });
+      // localStorage.favorite = JSON.stringify(favorite);
       }else {
         this.notificationDOMRef.current.addNotification({
           type: "success",
@@ -53,28 +71,42 @@ export default class Recipe extends Component {
           dismiss: { duration: 500 },
           dismissable: { click: true }
         });
-         this.setState({
-          favorite: true
-         })
-         axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
-          .then((response) =>{
-
+        this.setState({
+          favorite: true,
+          color:'red'
         })
-      }
-  }
+
+        axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
+          .then((response) =>{
+        })
+// window.location.reload()
+    }
+    // localStorage.favorite = JSON.stringify(favorite);
+}
 
 
 
 
-  // isFavourite = () =>
-  //   axios.get(`/api/recipe/${this.props.recipe.id}`).then(response =>{
-  // }
 
+// color {
+//   favourite: 'red',
+// }
 
+// isFavourite(){
+//   if(this.props.favorite === true){
+//     color
+//   }
+// }
+// componentDidMount() {
+//   this.addNotification()
+// }
 
   render() {
 
+
+
     const item = this.props.recipe
+
     return (
         <>
 
@@ -83,7 +115,7 @@ export default class Recipe extends Component {
             <a href={item['shareAs']}><img  src={item['img_source']} className= "recipe_item" /></a>
             <p><a href={item['shareAs']}>{item['name']}</a></p>
             <span style={{display: 'inline', padding:'5px'}}>
-            <FontAwesomeIcon icon="heart" onClick={this.addNotification} style={{color: item.favorite  ? 'red': 'black'}}  />  &nbsp;&nbsp; &nbsp;&nbsp;
+            <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
             <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
             </span>
         </li>

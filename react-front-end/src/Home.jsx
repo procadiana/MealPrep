@@ -49,8 +49,13 @@ export default class Home extends Component {
 
  componentDidMount() {
   this.getLastMealPlan()
-  this.getFavouriteRecipes()
- }
+  var intervalId = setInterval(this.getFavouriteRecipes(), 1);
+
+   // store intervalId in the state so it can be accessed later:
+
+  }
+
+
 
   render(){
     const ingredients = this.state.ingredients
@@ -105,7 +110,7 @@ export default class Home extends Component {
                           {
                             !favouriteRecipes
                             ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}} />
-                            : <ul> { favouriteRecipes.map(item => <Recipe key={item.id} recipe={item} />) }</ul>
+                            : <ul> { favouriteRecipes.map(item => <Recipe key={item.id} recipe={item}  />) }</ul>
                           }
                     </Col>
                   </Row>

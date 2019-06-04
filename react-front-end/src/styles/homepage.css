@@ -209,9 +209,13 @@ input[type=checkbox]:checked + span {
 }
 
 
+.red {
+  color: red;
+}
 
-
-
+.black{
+  color: black;
+}
 
 
 
