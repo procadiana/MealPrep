@@ -196,11 +196,11 @@ input[type=checkbox]:checked + span {
 }
 .home_heading {
   text-align: center;
-  margin-right: 230px;
+  margin-right: 245px;
 }
 .fav_heading {
   text-align: left;
-  margin-left: 130px;
+  margin-left: 120px;
 
 }
 .mealset_heading {
@@ -215,25 +215,25 @@ input[type=checkbox]:checked + span {
 .align {
   display: inherit;
   margin: 0px;
-  padding: 0px;
+  padding: 5px;
 }
-.recipe_item {
-  height: 80px;
-   width: 80px;
-}
-#archive_item {
+
+.archive_item{
   float: right;
   display:inline;
+  padding-left: 5px;
 }
 .archive_home_heading{
   margin-top: 25px;
-text-align: left;
- margin-left: 150px;
+  text-align: left;
+  margin-left: 215px;
 
 
 }
-
-
+.recipe_display_item{
+display: inline;
+padding:5px;
+}
 
 
 

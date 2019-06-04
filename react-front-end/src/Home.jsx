@@ -19,11 +19,14 @@ export default class Home extends Component {
       lastMealPlan: "",
       favouriteRecipes: [],
       ingredients:[],
+      checked: [],
+
       user: {
         email: "diana.claudia.ilinca@gmail.com"
 
             }
     }
+    this.checkedChanged = this.checkedChanged.bind(this)
 
   }
 
@@ -31,6 +34,14 @@ export default class Home extends Component {
   getLastMealPlan = () => {
     axios.get('/api/meal_plans/last').then((response) => {
       this.setState({lastMealPlan: response.data, ingredients:response.data.ingredients})
+      const l = this.state.ingredients.length
+      console.log(l)
+      const check = []
+      for(let i = 0; i < l; i++){
+        check.push(false)
+      }
+      this.setState({checked: check})
+      console.log(this.state.checked)
     })
   }
 
@@ -39,12 +50,24 @@ export default class Home extends Component {
       this.setState({favouriteRecipes: response.data.recipes})
     })
   }
+
   formatIngredientsForMail = () => {
     let emailBody = ''
-    this.state.ingredients.forEach(element => {
-          emailBody += element+'%0D%0A'
-      })
+    console.log()
+    this.state.ingredients.forEach((element,index) => {
+        this.state.checked[index] ? emailBody += element +'  ✓ '+'%0D%0A' : emailBody += element +'%0D%0A'
+
+    })
     return emailBody
+  }
+
+  checkedChanged(event){
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
+    const check = this.state.checked
+    check[name] = !check[name]
+    this.setState({checked: check})
   }
 
  componentDidMount() {
@@ -59,6 +82,7 @@ export default class Home extends Component {
 
       return(
         <div>
+
           <div className="float-right">
              <Button variant="primary" color="success" className="new_plan_button" href='/mealplan/new'>
                 <FontAwesomeIcon icon="plus" /> New Meal Plan</Button>
@@ -79,13 +103,15 @@ export default class Home extends Component {
                   <Row>
                     <Col lg="3" md="6" > <h5 className= "home_heading">Ingredients </h5>
                       <FormGroup check className="ingredient_check">
+
                         <ul>
-                          {ingredients.map(item =>
-                            <li key={item['name']} className = "ingredient_list">
-                              <Label check>
-                            <Input type="checkbox"  />{' '}
+                          {ingredients.map((item,index) =>
+                            <li className = "ingredient_list" >
+                            <input id={index} key={index}
+                          name={index}
+                          type="checkbox"
+                          onChange={this.checkedChanged} />
                                 <span>{item}</span>
-                              </Label>
                              </li>
                           )}
                         </ul>
@@ -100,7 +126,7 @@ export default class Home extends Component {
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe recipe={item}/>) }
                         </ul>
-                        <h5 className="fav_heading">Your favourite recipes: </h5>
+                        <h5 className="fav_heading">Your favourite recipes 😀 </h5>
 
                           {
                             !favouriteRecipes
