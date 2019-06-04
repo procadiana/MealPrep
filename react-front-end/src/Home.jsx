@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Button, FormGroup, Label, Input,Container, Col,Row,Nav,NavLink,NavItem} from 'reactstrap';
+import {Button, FormGroup, Label, Input,Container, Col,Row} from 'reactstrap';
 import LayoutFooter from './Footer.jsx';
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -85,17 +85,12 @@ export default class Home extends Component {
       return(
         <div>
 
-          <div className="float-right">
+          <div className="button_home">
              <Button variant="primary" color="success" className="new_plan_button" href='/mealplan/new'>
-                <FontAwesomeIcon icon="plus" /> New Meal Plan</Button>
-            <Nav>
-            <NavItem>
+                <FontAwesomeIcon icon="plus" /> New Meal Plan</Button> <br/>
 
               <Button variant="primary" className="previous_plan_button" href="/mealplans">
                 View Previous Meal Plans</Button>
-
-             </NavItem>
-            </Nav>
           </div>
           <Container className= "home_meal_plan">
 
@@ -114,9 +109,9 @@ export default class Home extends Component {
                           {ingredients.map((item,index) =>
                             <li className = "ingredient_list" >
                             <input id={index} key={index}
-                          name={index}
-                          type="checkbox"
-                          onChange={this.checkedChanged} />
+                                name={index}
+                                type="checkbox"
+                                onChange={this.checkedChanged} />
 
                                 <span>{item}</span>
                              </li>
@@ -133,7 +128,7 @@ export default class Home extends Component {
                         <ul>
                           { lastMealPlan.recipes.map(item => <Recipe key={item.id} recipe={item}/>) }
                         </ul>
-                        <h5 className="fav_heading">Your favourite recipes  </h5>
+                        <h5 className="home_heading">Your favourite recipes  </h5>
 
                           {
                             !favouriteRecipes

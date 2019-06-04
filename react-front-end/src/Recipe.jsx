@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
+import Figure from 'react-bootstrap/Figure'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -80,19 +81,29 @@ export default class Recipe extends Component {
     const item = this.props.recipe
 
     return (
-        <>
 
         <li key={item['id']} className ="recipe_display">
         <ReactNotification ref={this.notificationDOMRef} />
-            <a href={item['shareAs']}><img  src={item['img_source']} className= "recipe_item" /></a>
-            <p><a href={item['shareAs']}>{item['name']}</a></p>
-            <span style={{display: 'inline', padding:'5px'}}>
+            <a href={item['shareAs']}>
+            <Figure className="recipe_bg">
+            <Figure.Image
+            width={200}
+            height={200}
+            alt="171x180"
+            src={item['img_source']}/>
+            </Figure>
+
+            </a>
+            <Figure.Caption>
+            <span>
+            <a className="recipe_link" href={item['shareAs']}>{item['name']}</a>
+            </span>
+            </Figure.Caption>
             <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
             <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
         </li>
 
-        </>
+
       )
   }
 }

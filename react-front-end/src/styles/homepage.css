@@ -158,39 +158,53 @@ background-color: #F6F6F6;
 }
 .ingredient_list {
   display: block;
+  padding-right: 10px;
 
 
 }
+/*.recipe_bg {
+  box-shadow: 7px 13px 14px 4px rgba(173,54,173,1);
+}*/
 .meal_plans{
   margin-top: 50px;
 }
 .ingredient_check {
   text-align:left;
+  padding: 10px;
+  margin-right: 5px;
   font-size: 12px;
+  margin-left: 12px;
 
 }
 .email {
   float:right;
+
 }
 
 .recipe_display {
   display: inline-block;
   margin: 15px;
+  border-radius: 5px;
+  color: #718087;
+  background-color: #F6F6F6;
+
+}
+.dashboard {
+  margin-left: 900px;
+}
+.button_home{
+  margin-left: 900px;
+
+}
+.recipe_link {
+  color: #718087;
 }
 .recipe_span {
   display: inline;
   padding: 5px;
 
 }
-.recipe_item {
-  width:150px;
-}
 
-
-.heading {
-  text-align: center;
-  margin-right: 230px;
-}
 .heading_mealplan {
   margin-right: 415px
 }
@@ -199,8 +213,8 @@ background-color: #F6F6F6;
   margin-right: 15px;
 }
 .home_heading {
-  text-align: center;
-  margin-right: 245px;
+  text-align: left;
+  margin-left: 90px;
 }
 .fav_heading {
   text-align: left;
@@ -215,7 +229,10 @@ background-color: #F6F6F6;
   float: left;
 
 }
-
+input[type=checkbox]:checked + span {
+  color: black;
+  text-decoration: line-through;
+}
 
 
 .align {
