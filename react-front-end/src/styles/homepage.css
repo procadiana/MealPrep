@@ -82,6 +82,13 @@ background-color: #F6F6F6;
 
 
 }
+.previous_plan_button{
+  width: 200px;
+  font-size: 15px;
+  margin-top: 5px;
+  background-color: #718087;
+
+}
 .home_meal_plan{
   margin-top:50px;
 }
@@ -179,10 +186,7 @@ background-color: #F6F6F6;
   width:150px;
 }
 
-input[type=checkbox]:checked + span {
-  color: black;
-  text-decoration: line-through;
-}
+
 .heading {
   text-align: center;
   margin-right: 230px;
@@ -205,12 +209,13 @@ input[type=checkbox]:checked + span {
 }
 .mealset_heading {
   text-align: left;
-  margin-left: 150px;
+  margin-left: 20px;
 }
 .archive_time {
   float: left;
 
 }
+
 
 
 .align {
@@ -219,22 +224,20 @@ input[type=checkbox]:checked + span {
   padding: 5px;
 }
 
+
 .archive_item{
-  float: right;
   display:inline;
   padding-left: 5px;
 }
 .archive_home_heading{
-  margin-top: 25px;
-  text-align: left;
-  margin-left: 215px;
-
+  margin-top: 30px;
 
 }
 .recipe_display_item{
 display: inline;
 padding:5px;
 }
+
 
 .red {
   color: red;
@@ -245,6 +248,14 @@ padding:5px;
 }
 
 
+
+
+.food-flex{
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+
+}
 
 
 
