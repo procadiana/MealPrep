@@ -36,21 +36,26 @@ export default class Archive extends Component {
   render(){
     return(
       <div>
-      <h5 className= "archive_home_heading">Previous Meal Plans : </h5>
+      <Container>
+        <h4 className= "archive_home_heading">Previous Meal Plans  </h4>
 
+              <ul>
 
-
-              <ul className="align">
 
                 <li className="archive_item">{this.state.mealplans.map(item =>
-                    <p key={item.id}> <span className="archive_time">Created at <Moment format="LLLL" date={item.created_at} /></span>
-                    {this.state.recipes && Array.isArray(this.state.recipes[item.id]) && this.state.recipes[item.id].map(items =>
-                     <Recipe recipe={items} />
+
+                    <div key={item.id} > <h6 className="archive_time" >Created at <Moment format="LLLL" date={item.created_at} /> </h6><div className='food-flex'>
+                   {this.state.recipes && Array.isArray(this.state.recipes[item.id]) && this.state.recipes[item.id].map(items =>
+                    <span className="div_image"><Recipe recipe={items} /></span>
                     )}
-                    </p>
+                    </div> </div>
                 )}
                 </li>
+
               </ul>
+
+
+      </Container>
 
 
       <LayoutFooter />
