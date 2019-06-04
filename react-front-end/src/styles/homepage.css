@@ -9,10 +9,15 @@ background-color: #F6F6F6;
   color: #e33d26;
 }
 
-
+#login{
+  background-color: salmon;
+  font-size: 20;
+  color: white;
+  border:0;
+}
 .list-group {
   text-align: left;
-  font-size: 30px;
+  font-size: 28px;
   width: 100%;
   padding-top: 15px;
   margin-top: 25px;
@@ -142,7 +147,7 @@ background-color: #F6F6F6;
 }
 
 .justify-content-end {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 
@@ -184,6 +189,11 @@ background-color: #F6F6F6;
 }
 .recipe_item {
   width:150px;
+}
+.recipe_name{
+  width:150px;
+  overflow-wrap: normal;
+
 }
 
 

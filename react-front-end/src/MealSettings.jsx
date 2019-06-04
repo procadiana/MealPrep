@@ -63,7 +63,7 @@ class MealSettings extends Component {
 
 
             <Col lg="6" md="12">
-              <img class="home_image"  src={meal} style={{ height: 400 }} alt ="home"/ >
+              <img className="home_image"  src={meal} style={{ height: 400 }} alt ="home"/ >
 
             </Col>
 

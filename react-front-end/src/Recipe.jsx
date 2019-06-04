@@ -85,7 +85,7 @@ export default class Recipe extends Component {
         <li key={item['id']} className ="recipe_display">
         <ReactNotification ref={this.notificationDOMRef} />
             <a href={item['shareAs']}><img  src={item['img_source']} className= "recipe_item" /></a>
-            <p><a href={item['shareAs']}>{item['name']}</a></p>
+            <p className="recipe_name"><a href={item['shareAs']}>{item['name']}</a></p>
             <span style={{display: 'inline', padding:'5px'}}>
             <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
             <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
