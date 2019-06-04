@@ -75,11 +75,11 @@ export default class Recipe extends Component {
           color:'red'
         })
 
-        axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
+
+// window.location.reload()
+    }axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
           .then((response) =>{
         })
-// window.location.reload()
-    }
     // localStorage.favorite = JSON.stringify(favorite);
 }
 
