@@ -1,8 +1,6 @@
 .nav_bar {
 background-color: #F6F6F6;
 }
-
-
 .nav_bar_name{
   color: #718087;
 }
@@ -85,17 +83,10 @@ background-color: #F6F6F6;
 
   font-size: 20px;
   width: 200px;
-  margin-top: 20px;
-  margin-right: 165px;
-  float:right;
+  margin-top: 15px;
 
 
 }
-
-.link{
-float:right;
-}
-
 .previous_plan_button{
   width: 200px;
   font-size: 15px;
@@ -104,7 +95,7 @@ float:right;
 
 }
 .home_meal_plan{
-  margin-top:80px;
+  margin-top:50px;
 }
 .fav_meal-plans {
    text-align: left;
@@ -172,59 +163,44 @@ float:right;
 }
 .ingredient_list {
   display: block;
-  padding-right: 10px;
 
 
 }
-/*.recipe_bg {
-  box-shadow: 7px 13px 14px 4px rgba(173,54,173,1);
-}*/
 .meal_plans{
   margin-top: 50px;
 }
 .ingredient_check {
   text-align:left;
-  padding: 10px;
-  margin-right: 5px;
   font-size: 12px;
-  margin-left: 12px;
 
 }
 .email {
   float:right;
-
 }
 
 .recipe_display {
   display: inline-block;
   margin: 15px;
-  border-radius: 5px;
-  color: #718087;
-  background-color: #F6F6F6;
-
-}
-.dashboard {
-  margin-left: 900px;
-}
-.button_home{
-  margin-left: 900px;
-
-}
-.recipe_link {
-  color: #718087;
 }
 .recipe_span {
   display: inline;
   padding: 5px;
 
 }
-
 .recipe_item {
   width:150px;
 }
+.recipe_name{
+  width:150px;
+  overflow-wrap: normal;
+
+}
 
 
-
+.heading {
+  text-align: center;
+  margin-right: 230px;
+}
 .heading_mealplan {
   margin-right: 415px
 }
@@ -233,8 +209,8 @@ float:right;
   margin-right: 15px;
 }
 .home_heading {
-  text-align: left;
-  margin-left: 90px;
+  text-align: center;
+  margin-right: 245px;
 }
 .fav_heading {
   text-align: left;
@@ -249,10 +225,7 @@ float:right;
   float: left;
 
 }
-input[type=checkbox]:checked + span {
-  color: black;
-  text-decoration: line-through;
-}
+
 
 
 .align {
