@@ -20,7 +20,7 @@ class Api::MealPlansController < ApplicationController
  end
 
  def show
-  #if current_user
+  if current_user
    mealplan = MealPlan.find(params[:id])
    recipes = mealplan.recipes
    #ingredients = list_of_ingredients(recipes)
@@ -30,9 +30,7 @@ class Api::MealPlansController < ApplicationController
        recipes: recipes,
        ingredients: shopping_list
       }
-  #   else
-  #     puts "user not allowed to see this mealplan"
-  #end
+    end
   end
 
   def last
@@ -49,7 +47,7 @@ class Api::MealPlansController < ApplicationController
   end
 
   def alexa
-    mealplan = MealPlan.last #.where(user_id: session[:user_id])
+    mealplan = MealPlan.where(user_id: session[:user_id]).last #
     recipes = mealplan.recipes
     recipes_names = ""
         recipes.each { |r|
@@ -77,7 +75,6 @@ class Api::MealPlansController < ApplicationController
 
  def create
    puts params
-   #raise "Yay, I'm here!"
    recipes = Recipe.where(servings: params[:servings]).limit(params[:days]) #.take(params[:days])
    user = current_user #User.first
    diet_type = DietType.find_by(name: params[:diet])
