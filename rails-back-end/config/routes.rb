@@ -13,10 +13,10 @@ Rails.application.routes.draw do
 
 
   namespace :api do
-    #get '/data', to: 'tests#index'
     resources :meal_plans , only: [:index, :show, :create]
     resources :recipes do
       post 'favorite'
-    end#, only: [:create, :destroy, :index, :update]
+      get 'isfavorite'
+    end
   end
 end
