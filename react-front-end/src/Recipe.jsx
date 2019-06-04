@@ -22,22 +22,12 @@ export default class Recipe extends Component {
   }
 
 
-
   componentDidMount() {
     if(this.props.recipe.favorite){
       this.setState({favorite: true})
     }
 
   }
-//   var intervalId = setInterval(this.setState({favorite: this.state.favorite}), 1);
-//    // store intervalId in the state so it can be accessed later:
-//    this.setState({intervalId: intervalId});
-// }
-
-//    componentWillUnmount() {
-//       clearInterval(this.state.intervalId);
-//     }
-
 
 
   addNotification() {
@@ -80,25 +70,8 @@ export default class Recipe extends Component {
     }axios.post(`/api/recipes/${this.props.recipe.id}/favorite`)
           .then((response) =>{
         })
-    // localStorage.favorite = JSON.stringify(favorite);
+
 }
-
-
-
-
-
-// color {
-//   favourite: 'red',
-// }
-
-// isFavourite(){
-//   if(this.props.favorite === true){
-//     color
-//   }
-// }
-// componentDidMount() {
-//   this.addNotification()
-// }
 
   render() {
 
@@ -112,7 +85,7 @@ export default class Recipe extends Component {
         <li key={item['id']} className ="recipe_display">
         <ReactNotification ref={this.notificationDOMRef} />
             <a href={item['shareAs']}><img  src={item['img_source']} className= "recipe_item" /></a>
-            <p><a href={item['shareAs']}>{item['name']}</a></p>
+            <p className="recipe_name"><a href={item['shareAs']}>{item['name']}</a></p>
             <span style={{display: 'inline', padding:'5px'}}>
             <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
             <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;

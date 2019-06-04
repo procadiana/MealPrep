@@ -63,13 +63,13 @@ class MealSettings extends Component {
 
 
             <Col lg="6" md="12">
-              <img class="home_image"  src={meal} style={{ height: 400 }} alt ="home"/ >
+              <img className="home_image"  src={meal} style={{ height: 400 }} alt ="home"/ >
 
             </Col>
 
             <Col lg="6" md="12"style={{marginTop:50}} className="meal-form">
-              <h5 className="meal-plan mealset_heading">Fill-in the details below to create your meal plan</h5>
-            <Form onSubmit={this.onSubmit}>
+              <h5 className="mealset_heading">Fill-in the details below to create your meal plan</h5>
+            <Form className="meal-plan" onSubmit={this.onSubmit}>
          <FormGroup row >
           <Label for="select" md={4} className="meal-plans">Number of days:</Label>
           <Col >

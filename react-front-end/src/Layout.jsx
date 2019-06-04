@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Navbar, NavbarBrand, Nav, NavItem, NavLink,UncontrolledDropdown, DropdownToggle, DropdownMenu,DropdownItem} from 'reactstrap';
+import {Button, Container, Navbar, NavbarBrand, Nav, NavItem, NavLink,UncontrolledDropdown, DropdownToggle, DropdownMenu,DropdownItem} from 'reactstrap';
 import './styles/homepage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from './img/Logo2.png';
@@ -18,10 +18,10 @@ export default class LayoutSignedIn extends Component {
   }
 
   render() {
-    let content = <NavLink className = "nav_bar_names" href={'/login'} >Login</NavLink>
+    let content = <NavLink className = "nav_bar_names" href={'/login'} ><Button id="login" style={{backgroundColor:'red', color: 'white'}}>Login</Button></NavLink>
     if(this.props.authenticated){
       content = (<UncontrolledDropdown setActiveFromChild className="nav_bar_name">
-                <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Setting </DropdownToggle>
+                <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="user" href=''/> Settings </DropdownToggle>
                 <DropdownMenu>
                 <DropdownItem tag="a" href="/login" active>Edit User</DropdownItem>
                 <DropdownItem tag="a" href="/mealplan/new" active>Edit Meal Plan</DropdownItem>
@@ -38,7 +38,7 @@ export default class LayoutSignedIn extends Component {
           <Container>
 
             <NavbarBrand href="/">
-             <img src={logo} style={{ height: 70 }} alt ="logo"/ >
+             <img src={logo} style={{ height: 80 }} alt ="logo"/ >
 
             </NavbarBrand>
 
