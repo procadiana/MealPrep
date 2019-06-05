@@ -18,16 +18,16 @@ export default class LayoutSignedIn extends Component {
   }
 
   render() {
-    let content = <NavLink className = "nav_bar_names" href={'/login'} ><Button id="login" style={{backgroundColor:'red', color: 'white'}}>Login</Button></NavLink>
+    let content = <NavLink className = "nav_bar_names" href={'/login'} ><Button id="login" style={{backgroundColor:'salmon', color: 'white'}}>Login</Button></NavLink>
     if(this.props.authenticated){
       content = (<UncontrolledDropdown setActiveFromChild className="nav_bar_name">
                 <DropdownToggle tag="a" className="nav-link" caret>  <FontAwesomeIcon icon="bars" href=''/> Menu </DropdownToggle>
                 <DropdownMenu>
-                <DropdownItem tag="a" href="/home" active>Home</DropdownItem>
+                <DropdownItem tag="a" href="/home" active>Dashboard</DropdownItem>
                 <DropdownItem tag="a" href="/mealplan/new" active>New Meal Plan</DropdownItem>
                 <DropdownItem tag="a" href="/mealplans" active>Previous Meal Plans</DropdownItem>
-                <DropdownItem tag="a" href="/login" active>Edit User</DropdownItem>
-                <DropdownItem tag="a" href="/" style={{color:'#e33d26'}} onClick={this.props.logout} active>Logout</DropdownItem>
+                <DropdownItem tag="a" href="/login" active>User Settings</DropdownItem>
+                <DropdownItem tag="a" href="/" style={{color:'#F18C00'}} onClick={this.props.logout} active>Logout</DropdownItem>
                 </DropdownMenu>
                 </UncontrolledDropdown>);
     }

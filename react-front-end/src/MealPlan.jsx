@@ -57,7 +57,7 @@ export default class MealPlan extends Component {
 
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > <h5 className="heading">Ingredients</h5>
+                    <Col lg="3" md="6" > <h5 className="headings">Shopping List</h5>
                       <FormGroup check className="ingredient_check">
                         <ul >
 

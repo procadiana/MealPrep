@@ -1,3 +1,8 @@
+.headings{
+  text-align: left;
+  margin-left: 38px;
+}
+
 .nav_bar {
 background-color: #F6F6F6;
 height: 150px;
@@ -102,13 +107,6 @@ input[type=checkbox]:checked + span {
  text-decoration: line-through;
 }
 
-.previous_plan_button{
-  width: 200px;
-  font-size: 15px;
-  margin-top: 5px;
-  background-color: #718087;
-
-}
 .home_meal_plan{
   margin-top:10px;
 }
@@ -254,10 +252,7 @@ input[type=checkbox]:checked + span {
   display:inline;
   padding-left: 5px;
 }
-.archive_home_heading{
-  margin-top: 30px;
 
-}
 .recipe_display_item{
 display: inline;
 padding:5px;
@@ -270,13 +265,17 @@ padding:5px;
 
 .red {
   color: red;
+  float: right;
+  margin-right:10px;
 }
 
 .black{
-  color: black;
+  color: grey;
+  float: right;
+  margin-right:10px;
 }
 .archive_home_heading {
-  margin-top: 100px;
+  margin-top: 20px;
   text-align: left;
   margin-left: 40px;
 }

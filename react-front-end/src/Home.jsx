@@ -22,7 +22,7 @@ export default class Home extends Component {
       checked: [],
 
       user: {
-        email: "diana.claudia.ilinca@gmail.com"
+        email: "procadiana@icloud.com"
 
             }
     }
@@ -97,7 +97,7 @@ export default class Home extends Component {
 
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > <h5 className= "home_heading">Ingredients </h5>
+                    <Col lg="3" md="6" > <h5>Shopping List</h5>
                       <FormGroup check className="ingredient_check">
 
                         <ul>
@@ -115,7 +115,7 @@ export default class Home extends Component {
                         </ul>
                       </FormGroup>
                       <a className="email" href = {`mailto:${this.state.user.email}?subject=Ingredients%20for%20your%20Mealplan&body=${this.formatIngredientsForMail()}`} >
-                        <EmailIcon size={30} /> </a>
+                        <EmailIcon className="email_icon" round={true}  size={40} /> </a>
 
                     </Col>
 
