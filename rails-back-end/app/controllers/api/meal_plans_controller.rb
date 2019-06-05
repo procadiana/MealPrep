@@ -184,7 +184,7 @@ class Api::MealPlansController < ApplicationController
       }
     # converting the hash into an array
     shopping_list_hash.each do |key, value|
-      v = "#{key} - #{value.round(2).to_s} g"
+      v = "#{key} - #{value.round.to_s} g"
       shopping_list_array.push(v)
     end
     return shopping_list_array
