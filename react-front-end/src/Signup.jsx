@@ -52,7 +52,7 @@ class Signup extends Component {
                   <Input type="password" name="password" id="confirmPassword" placeholder="confirm password" />
                 </Col>
                 </FormGroup>
-              <Button variant="primary" type="submit" color="success" className="sign_up_button" >
+              <Button variant="primary" type="submit" color="success" className="sign_up_button" href="/mealplan/new">
                 Create Account
               </Button>
             </Form>
