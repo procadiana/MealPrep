@@ -54,8 +54,7 @@ export default class MealPlan extends Component {
             !ingredients
               ? <FontAwesomeIcon icon="spinner" size="4x" spin style={{color: 'grey'}} />
                 : <div>
-                  <Button variant="primary" color="success" className="new_plan_button dashboard" href='/home'>
-                   Dashboard</Button>
+
                 <Container className="meal_plans">
                   <Row>
                     <Col lg="3" md="6" > <h5 className="heading">Ingredients</h5>

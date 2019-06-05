@@ -87,14 +87,7 @@ export default class Home extends Component {
       return(
         <div>
 
-          <div className="button_home">
-             <Button variant="primary" color="success" className="new_plan_button" href='/mealplan/new'>
-                <FontAwesomeIcon icon="plus" /> New Meal Plan</Button> <br/>
 
-              <Button variant="primary" className="previous_plan_button" href="/mealplans">
-                View Previous Meal Plans</Button>
-
-          </div>
           <Container className= "home_meal_plan">
 
               {
