@@ -165,7 +165,29 @@ RecipesAllergy.create! recipe: recipe23, allergy: allergy_n
 
 
 
-
+RecipesDietType.create! recipe: recipe1, diet_type: diet_t
+RecipesDietType.create! recipe: recipe2, diet_type: diet_t
+RecipesDietType.create! recipe: recipe3, diet_type: diet_t
+RecipesDietType.create! recipe: recipe4, diet_type: diet_t
+RecipesDietType.create! recipe: recipe5, diet_type: diet_t
+RecipesDietType.create! recipe: recipe6, diet_type: diet_t
+RecipesDietType.create! recipe: recipe7, diet_type: diet_t
+RecipesDietType.create! recipe: recipe8, diet_type: diet_t
+RecipesDietType.create! recipe: recipe9, diet_type: diet_t
+RecipesDietType.create! recipe: recipe10, diet_type: diet_t
+RecipesDietType.create! recipe: recipe11, diet_type: diet_t
+RecipesDietType.create! recipe: recipe12, diet_type: diet_t
+RecipesDietType.create! recipe: recipe13, diet_type: diet_t
+RecipesDietType.create! recipe: recipe14, diet_type: diet_t
+RecipesDietType.create! recipe: recipe15, diet_type: diet_t
+RecipesDietType.create! recipe: recipe16, diet_type: diet_t
+RecipesDietType.create! recipe: recipe17, diet_type: diet_t
+RecipesDietType.create! recipe: recipe18, diet_type: diet_t
+RecipesDietType.create! recipe: recipe19, diet_type: diet_t
+RecipesDietType.create! recipe: recipe20, diet_type: diet_t
+RecipesDietType.create! recipe: recipe21, diet_type: diet_t
+RecipesDietType.create! recipe: recipe22, diet_type: diet_t
+RecipesDietType.create! recipe: recipe23, diet_type: diet_t
 RecipesDietType.create! recipe: recipe6, diet_type: diet_v
 RecipesDietType.create! recipe: recipe6, diet_type: diet_p
 RecipesDietType.create! recipe: recipe8, diet_type: diet_v

@@ -75,7 +75,10 @@ class Api::MealPlansController < ApplicationController
 
  def create
    puts params
-   recipes = Recipe.where(servings: params[:servings]).limit(params[:days]) #.take(params[:days])
+   #recipes = Recipe.where(servings: params[:servings]) #.limit(params[:days]) #.take(params[:days])
+   recipes = Recipe.where(servings: params[:servings]).
+            joins(:diet_types).where('diet_types.name' => params[:diet]).
+            limit(params[:days])
    user = current_user #User.first
    diet_type = DietType.find_by(name: params[:diet])
    mealplan = MealPlan.new
