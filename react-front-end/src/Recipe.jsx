@@ -100,7 +100,6 @@ export default class Recipe extends Component {
             <a className="recipe_link" href={item['shareAs']}>{item['name']}</a>
             </span>
             </Figure.Caption>
-
             <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
             <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
         </li>

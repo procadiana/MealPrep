@@ -1,8 +1,6 @@
 .nav_bar {
 background-color: #F6F6F6;
 }
-
-
 .nav_bar_name{
   color: #718087;
 }
@@ -85,17 +83,10 @@ background-color: #F6F6F6;
 
   font-size: 20px;
   width: 200px;
-  margin-top: 20px;
-  margin-right: 165px;
-  float:right;
+  margin-top: 15px;
 
 
 }
-
-.link{
-float:right;
-}
-
 .previous_plan_button{
   width: 200px;
   font-size: 15px;
@@ -104,7 +95,7 @@ float:right;
 
 }
 .home_meal_plan{
-  margin-top:80px;
+  margin-top:50px;
 }
 .fav_meal-plans {
    text-align: left;
@@ -222,7 +213,11 @@ float:right;
 .recipe_item {
   width:150px;
 }
+.recipe_name{
+  width:150px;
+  overflow-wrap: normal;
 
+}
 
 
 .heading_mealplan {
@@ -267,7 +262,9 @@ input[type=checkbox]:checked + span {
   padding-left: 5px;
 }
 .archive_home_heading{
-  margin-top: 30px;
+  margin-top: 100px;
+  text-align: left;
+  margin-left: 40px;
 
 }
 .recipe_display_item{
@@ -283,8 +280,6 @@ padding:5px;
 .black{
   color: black;
 }
-
-
 
 
 .food-flex{
