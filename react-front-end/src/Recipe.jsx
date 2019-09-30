@@ -102,7 +102,7 @@ export default class Recipe extends Component {
             </Figure.Caption>
 
             <FontAwesomeIcon icon="heart" onClick={this.addNotification}  className={this.state.favorite ? "red" : "black"} />  &nbsp;&nbsp; &nbsp;&nbsp;
-            <FontAwesomeIcon icon="times" onClick={this.props.deleteItem}/>  &nbsp;&nbsp;&nbsp;&nbsp;
+
         </li>
 
 

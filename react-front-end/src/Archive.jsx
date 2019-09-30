@@ -36,7 +36,7 @@ export default class Archive extends Component {
   render(){
     return(
       <div>
-      <Container>
+      <Container >
         <h4 className= "archive_home_heading">Previous Meal Plans  </h4>
 
               <ul>
