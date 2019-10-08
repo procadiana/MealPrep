@@ -1,6 +1,7 @@
-#"MEAL PREP" - Final Project Lighthouse Labs Web Development Bootcamp
+"MEAL PREP" - Final Project Lighthouse Labs Web Development Bootcamp
+======================================
 
-## Main Contributors: Anitha Amarnath , Diana Ilinca Procadiana, Karina lopez
+## Main Contributors: Anitha Amarnath , Diana Ilinca Procadiana, @karinalop
 
 ##Description - A food app that helps plan your meals in advance and create your grocery list using a recipes API. The app will generate a set of easy recipes according to the user preferences and needs. The user can save recipes to their favorites list and customize their meal plan and share the shopping list on email.
 
