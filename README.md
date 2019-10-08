@@ -1,10 +1,9 @@
-# "MEAL PREP"
+## MEAL PREP
+
+A food app that helps plan your meals in advance and create your grocery list using a recipes API. The app will generate a set of easy recipes according to the user preferences and needs. The user can save recipes to their favorites list, customize their meal plan and share the shopping list on email.
 
 ## Main Contributors
 Anitha Amarnath [anithaamarnath](https://github.com/anithaamarnath), Diana Ilinca [procadiana](https://github.com/procadiana), Karina Lopez [karinalop](https://github.com/karinalop)
-
-## Description
-A food app that helps plan your meals in advance and create your grocery list using a recipes API. The app will generate a set of easy recipes according to the user preferences and needs. The user can save recipes to their favorites list and customize their meal plan and share the shopping list on email.
 
 
 ## Getting Started
