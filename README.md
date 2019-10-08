@@ -1,4 +1,4 @@
-# "MEAL PREP" - Final Project Lighthouse Labs Web Development Bootcamp
+# "MEAL PREP"
 
 ## Main Contributors
 Anitha Amarnath [anithaamarnath](https://github.com/anithaamarnath), Diana Ilinca [procadiana](https://github.com/procadiana), Karina Lopez [karinalop](https://github.com/karinalop)
