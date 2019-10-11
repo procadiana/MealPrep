@@ -27,13 +27,13 @@ Anitha Amarnath [anithaamarnath](https://github.com/anithaamarnath), Diana Ilin
 
 ## Final Project
 
-!["Home page"](#)
-!["Login Page"](#)
-!["Creating a New Meal Plan"](#)
-!["Meal Plan"](#)
-!["Recipe Details"](#)
-!["Current Meal Plan and Favorite Recipes"](#)
-!["Meal Plan History"](#)
+!["Home page"](https://github.com/procadiana/MealPrep/blob/master/docs/Home.png)
+!["Login Page"](https://github.com/procadiana/MealPrep/blob/master/docs/Login.png)
+!["Creating a New Meal Plan"](https://github.com/procadiana/MealPrep/blob/master/docs/Create%20New%20Meal%20Plan.png)
+!["Meal Plan"](https://github.com/procadiana/MealPrep/blob/master/docs/Meal%20Plan.png)
+!["Recipe Details"](https://github.com/procadiana/MealPrep/blob/master/docs/Details%20of%20Recipe.png)
+!["Current Meal Plan and Favorite Recipes"](https://github.com/procadiana/MealPrep/blob/master/docs/Current%20Meal%20Plan%20and%20Favorite%20Recipes.png)
+!["Meal Plan History"](https://github.com/procadiana/MealPrep/blob/master/docs/Meal%20Plan%20History.png)
 
 
 ## Tech Stack
