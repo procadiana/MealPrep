@@ -10,16 +10,16 @@ Anitha Amarnath [anithaamarnath](https://github.com/anithaamarnath), Diana Ilin
 1. Clone this repository.
 2.  Create or use your https://www.edamam.com/ (recipes API) and store your KEY_API_ID and KEY_API_PASS on the .env file into the `rails-back-end` folder
 3. You need **TWO** terminals to run this proyect:
-  - In one terminal:
-`cd rails-back-end`
+  - In one terminal:
+`cd rails-back-end`,
 `bundle` to install the dependencies,
 `bin/rake db:setup` to create the databases (called rails_project_development by default),
 `bin/rake db:migrate` tu run migrations,
-`bin/rake db:seed` to seed the database
+`bin/rake db:seed` to seed the database,
 `bin/rails s` to run the server.
   - In the other terminal:
-   `cd react-front-end`
-   `npm install`
+   `cd react-front-end`,
+   `npm install`,
    `npm start`
 4. The app will be served at http://localhost:3000/.
 
