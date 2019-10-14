@@ -97,7 +97,7 @@ export default class Home extends Component {
 
                 <Container className="meal_plans">
                   <Row>
-                    <Col lg="3" md="6" > <h5>Shopping List</h5>
+                    <Col lg="3" md="6" > <h5>List of Ingredients</h5>
                       <FormGroup check className="ingredient_check">
 
                         <ul>

@@ -137,57 +137,58 @@ class Api::MealPlansController < ApplicationController
  end
  private
 
- # def list_of_ingredients (recipes)
- #   q_string = "#{BASE_URL}&#{API_PARTIAL_URL}"
- #   recipes.each { |r|
- #     q_string = q_string + "&" + RECIPE_PARTIAL_URL + r.edaman_id
- #   }
- #   puts q_string
- #   result = HTTParty.get(q_string)
- #   list = []
+ def shopping_list(recipes) #using free edaman api only provides list of ingredients
+   q_string = "#{BASE_URL}&#{API_PARTIAL_URL}"
+   recipes.each { |r|
+     q_string = q_string + "&" + RECIPE_PARTIAL_URL + r.edaman_id
+   }
+  # puts q_string
+   result = HTTParty.get(q_string)
+   list = []
 
- #   if result
- #     result.each { |r|
- #       list = list + r["ingredientLines"]
- #     }
- #   else
- #    puts result
- #  end
- #    puts "List of ingredients: #{list}"
- #    return list
-
- # end
-
-  def shopping_list(recipes)
-    q_string = "#{BASE_URL}&#{API_PARTIAL_URL}"
-     recipes.each { |r|
-       q_string = q_string + "&" + RECIPE_PARTIAL_URL + r.edaman_id
+   if result
+     result.each { |r|
+       list = list + r["ingredientLines"]
      }
-     puts q_string
-     result = HTTParty.get(q_string)
-     ing =[]
-     shopping_list_hash = {}
-     shopping_list_array =[]
-
-    if result
-      result.each { |r|
-        ing = ing + r["ingredients"]
-      }
-    end
-    puts ing
-    ing.each { |i|
-        if !shopping_list_hash[i['food']]
-          shopping_list_hash[i['food']] = i['weight']
-        else
-          shopping_list_hash[i['food']] = shopping_list_hash[i['food']] + i['weight']
-        end
-      }
-    # converting the hash into an array
-    shopping_list_hash.each do |key, value|
-      v = "#{key} - #{value.round.to_s} g"
-      shopping_list_array.push(v)
-    end
-    return shopping_list_array
+   else
+    #puts result
   end
-end
+    puts "List of ingredients: #{list}"
+    return list
+
+ end
+
+  # def shopping_list(recipes) #usin paid edaman account
+  #   q_string = "#{BASE_URL}&#{API_PARTIAL_URL}"
+  #    recipes.each { |r|
+  #      q_string = q_string + "&" + RECIPE_PARTIAL_URL + r.edaman_id
+  #    }
+  #    puts q_string
+  #    result = HTTParty.get(q_string)
+  #    ing =[]
+  #    shopping_list_hash = {}
+  #    shopping_list_array =[]
+
+  #   if result
+  #     result.each { |r|
+  #       ing = ing + r["ingredients"]
+  #     }
+  #   end
+  #   puts ing
+  #   ing.each { |i|
+  #       if !shopping_list_hash[i['food']]
+  #         shopping_list_hash[i['food']] = i['weight']
+  #       else
+  #         shopping_list_hash[i['food']] = shopping_list_hash[i['food']] + i['weight']
+  #       end
+  #     }
+  #   # converting the hash into an array
+  #   shopping_list_hash.each do |key, value|
+  #     v = "#{key} - #{value.round.to_s} g"
+  #     shopping_list_array.push(v)
+  #   end
+  #   return shopping_list_array
+  # end
+
+end #end of class
 
